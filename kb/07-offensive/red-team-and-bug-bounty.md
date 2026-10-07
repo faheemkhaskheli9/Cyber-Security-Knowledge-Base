@@ -11,7 +11,14 @@
 ## Why it matters
 Scanners find known weaknesses. Red teams reveal whether an organization can actually **detect and respond** to a realistic attacker. Bug bounties provide continuous, diverse testing at scale.
 
-## Red team engagement lifecycle
+## Attacks
+What these exercises emulate, and what goes wrong when they are run badly:
+- **Emulated**: phishing and initial access, credential theft, privilege escalation, lateral movement, C2, data staging/exfiltration, mapped to MITRE ATT&CK.
+- **Failure modes**: testing without written authorization or outside scope, causing outages, mishandling real customer data found during testing, red team findings never turned into detections, and bounty researchers exceeding the minimum needed to prove impact.
+
+## Defenses
+
+### Red team engagement lifecycle
 1. **Rules of engagement (RoE)**:
    - Scope, objectives and out-of-bounds systems
    - Allowed techniques (social engineering? physical?)
@@ -28,14 +35,14 @@ Scanners find known weaknesses. Red teams reveal whether an organization can act
 
 Common frameworks: TIBER-EU, CBEST, and ATT&CK-based emulation plans such as the CTID Adversary Emulation Library. Common tooling for authorized use: Atomic Red Team, MITRE Caldera, Sliver/Mythic C2.
 
-## Bug bounty: for researchers
+### Bug bounty: for researchers
 - Read the program policy fully: scope, excluded vulnerability classes, rate limits, safe harbor.
 - Recon only in-scope assets. Never pivot, exfiltrate real user data, or cause DoS.
 - Prove impact minimally (your own test accounts; read one record, not thousands).
 - Write reports with a clear title, affected asset, steps to reproduce, impact, PoC and suggested fix.
 - Common high-value classes: IDOR/BOLA, auth bypass, SSRF, account takeover, business logic flaws.
 
-## Bug bounty: for organizations
+### Bug bounty: for organizations
 1. Start with a **VDP** (`SECURITY.md`, `/.well-known/security.txt`, safe-harbor language). Add paid bounty only once triage capacity and vulnerability management are mature.
 2. Define scope, a severity-based reward table and response SLAs (triage ≤ 3 business days).
 3. Use a platform (HackerOne, Bugcrowd, Intigriti, YesWeHack) or self-host.

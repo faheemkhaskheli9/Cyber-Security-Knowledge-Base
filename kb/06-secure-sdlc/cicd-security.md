@@ -10,7 +10,8 @@ Compromising CI means compromising everything it deploys. Real incidents include
 - `tj-actions/changed-files` (2025, compromised Action dumping secrets to logs)
 - Ultralytics (PyPI release poisoned via a `pull_request_target` cache/injection chain)
 
-## Attacks (OWASP Top 10 CI/CD Security Risks)
+## Attacks
+Mapped to the OWASP Top 10 CI/CD Security Risks:
 1. **Insufficient flow control**: pushing to main or deploying without review.
 2. **Inadequate identity and access management**: stale accounts, overly broad tokens.
 3. **Dependency chain abuse**: dependency confusion, typosquats, compromised third-party Actions/plugins.
@@ -24,7 +25,8 @@ Compromising CI means compromising everything it deploys. Real incidents include
 
 **Script injection**: using `${{ github.event.issue.title }}` (or PR title, branch name) inside `run:` lets anyone who can open an issue or PR execute shell commands.
 
-## Defenses (GitHub Actions examples; concepts apply to all CI)
+## Defenses
+Examples use GitHub Actions; the concepts apply to every CI system.
 1. **Least-privilege token**: set `permissions: contents: read` at the workflow top level and grant more per job only when needed.
 2. **Pin third-party Actions to a full commit SHA** (`uses: actions/checkout@<40-char-sha> # v4.x`). Let Dependabot update the pins.
 3. **No untrusted input in `run:`**: pass it via `env:` and quote it:

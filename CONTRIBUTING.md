@@ -21,4 +21,4 @@
 - Prefer secure defaults in every example (parameterized queries, TLS on, least privilege, pinned versions).
 
 ## Checks
-CI runs `bash -n` on scripts and `scripts/audit.sh .`. Run them locally before opening a PR.
+CI runs `bash -n` on scripts, `scripts/check-kb.sh` (required headings and internal links) and `scripts/audit.sh .`. Run them locally before pushing.
