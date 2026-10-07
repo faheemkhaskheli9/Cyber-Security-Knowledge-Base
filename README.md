@@ -8,12 +8,12 @@ A practical, Claude-readable knowledge base covering the whole cybersecurity fie
 |------|----------|
 | `CLAUDE.md` | Instructions Claude loads automatically in this repo (how to use the KB, how to secure projects) |
 | `.claude/skills/secure-project-audit/` | Skill: audit any project against this KB and fix findings |
-| `kb/01-foundations` | CIA triad, threat modeling, risk, attacker frameworks (ATT&CK, kill chain) |
-| `kb/02-network` | Network defense, protocols, wireless, DNS, DDoS |
+| `kb/01-foundations` | CIA triad, threat modeling, risk, attacker frameworks (ATT&CK, kill chain), zero trust |
+| `kb/02-network` | Network defense, protocols, wireless, DNS, DDoS, email security |
 | `kb/03-application` | OWASP Top 10, API security, mobile, browser/client side |
-| `kb/04-cloud-infra` | Cloud, containers/Kubernetes, IaC, Linux/Windows hardening |
-| `kb/05-identity-crypto` | IAM, authN/authZ, secrets, cryptography, PKI |
-| `kb/06-secure-sdlc` | Secure SDLC, supply chain, SAST/DAST, CI/CD security |
+| `kb/04-cloud-infra` | Cloud (incl. AWS/Azure/GCP baselines), containers/Kubernetes, IaC, Linux/Windows hardening |
+| `kb/05-identity-crypto` | IAM, authN/authZ, Active Directory, secrets, cryptography, PKI |
+| `kb/06-secure-sdlc` | Secure SDLC, supply chain, SAST/DAST, CI/CD security, secure code review |
 | `kb/07-offensive` | Pentesting methodology, red team, bug bounty, exploit concepts (authorized testing only) |
 | `kb/08-defensive` | SOC, detection engineering, incident response, DFIR, malware analysis, threat intel |
 | `kb/09-governance` | GRC, compliance (ISO 27001, SOC 2, NIST, PCI, GDPR), privacy, vulnerability management |
@@ -26,12 +26,12 @@ A practical, Claude-readable knowledge base covering the whole cybersecurity fie
 
 | Area | Files |
 |------|-------|
-| 01 Foundations | [core-concepts](kb/01-foundations/core-concepts.md) · [threat-modeling](kb/01-foundations/threat-modeling.md) · [frameworks-attack-models](kb/01-foundations/frameworks-attack-models.md) |
-| 02 Network | [network-security](kb/02-network/network-security.md) · [wireless-dns-ddos](kb/02-network/wireless-dns-ddos.md) |
+| 01 Foundations | [core-concepts](kb/01-foundations/core-concepts.md) · [threat-modeling](kb/01-foundations/threat-modeling.md) · [frameworks-attack-models](kb/01-foundations/frameworks-attack-models.md) · [zero-trust-architecture](kb/01-foundations/zero-trust-architecture.md) |
+| 02 Network | [network-security](kb/02-network/network-security.md) · [wireless-dns-ddos](kb/02-network/wireless-dns-ddos.md) · [email-security](kb/02-network/email-security.md) |
 | 03 Application | [owasp-top10](kb/03-application/owasp-top10.md) · [api-security](kb/03-application/api-security.md) · [browser-client-side](kb/03-application/browser-client-side.md) · [mobile-and-client](kb/03-application/mobile-and-client.md) |
-| 04 Cloud & infra | [cloud-security](kb/04-cloud-infra/cloud-security.md) · [containers-kubernetes-iac](kb/04-cloud-infra/containers-kubernetes-iac.md) · [os-hardening](kb/04-cloud-infra/os-hardening.md) |
-| 05 Identity & crypto | [identity-access](kb/05-identity-crypto/identity-access.md) · [secrets-management](kb/05-identity-crypto/secrets-management.md) · [cryptography](kb/05-identity-crypto/cryptography.md) · [pki-and-tls](kb/05-identity-crypto/pki-and-tls.md) |
-| 06 Secure SDLC | [secure-sdlc-and-supply-chain](kb/06-secure-sdlc/secure-sdlc-and-supply-chain.md) · [cicd-security](kb/06-secure-sdlc/cicd-security.md) |
+| 04 Cloud & infra | [cloud-security](kb/04-cloud-infra/cloud-security.md) · [containers-kubernetes-iac](kb/04-cloud-infra/containers-kubernetes-iac.md) · [os-hardening](kb/04-cloud-infra/os-hardening.md) · [cloud-provider-baselines](kb/04-cloud-infra/cloud-provider-baselines.md) |
+| 05 Identity & crypto | [identity-access](kb/05-identity-crypto/identity-access.md) · [secrets-management](kb/05-identity-crypto/secrets-management.md) · [cryptography](kb/05-identity-crypto/cryptography.md) · [pki-and-tls](kb/05-identity-crypto/pki-and-tls.md) · [active-directory-security](kb/05-identity-crypto/active-directory-security.md) |
+| 06 Secure SDLC | [secure-sdlc-and-supply-chain](kb/06-secure-sdlc/secure-sdlc-and-supply-chain.md) · [cicd-security](kb/06-secure-sdlc/cicd-security.md) · [secure-code-review](kb/06-secure-sdlc/secure-code-review.md) |
 | 07 Offensive | [pentest-methodology](kb/07-offensive/pentest-methodology.md) · [red-team-and-bug-bounty](kb/07-offensive/red-team-and-bug-bounty.md) |
 | 08 Defensive | [soc-detection-ir](kb/08-defensive/soc-detection-ir.md) · [dfir-malware-threat-intel](kb/08-defensive/dfir-malware-threat-intel.md) |
 | 09 Governance | [grc-compliance-privacy](kb/09-governance/grc-compliance-privacy.md) · [vulnerability-management](kb/09-governance/vulnerability-management.md) |
