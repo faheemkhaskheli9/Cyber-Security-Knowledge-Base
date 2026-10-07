@@ -1,0 +1,1 @@
+{"title":"Cybersecurity KB","port":8771,"extensions":[".md",".txt",".csv",".json",".yml",".yaml",".toml",".py",".sh"],"skip_dirs":["node_modules","__pycache__","venv",".venv"],"readonly":[]}
