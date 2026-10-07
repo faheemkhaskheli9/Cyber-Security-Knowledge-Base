@@ -7,5 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: bash -n scripts/audit.sh && bash -n scripts/bootstrap-project.sh
+      - run: bash -n scripts/audit.sh && bash -n scripts/bootstrap-project.sh && bash -n scripts/check-kb.sh
+      - run: scripts/check-kb.sh
       - run: scripts/audit.sh . || true
