@@ -59,3 +59,14 @@ Offensive content is for **authorized** testing, defense, CTFs and education. Ne
 
 ## Contributing
 See [CONTRIBUTING.md](CONTRIBUTING.md). One topic per file, keep it actionable (what / why / how to defend / how to verify), link authoritative sources (OWASP, NIST, MITRE, CIS, vendor docs).
+
+## Web app (view and edit)
+
+```bash
+python3 webapp/server.py --open     # http://localhost:8771 , stdlib only, no install
+```
+
+Browse the file tree, read rendered Markdown (links and `[[wiki-links]]` work), full-text search, edit raw
+text (Ctrl+S saves) and create new files. Edits write straight to the files here; review and commit with git.
+It listens on 127.0.0.1 only, rejects foreign Host/Origin headers, needs a per-run token for writes, only touches
+text files inside the repo, and refuses to overwrite a file that changed on disk since you opened it.
