@@ -137,7 +137,7 @@ openssl s_client -starttls smtp -connect mx1.example.com:25 -servername mx1.exam
 - Process: run a BEC tabletop or simulated payment-change request against finance and check that the call-back step happens.
 
 ## References
-- RFC 7208 (SPF) · RFC 6376 (DKIM) · RFC 8301 / RFC 8463 (DKIM crypto) · RFC 7489 (DMARC) · RFC 8617 (ARC)
+- [RFC 7208 (SPF)](https://www.rfc-editor.org/rfc/rfc7208) · [RFC 6376 (DKIM)](https://www.rfc-editor.org/rfc/rfc6376) · RFC 8301 / RFC 8463 (DKIM crypto) · [RFC 7489 (DMARC)](https://www.rfc-editor.org/rfc/rfc7489) · RFC 8617 (ARC)
 - RFC 8461 (MTA-STS) · RFC 8460 (TLS-RPT) · RFC 7672 / RFC 6698 (DANE/TLSA) · RFC 7505 (null MX) · RFC 8058 (one-click unsubscribe)
 - Google "Email sender guidelines" · Yahoo "Sender best practices" · BIMI Group specification
 - M3AAWG best practices · CISA BOD 18-01 · UK NCSC email security guidance · FBI IC3 BEC public service announcements

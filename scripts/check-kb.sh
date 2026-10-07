@@ -27,6 +27,12 @@ for f in kb/*/*.md; do
   done
 done
 
+# Every topic must cite at least one external source in its References section.
+for f in kb/*/*.md; do
+  case " $EXEMPT_STRUCTURE " in *" $f "*) continue ;; esac
+  sed -n '/^## References/,$p' "$f" | grep -qE 'https?://' || { echo "[x] $f: References has no http(s) source link"; fail=1; }
+done
+
 # Repo-relative references like `kb/..../x.md`, `templates/x`, `scripts/x` and markdown links must exist.
 for f in README.md CONTRIBUTING.md CLAUDE.md kb/*/*.md; do
   while IFS= read -r ref; do

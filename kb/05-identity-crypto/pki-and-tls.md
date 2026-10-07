@@ -47,8 +47,8 @@
 - AD CS: `Certify`/`Certipy find -vulnerable` (authorized, own domain) or PingCastle.
 
 ## References
-- Mozilla Server Side TLS & SSL Config Generator
-- NIST SP 800-52r2 (TLS guidelines) · NIST SP 800-57 (key management)
-- CA/Browser Forum Baseline Requirements
-- SpecterOps "Certified Pre-Owned" (AD CS)
+- [Mozilla Server Side TLS & SSL Config Generator](https://ssl-config.mozilla.org/)
+- [NIST SP 800-52r2 (TLS guidelines)](https://csrc.nist.gov/pubs/sp/800/52/r2/final) · [NIST SP 800-57 Part 1 (key management)](https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final)
+- [CA/Browser Forum Baseline Requirements](https://cabforum.org/working-groups/server/baseline-requirements/requirements/)
+- [SpecterOps "Certified Pre-Owned" (AD CS)](https://posts.specterops.io/certified-pre-owned-d95910965cd2)
 - See also `kb/05-identity-crypto/cryptography.md`, `kb/10-emerging/post-quantum-cryptography.md`
