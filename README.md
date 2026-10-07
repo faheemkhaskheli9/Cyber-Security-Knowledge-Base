@@ -38,6 +38,9 @@ This copies the security templates and adds an `@import` of the KB to the projec
 mkdir -p ~/.claude/skills && cp -r ~/cybersec-kb/.claude/skills/secure-project-audit ~/.claude/skills/
 ```
 
+## Available in every new session
+`scripts/install-global.sh` clones the three KB repos to `~/kb`, imports them from `~/.claude/CLAUDE.md` and installs their skills. Paste it into your cloud environment's **Setup script** (environment menu → Edit) so every new session runs it. The private repo needs GitHub access in that environment; otherwise it is skipped.
+
 ## Scope and ethics
 Offensive content is for **authorized** testing, defense, CTFs and education. Never test systems you don't own or lack written permission to test. Never commit real secrets, client data or live exploit weaponization to this repo.
 
