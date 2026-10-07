@@ -21,4 +21,4 @@
 - Prefer secure defaults in every example (parameterized queries, TLS on, least privilege, pinned versions).
 
 ## Checks
-CI runs `bash -n` on scripts, `scripts/check-kb.sh` (required headings and internal links) and `scripts/audit.sh .`. Run them locally before pushing.
+CI runs `bash -n` on scripts, `scripts/check-kb.sh` (required headings and internal links) and `scripts/audit.sh .`. Run them locally before pushing. CodeQL (`.github/workflows/codeql.yml`) and gitleaks (`.github/workflows/gitleaks.yml`) also run on every push. Workflow actions are pinned to commit SHAs, and Dependabot keeps them current.
