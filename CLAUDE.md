@@ -22,3 +22,9 @@ When asked to review, harden or build anything:
 
 ## Style
 Concise, actionable, evidence-based. Each KB file: What / Why it matters / Attacks / Defenses / How to verify / References.
+
+## Sibling knowledge bases
+This repo is one of three: `faheemkhaskheli9/Cyber-Security-Knowledge-Base`, `faheemkhaskheli9/Personal-Knowledge-Base`,
+`faheemkhaskheli9/AI-Knowledge-Base`. If a task could use the others and they are not in the session, attach them
+with `add_repo` (read access is enough unless you need to push) and clone them next to this one. Each has a
+`webapp/` for manual viewing and editing (`python3 webapp/server.py --open`).
