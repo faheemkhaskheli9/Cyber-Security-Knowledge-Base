@@ -38,6 +38,12 @@ A practical, Claude-readable knowledge base covering the whole cybersecurity fie
 | 10 Emerging | [ai-llm-security](kb/10-emerging/ai-llm-security.md) · [iot-ot-social-physical](kb/10-emerging/iot-ot-social-physical.md) · [post-quantum-cryptography](kb/10-emerging/post-quantum-cryptography.md) |
 | 11 Reference | [glossary](kb/11-reference/glossary.md) · [tools-and-cheatsheets](kb/11-reference/tools-and-cheatsheets.md) · [learning-paths-and-resources](kb/11-reference/learning-paths-and-resources.md) |
 
+## Practical workflows
+
+- **Prioritize a vulnerability:** use [Vulnerability Management](kb/09-governance/vulnerability-management.md) to validate affected assets, weigh exploitation and business impact, and verify the fix.
+- **Track a finding or exception:** copy the [finding and exception template](templates/vulnerability-finding.md) into your approved tracker. It includes ownership, deadlines, evidence and expiry.
+- **Respond to suspected compromise:** start with [SOC, detection and incident response](kb/08-defensive/soc-detection-ir.md); patching alone is insufficient.
+
 ## Using it with Claude
 
 **In this repo:** open Claude Code here; `CLAUDE.md` is loaded automatically.
