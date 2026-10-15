@@ -15,6 +15,11 @@
 3. Keep it actionable: concrete settings, commands and checks over prose. Link authoritative sources (OWASP, NIST, MITRE, CIS, CISA, vendor docs).
 4. Add new terms to `kb/11-reference/glossary.md` and list the file in `README.md`.
 
+## Operational guidance
+- Distinguish technical severity, exploitation probability and business risk; explain the limits of scores and feeds.
+- Label example deadlines as examples, and include ownership, verification evidence and exception expiry where relevant.
+- Link related KB topics with paths relative to the current file. Keep sensitive finding evidence in an approved tracker; use [the finding template](templates/vulnerability-finding.md) as a starting point.
+
 ## Rules
 - **No real secrets, client data, or weaponized exploits.** Use placeholders like `EXAMPLE_KEY`.
 - Offensive content must state it is for authorized testing only and pair each technique with its defense and detection.
