@@ -30,7 +30,8 @@ symptom, steps to reproduce, the cause with `file:line` when known, and a sugges
 Concise, actionable, evidence-based. Each KB file: What / Why it matters / Attacks / Defenses / How to verify / References.
 
 ## Sibling knowledge bases
-This repo is one of three: `faheemkhaskheli9/Cyber-Security-Knowledge-Base`, `faheemkhaskheli9/Personal-Knowledge-Base`,
-`faheemkhaskheli9/AI-Knowledge-Base`. If a task could use the others and they are not in the session, attach them
+This repo is one of several: `faheemkhaskheli9/Cyber-Security-Knowledge-Base`, `faheemkhaskheli9/Personal-Knowledge-Base`,
+`faheemkhaskheli9/AI-Knowledge-Base`, `faheemkhaskheli9/Software-Engineering-KnowledgeBase`, `faheemkhaskheli9/Brain`.
+To update or check them together, or to change the shared web app, use the `update-knowledge-bases` skill. If a task could use the others and they are not in the session, attach them
 with `add_repo` (read access is enough unless you need to push) and clone them next to this one. Each has a
 `webapp/` for manual viewing and editing (`python3 webapp/server.py --open`).
