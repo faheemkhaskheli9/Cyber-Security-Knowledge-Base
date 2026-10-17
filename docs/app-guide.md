@@ -92,6 +92,9 @@ or wiki-links today.
 - **Relative links** such as `[incident response](../08-defensive/soc-detection-ir.md)` open the target
   inside the app if that file is in the tree. A relative link to anything else (an image, a heading
   anchor like `#defenses`) is shown as plain text.
+- **Images** such as `![alt](screenshots/search.png)` are shown when they are PNG, JPEG, GIF or WebP files
+  inside the repo; the path is resolved against the open file's folder. Remote images (`https://...`) are
+  shown as a link instead, because the page only loads images from the app itself. SVG is not shown.
 - **External links** (`http`, `https`, `mailto`) open in a new tab.
 - **Wiki-links**: `[[owasp-top10]]` resolves by full path without `.md` first, then by file name alone.
   `[[kb/06-secure-sdlc/secure-code-review|Secure code review]]` shows the text after `|`. A wiki-link with
@@ -109,8 +112,9 @@ or wiki-links today.
 1. Type at least 2 characters in **Search all files (Enter)...** in the header.
 2. Press **Enter**.
 3. Each result shows `path:line` and the matching line with the match highlighted. A file whose name
-   matches is listed with `(filename)`. Click a result to open that file (it opens at the top, not at the
-   line).
+   matches is listed with `(filename)`. Click a result to open that file at that line: the view scrolls
+   to the block holding the line (heading, paragraph, list item, table row, code block) and flashes it,
+   and **Edit** puts the cursor on the line. A `(filename)` result opens the file at the top.
 
 **Details.** Matching is a case-insensitive plain substring, not a regular expression or word search.
 At most 200 results are returned. Result lines are shown as raw text (no Markdown formatting) and cut to
@@ -204,6 +208,9 @@ The app can write to your repository, so it is locked down to your own machine:
 - **Path limits.** Only files with the listed extensions, inside the repo, outside hidden and skipped
   folders, can be read or written. Paths with `..`, absolute paths and backslashes are rejected. Files over
   2 MB cannot be opened or saved here.
+- **Images are read-only.** A separate read-only route serves images under the same path rules, only PNG,
+  JPEG, GIF and WebP files (checked by extension and file content) up to 10 MB. They cannot be opened in
+  the editor or saved.
 - **Browser hardening.** Responses carry a strict Content-Security-Policy (only the app's own script and
   stylesheet), `X-Content-Type-Options: nosniff`, `Referrer-Policy: no-referrer` and `Cache-Control:
   no-store`. Markdown is rendered with raw HTML escaped, so a file cannot inject script into the page.
@@ -231,9 +238,8 @@ Restart the server after changing the file.
   `--port <other>`.
 - **A file is missing from the tree**: check its extension and whether it sits in a hidden or skipped
   folder (see [File tree and filter](#file-tree-and-filter)).
-- **The Edit button before a file is open**: it is shown on the start and search pages too, but does
-  nothing useful there. Open a file first.
-- **Images** in Markdown are not displayed; their alt text shows as plain text.
+- **Images** in Markdown: SVG files and remote (`https://`) images are not displayed; a remote image is
+  shown as a link.
 - **Headings have no anchors**, so `#heading` links are not followable inside the app.
 - **No delete or rename.** Do these with git or your file manager; the tree updates when you reload the
   page.
