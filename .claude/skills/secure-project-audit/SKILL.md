@@ -18,7 +18,7 @@ Locate the KB (this repo, or `$CYBERSEC_KB`, or `~/cybersec-kb`). Read the relev
    - Dependencies & lockfiles → `kb/06-secure-sdlc/`
    - Dockerfile/K8s/IaC → `kb/04-cloud-infra/`
    - CI/CD workflows (permissions, pinned actions, secrets) → `kb/06-secure-sdlc/`
-   - Logging, error handling, security headers, CORS
+   - Logging, error handling, security headers, CORS → `kb/06-secure-sdlc/security-logging-and-monitoring.md`
 4. **Report**: table of findings – Severity (Critical/High/Med/Low/Info), Location (`file:line`), Issue, Fix. Be concrete; no speculative noise.
 5. **Fix**: apply safe fixes directly; add missing baseline files from `templates/`; for risky or breaking changes, ask first.
 6. **Verify**: re-run tests/linters/`audit.sh`; state what remains.
