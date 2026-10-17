@@ -78,6 +78,6 @@ python3 webapp/server.py --open     # http://localhost:8771 , stdlib only, no in
 Browse, search, read rendered Markdown (with `[[wiki-links]]`) and edit the files in this repo from your browser.
 Local only: it listens on 127.0.0.1, needs a per-run token for writes and refuses to overwrite files changed on disk.
 
-![The Cybersecurity KB web app showing the OWASP Top 10 topic](docs/screenshots/webapp.png)
+![The Cybersecurity KB web app showing the OWASP Top 10 topic](docs/screenshots/file.png)
 
 Full guide with screenshots: [docs/app-guide.md](docs/app-guide.md)
