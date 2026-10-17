@@ -6,7 +6,7 @@ A structured way to find design-level security flaws before they are built. Ask 
 Output: a diagram, a list of threats with mitigations and owners, and tracked follow-up work. It is cheapest at design time, but any existing system can be modeled.
 
 ## Why it matters
-Scanners and code review find implementation bugs; they rarely find missing authorization between services, an unauthenticated internal queue, or an admin path that bypasses MFA. Design flaws are expensive to fix after launch. OWASP Top 10 2021 added **A04 Insecure Design** for this reason.
+Scanners and code review find implementation bugs; they rarely find missing authorization between services, an unauthenticated internal queue, or an admin path that bypasses MFA. Design flaws are expensive to fix after launch. OWASP Top 10 2021 added **Insecure Design** (A04:2021, A06:2025) for this reason.
 
 ## Attacks
 STRIDE categories, with typical threats and mitigations:

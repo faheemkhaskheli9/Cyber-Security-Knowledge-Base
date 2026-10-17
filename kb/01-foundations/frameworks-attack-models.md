@@ -43,7 +43,7 @@ Frameworks give a common language between red, blue, engineering and leadership.
 | Cluster and attribute intrusions, pivot on CTI | Diamond Model |
 | Decide which indicators are worth detecting | Pyramid of Pain |
 | Structure a whole security program, report to the board | NIST CSF 2.0 |
-| Concrete prioritized to-do list for a small/medium org | CIS Controls v8 (start with IG1) |
+| Concrete prioritized to-do list for a small/medium org | CIS Controls v8.1 (start with IG1) |
 | Prioritize patching | KEV first, then EPSS + CVSS + asset criticality |
 
 ## Attacks

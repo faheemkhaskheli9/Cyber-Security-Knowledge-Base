@@ -6,7 +6,7 @@ A large fault-tolerant quantum computer running Shor's algorithm would break RSA
 - **ML-DSA** (FIPS 204, ex-Dilithium): signatures
 - **SLH-DSA** (FIPS 205, ex-SPHINCS+): hash-based signatures
 
-**FN-DSA** (Falcon) and **HQC** are in progress as further additions.
+Still being standardized (check the NIST PQC project page for status): **FN-DSA** (Falcon, signatures, to be FIPS 206) and **HQC** (a code-based KEM selected in March 2025 as a backup to ML-KEM, built on different mathematics).
 
 ## Why it matters
 - **Harvest now, decrypt later**: traffic recorded today can be decrypted once quantum capability exists. Data that must stay secret for 10+ years is already at risk.

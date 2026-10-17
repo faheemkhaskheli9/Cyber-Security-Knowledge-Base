@@ -6,7 +6,7 @@ IAM covers who a user or workload is (**authentication**, AuthN: something you k
 ## Why it matters
 - Valid accounts and stolen credentials are among the most common initial access vectors in breach reports (MITRE ATT&CK T1078).
 - Identity is the perimeter for SaaS and cloud: one phished admin session can expose the whole tenant.
-- Broken access control is OWASP Top 10 A01 (2021).
+- Broken access control is OWASP Top 10 A01 (2021 and 2025); authentication failures are A07.
 
 ## Attacks
 For authorized testing only; each is paired with its defense.
@@ -21,7 +21,7 @@ For authorized testing only; each is paired with its defense.
   - Kerberoasting (offline cracking of service tickets) → gMSAs, long random service passwords, AES only; detect 4769 with RC4 encryption.
   - Pass-the-Hash / Pass-the-Ticket → LAPS, Credential Guard, tiered admin, Protected Users, restrict NTLM.
   - DCSync (replication rights abuse) → limit `Replicating Directory Changes All` to DCs; alert on 4662 from non-DC hosts.
-  - Details and more in `kb/04-cloud-infra/os-hardening.md`.
+  - Details, detections and AD CS in `kb/05-identity-crypto/active-directory-security.md`; host hardening in `kb/04-cloud-infra/os-hardening.md`.
 
 ## Defenses
 
@@ -54,8 +54,8 @@ Prefer phishing-resistant MFA (FIDO2/WebAuthn passkeys) over SMS/TOTP. Secure re
 - Leaver: disable within hours, revoke sessions and tokens, rotate shared secrets they knew, transfer ownership.
 - Quarterly access reviews (monthly for privileged), disable stale accounts (e.g., 90 days inactive), inventory service accounts with owners.
 
-### Passwords (NIST SP 800-63B)
-- Length > complexity: minimum 8 (15 recommended when password is the only factor), allow at least 64 characters and all printable/Unicode characters, allow paste and password managers.
+### Passwords (NIST SP 800-63B-4, final 2025)
+- Length > complexity: minimum 15 characters when the password is the only factor, minimum 8 when it is only used as part of MFA; allow at least 64 characters and all printable/Unicode characters, allow paste and password managers.
 - Check against breached lists (HIBP k-anonymity) and context words; no composition rules, no periodic forced rotation (change on evidence of compromise); no security questions.
 - Rate-limit failed attempts.
 - Storage: hash with Argon2id (or bcrypt/scrypt), unique salts, never reversible encryption. See `kb/05-identity-crypto/cryptography.md`.
@@ -80,11 +80,11 @@ Prefer phishing-resistant MFA (FIDO2/WebAuthn passkeys) over SMS/TOTP. Secure re
 - Leaver test: a disabled account's existing tokens stop working within the expected window.
 
 ## References
-- NIST SP 800-63B (Digital Identity Guidelines, Authentication): https://pages.nist.gov/800-63-4/
+- NIST SP 800-63B-4 (Digital Identity Guidelines, Authentication and Authenticator Management): https://pages.nist.gov/800-63-4/ · https://doi.org/10.6028/NIST.SP.800-63b-4
 - NIST SP 800-207 (Zero Trust Architecture)
 - OWASP Authentication, Session Management, Authorization and Multifactor Authentication Cheat Sheets: https://cheatsheetseries.owasp.org/
-- OWASP ASVS (V2 Authentication, V3 Session, V4 Access Control)
+- OWASP ASVS 5.0 (V6 Authentication, V7 Session Management, V8 Authorization; V2/V3/V4 in 4.0.3): https://owasp.org/www-project-application-security-verification-standard/
 - CISA "Implementing Phishing-Resistant MFA" fact sheet
 - FIDO Alliance passkeys: https://fidoalliance.org/passkeys/
 - MITRE ATT&CK T1078 (Valid Accounts), T1558 (Steal or Forge Kerberos Tickets): https://attack.mitre.org
-- See also `kb/04-cloud-infra/os-hardening.md`, `kb/05-identity-crypto/secrets-management.md`, `kb/03-application/api-security.md`, `kb/04-cloud-infra/cloud-security.md`
+- See also `kb/05-identity-crypto/active-directory-security.md`, `kb/04-cloud-infra/os-hardening.md`, `kb/05-identity-crypto/secrets-management.md`, `kb/03-application/api-security.md`, `kb/04-cloud-infra/cloud-security.md`

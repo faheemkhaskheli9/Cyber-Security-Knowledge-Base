@@ -87,7 +87,7 @@ spec: { podSelector: {}, policyTypes: [Ingress, Egress] }
 - Benchmarks: CIS Kubernetes Benchmark (`kube-bench`), managed-cluster equivalents (EKS/GKE/AKS).
 
 ### IaC (Terraform, CloudFormation, Helm)
-- Scan in CI (Checkov, tfsec/Trivy, KICS) and block on high findings; policy as code (OPA/Conftest, Sentinel).
+- Scan in CI (Checkov, `trivy config` (tfsec's successor), KICS) and block on high findings; policy as code (OPA/Conftest, Sentinel).
 - Remote state encrypted + locked (e.g., S3 with SSE-KMS and versioning plus locking, or Terraform Cloud), access restricted to the pipeline role; no secrets in state/code (mark `sensitive = true`, fetch from a secrets manager at apply).
 - Pin provider and module versions and commit `.terraform.lock.hcl`; peer review every plan; apply only from CI with OIDC credentials.
 - Drift detection (scheduled `terraform plan -detailed-exitcode`) and alerts on console changes.

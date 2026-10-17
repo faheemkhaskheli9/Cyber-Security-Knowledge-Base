@@ -5,7 +5,7 @@ Practical use of cryptographic primitives (encryption, hashing, MACs, signatures
 
 ## Why it matters
 - Most crypto failures are misuse, not broken math: ECB mode, reused nonces, unsalted fast password hashes, hard-coded keys, disabled certificate checks.
-- OWASP Top 10 lists Cryptographic Failures as A02 (2021).
+- OWASP Top 10 lists Cryptographic Failures as A04:2025 (A02 in 2021).
 - Encrypted data stolen today may be decrypted later ("harvest now, decrypt later"), which drives post-quantum planning.
 
 ## Attacks

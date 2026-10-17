@@ -80,7 +80,7 @@ Scope the cloud trust policy `sub` claim to the repo and branch/environment (e.g
 - Alert on cloud API calls by keys tagged as canaries and on secret reads from unusual principals.
 
 ## How to verify
-- `gitleaks detect --source . --log-opts="--all"` (full history) · `trufflehog git file://. --only-verified`.
+- `gitleaks git --log-opts="--all" --redact .` (full history, all branches) · `trufflehog git file://. --only-verified`.
 - `git check-ignore .env` returns `.env`; `git ls-files | grep -E '\.env$|\.pem$|id_rsa'` returns nothing.
 - `docker history --no-trunc <image>` and `trivy image --scanners secret <image>`.
 - CI: no long-lived cloud keys in repository/org secrets once OIDC is in place; GitHub secret scanning and push protection enabled.

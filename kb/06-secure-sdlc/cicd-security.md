@@ -28,25 +28,26 @@ Mapped to the OWASP Top 10 CI/CD Security Risks:
 ## Defenses
 Examples use GitHub Actions; the concepts apply to every CI system.
 1. **Least-privilege token**: set `permissions: contents: read` at the workflow top level and grant more per job only when needed.
-2. **Pin third-party Actions to a full commit SHA** (`uses: actions/checkout@<40-char-sha> # v4.x`). Let Dependabot update the pins.
-3. **No untrusted input in `run:`**: pass it via `env:` and quote it:
+2. **Pin third-party Actions to a full commit SHA** (`uses: actions/checkout@<40-char-sha> # v7.0.1`). Let Dependabot update the pins, with a `cooldown` (e.g. `default-days: 7`) so a freshly published, possibly compromised release is not proposed at once. `templates/dependabot.yml` sets this.
+3. **Don't leave the token on disk**: `actions/checkout` writes the job token into `.git/config` by default, where later steps and uploaded artifacts can read it. Set `with: { persist-credentials: false }` unless a later step pushes.
+4. **No untrusted input in `run:`**: pass it via `env:` and quote it:
    ```yaml
    env:
      TITLE: ${{ github.event.pull_request.title }}
    run: echo "$TITLE"
    ```
-4. **Avoid `pull_request_target` and `workflow_run`** with a checkout of PR code. If you must use them, never expose secrets to untrusted code, and split into an unprivileged build job and a privileged job that consumes only artifacts.
-5. **OIDC federation to cloud** (`id-token: write` plus a cloud trust policy scoped to repo/branch/environment) instead of static keys.
-6. **Protected environments** with required reviewers for production deploys. Use branch protection or rulesets: required reviews, required status checks, signed commits, no force push, CODEOWNERS for `.github/`.
-7. **Runners**: use ephemeral, isolated runners. Never attach self-hosted runners to public repos. Restrict egress (e.g., `step-security/harden-runner`).
-8. **Secrets**: scope them to environments, mask them in logs, rotate them, and enable secret-scanning push protection.
-9. **Artifact integrity**:
+5. **Avoid `pull_request_target` and `workflow_run`** with a checkout of PR code. If you must use them, never expose secrets to untrusted code, and split into an unprivileged build job and a privileged job that consumes only artifacts.
+6. **OIDC federation to cloud** (`id-token: write` plus a cloud trust policy scoped to repo/branch/environment) instead of static keys.
+7. **Protected environments** with required reviewers for production deploys. Use branch protection or rulesets: required reviews, required status checks, signed commits, no force push, CODEOWNERS for `.github/`.
+8. **Runners**: use ephemeral, isolated runners. Never attach self-hosted runners to public repos. Restrict egress (e.g., `step-security/harden-runner`).
+9. **Secrets**: scope them to environments, mask them in logs, rotate them, and enable secret-scanning push protection.
+10. **Artifact integrity**:
    - SLSA build provenance (`actions/attest-build-provenance`).
    - Sign images and artifacts with Sigstore `cosign` (keyless).
    - Verify signatures at deploy or admission (Kyverno, Sigstore policy-controller).
    - Generate an SBOM per build.
-10. **Supply-chain hygiene**: commit lockfiles and use `npm ci`, `pip install --require-hashes`, private registry scoping to prevent dependency confusion, and minimum release-age policies for new package versions.
-11. **Audit**: export CI audit logs to the SIEM and alert on workflow file changes, new self-hosted runners and secret access.
+11. **Supply-chain hygiene**: commit lockfiles and use `npm ci`, `pip install --require-hashes`, private registry scoping to prevent dependency confusion, and minimum release-age policies for new package versions.
+12. **Audit**: export CI audit logs to the SIEM and alert on workflow file changes, new self-hosted runners and secret access.
 
 ## How to verify
 - `zizmor .github/workflows/` (static analysis for Actions) or `actionlint`.

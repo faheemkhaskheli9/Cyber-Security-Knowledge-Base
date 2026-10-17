@@ -14,7 +14,7 @@
 - Mis-issuance via weak domain validation or DNS hijack, and rogue/compromised CAs.
 - Private key theft from servers, repos or CI.
 - Downgrade to legacy protocols or ciphers (SSLv3/TLS 1.0, RC4, export ciphers) and SSL stripping when HSTS is missing.
-- **AD CS abuse** (ESC1–ESC15): misconfigured templates let low-privileged users request certificates for domain admins.
+- **AD CS abuse** (ESC1 onward; researchers keep adding ESC numbers): misconfigured templates, CA flags or ACLs let low-privileged users request certificates for domain admins. Details in `kb/05-identity-crypto/active-directory-security.md`.
 - Wildcard certificate reuse across many hosts widens the blast radius of one key compromise.
 
 ## Defenses
@@ -25,7 +25,7 @@
 2. **HSTS** with preload; redirect HTTP to HTTPS.
 3. **Automate the certificate lifecycle**:
    - ACME (Let's Encrypt, cert-manager, Caddy) with short-lived certificates.
-   - Public TLS certificate maximum lifetime drops in steps from 398 days toward 47 days by 2029 (CA/B Forum), so automation is mandatory.
+   - Public TLS certificate maximum lifetime (CA/B Forum Baseline Requirements, ballot SC-081): 200 days from 15 March 2026, 100 days from 15 March 2027, 47 days from 15 March 2029. Domain validation reuse shrinks to 10 days by 2029, so automation is mandatory.
    - Monitor expiry.
 4. **Protect keys**:
    - Generate keys on the host, HSM or KMS; never email them or commit them.
@@ -37,7 +37,7 @@
    - Keep the offline root in an HSM; use intermediates for issuance.
    - Short-lived workload certificates (SPIFFE/SPIRE, service mesh mTLS).
    - Audit AD CS templates (remove `ENROLLEE_SUPPLIES_SUBJECT` plus Client Authentication for low-privileged groups).
-8. **Revocation**: OCSP stapling. Short-lived certificates reduce reliance on revocation.
+8. **Revocation**: CRLs are mandatory for public CAs and OCSP is optional (Baseline Requirements since 2024). Let's Encrypt shut down OCSP in August 2025, so do not build monitoring or clients that require OCSP responses; browsers use pushed CRL sets. Short-lived certificates reduce reliance on revocation.
 
 ## How to verify
 - `testssl.sh host:443` or the SSL Labs server test (target A/A+).
@@ -49,6 +49,7 @@
 ## References
 - [Mozilla Server Side TLS & SSL Config Generator](https://ssl-config.mozilla.org/)
 - [NIST SP 800-52r2 (TLS guidelines)](https://csrc.nist.gov/pubs/sp/800/52/r2/final) · [NIST SP 800-57 Part 1 (key management)](https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final)
-- [CA/Browser Forum Baseline Requirements](https://cabforum.org/working-groups/server/baseline-requirements/requirements/)
+- [CA/Browser Forum Baseline Requirements](https://cabforum.org/working-groups/server/baseline-requirements/requirements/) (validity schedule in section 1.2.2; source: https://github.com/cabforum/servercert)
+- [Let's Encrypt: OCSP service has reached end of life (2025)](https://letsencrypt.org/2025/08/06/ocsp-service-has-reached-end-of-life/)
 - [SpecterOps "Certified Pre-Owned" (AD CS)](https://posts.specterops.io/certified-pre-owned-d95910965cd2)
 - See also `kb/05-identity-crypto/cryptography.md`, `kb/10-emerging/post-quantum-cryptography.md`

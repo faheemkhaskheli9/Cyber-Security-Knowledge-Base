@@ -1,0 +1,2 @@
+# False positive: a password-hashing cell in the OWASP table matched generic-api-key (reworded since).
+9e349d3e305fa355d01f6bc435a57809706cf04c:kb/03-application/owasp-top10.md:generic-api-key:11

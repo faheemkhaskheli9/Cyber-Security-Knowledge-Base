@@ -1,7 +1,7 @@
 # Contributing
 
 ## Adding or editing a KB file
-1. Put it in the matching `kb/NN-area/` folder, one topic per file, kebab-case name.
+1. Put it in the matching `kb/NN-area/` folder, one topic per file, kebab-case name. Start from [templates/kb-topic.md](templates/kb-topic.md) (the web app's **+ New** does this for `.md` files).
 2. Use this structure (required headings):
    ```
    # Title
@@ -26,4 +26,4 @@
 - Prefer secure defaults in every example (parameterized queries, TLS on, least privilege, pinned versions).
 
 ## Checks
-CI runs `bash -n` on scripts, `scripts/check-kb.sh` (required headings and internal links) and `scripts/audit.sh .`. Run them locally before pushing. CodeQL (`.github/workflows/codeql.yml`) and gitleaks (`.github/workflows/gitleaks.yml`) also run on every push. Workflow actions are pinned to commit SHAs, and Dependabot keeps them current.
+CI runs `bash -n` and `shellcheck --severity=warning` on scripts, `scripts/check-kb.sh` and `scripts/audit.sh .`. Run them locally before pushing. `check-kb.sh` checks required headings and their order, a source link under References, repo paths and relative Markdown links (code spans excluded), that every `kb/` file is linked from the README index, LF line endings and UTF-8, and that every Action is pinned to a commit SHA with `templates/*.yml` using the same pins as `.github/workflows/` (Dependabot only updates the latter, so bump the templates in the same change). `scripts/audit.sh --strict <path>` exits 1 when it reports findings, for use as a CI gate. CodeQL (`.github/workflows/codeql.yml`) and gitleaks (`.github/workflows/gitleaks.yml`) also run on every push. Workflow actions are pinned to commit SHAs, and Dependabot keeps them current.

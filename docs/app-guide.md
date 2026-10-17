@@ -4,26 +4,24 @@ The web app is a small local site for reading, searching and editing the files i
 meant for the person who maintains the knowledge base, running on their own machine. It is not a site to
 host for other people.
 
-![The web app showing the OWASP Top 10 topic](screenshots/webapp.png)
+![The web app showing the OWASP Top 10 topic with its outline](screenshots/file.png)
 
 Use it when you want:
 - the KB open next to code you are reviewing, with one search box over every file (for example "CSP",
   "IDOR", "SBOM");
-- rendered Markdown with working `[[wiki-links]]` and relative links, which GitHub does not resolve for wiki-links;
-- to fix or add a topic in place, then review the diff and commit with git.
+- rendered Markdown with working links, heading links, an outline and the list of topics that link to the
+  one you read;
+- to fix or add a topic in place, preview it as you type, run the KB checks, review the diff and commit
+  with git.
 
-Contents: [Start the app](#start-the-app) ·
-[File tree and filter](#file-tree-and-filter) ·
-[Reading a file](#reading-a-file) ·
-[Links, wiki-links and frontmatter](#links-wiki-links-and-frontmatter) ·
-[Full-text search](#full-text-search) ·
-[Editing and saving](#editing-and-saving) ·
-[Conflict detection](#conflict-detection) ·
-[Creating a file](#creating-a-file) ·
-[Sidebar toggle and small screens](#sidebar-toggle-and-small-screens) ·
-[Dark mode](#dark-mode) ·
-[Safety model](#safety-model) ·
-[Configuration](#configuration) ·
+Contents: [Start the app](#start-the-app) · [File tree and filter](#file-tree-and-filter) ·
+[Reading a file](#reading-a-file) · [Backlinks](#backlinks) · [Full-text search](#full-text-search) ·
+[Editing with live preview](#editing-with-live-preview) · [Saving](#saving) · [Conflicts](#conflicts) ·
+[Creating a file](#creating-a-file) · [Deleting a file](#deleting-a-file) ·
+[Reviewing changes](#reviewing-changes) · [Header actions](#header-actions) ·
+[Sidebar and small screens](#sidebar-and-small-screens) · [Theme](#theme) ·
+[Keyboard shortcuts](#keyboard-shortcuts) · [Safety model](#safety-model) · [Configuration](#configuration) ·
+[Refreshing these screenshots](#refreshing-these-screenshots) ·
 [Tips, troubleshooting and limits](#tips-troubleshooting-and-limits) ·
 [Command-line audit: scripts/audit.sh](#command-line-audit-scriptsauditsh)
 
@@ -37,213 +35,257 @@ python3 webapp/server.py --open     # same, and opens your browser
 python3 webapp/server.py --port 9000
 ```
 
-The terminal prints `Cybersecurity KB -> http://localhost:8771/  (Ctrl+C to stop)`. The default port
-comes from `webapp/config.json`. Stop the server with Ctrl+C.
+The terminal prints `Cybersecurity KB -> http://localhost:8771/  (Ctrl+C to stop)`. The default port comes from
+`webapp/config.json`. Stop the server with Ctrl+C.
 
-![Start page before a file is opened](screenshots/home.png)
+![Start page with recently opened files and the uncommitted-changes summary](screenshots/home.png)
 
-The start page shows the file tree on the left and "Pick a file on the left, or search." on the right.
+**Start page.** Shows how many files the app lists, the files you opened most recently in this browser
+(up to 8, kept in the browser's local storage) and, inside a git checkout, how many files differ from the
+last commit with a link to [review them](#reviewing-changes). Click the title at the top left to come back
+to it.
 
 ## File tree and filter
 
-![The filter box narrowing the tree to files whose path contains "crypto"](screenshots/file-filter.png)
+![The filter box narrowing the tree to matching paths](screenshots/filter.png)
 
-**What it does.** The left sidebar lists every viewable file in the repo as a folder tree. Folders start
-collapsed; the folders of the file you open expand automatically and that file is highlighted.
+**What it does.** The left sidebar lists every viewable file as a folder tree. Folders start collapsed; the
+folders of the file you open expand automatically and that file is highlighted.
 
 **How to use it.**
 1. Click a folder to expand it, then click a file to open it.
-2. Type in **Filter files...** to keep only files whose path contains the text (case-insensitive). While
-   a filter is active, all matching folders are expanded. Clear the box to see the full tree again.
+2. Type in **Filter files...** to keep only files whose path contains the text (case-insensitive, here
+   `crypto`). All matching folders open. Clear the box to see the full tree again.
+3. Click **⟳** to reload the tree after you add, rename or delete files outside the app.
 
-**Which files appear.** Files ending in `.md`, `.txt`, `.csv`, `.json`, `.yml`, `.yaml`, `.toml`, `.py`
-or `.sh`. Hidden files and folders (names starting with `.`, such as `.github` and `.claude`), symlinks,
-and `node_modules`, `__pycache__`, `venv` and `.venv` are left out.
-
-**Why.** The filter is the quickest way to jump to a topic when you know part of its name; use
-[search](#full-text-search) when you only know what it says.
+**Which files appear.** Files ending in `.md`, `.txt`, `.csv`, `.json`, `.yml`, `.yaml`, `.toml`, `.py`, `.sh`. Hidden files and folders (names starting with `.`),
+symlinks and the folders `node_modules`, `__pycache__`, `venv`, `.venv` are left out.
 
 ## Reading a file
 
-![A rendered topic with tables, lists and in-app links](screenshots/rendered-markdown.png)
+![A rendered topic with the outline on the right](screenshots/file.png)
 
-**What it does.** The selected file is shown on the right. The bar above it shows the file's path.
+**What it does.** The selected file is shown on the right; the bar above it shows its path.
 
 - `.md` files are rendered: headings, paragraphs, bold/italic/strikethrough, inline code, fenced code
-  blocks, block quotes, horizontal rules, nested bulleted and numbered lists, task lists (shown as ☐/☑)
-  and tables.
-- `.csv` files are shown as a table.
-- Everything else (`.py`, `.sh`, `.yml`, ...) is shown as plain text.
+  blocks, block quotes, horizontal rules, nested lists, task lists (shown as ☐/☑) and tables.
+- `.csv` files are shown as a table; everything else as plain text.
+- The address bar changes to `#/<path>` (for example `http://localhost:8771/#/kb/03-application/owasp-top10.md`), so you can
+  bookmark a file and use the browser's Back and Forward buttons.
 
-**Where/when.** The address bar changes to `#/<path>` (for example
-`http://localhost:8771/#/kb/03-application/owasp-top10.md`), so you can bookmark a topic, share the link
-with yourself, and use the browser's Back and Forward buttons.
+**Outline.** A Markdown file with three or more headings gets an **On this page** list on the right (on
+windows wider than 1100 px). Click an entry to jump to that section; the section flashes yellow.
 
-**Why.** Reading rendered tables and lists is easier than reading raw Markdown, and the in-app links let
-you follow a topic's references without leaving the page.
+![After clicking an outline entry the view jumps to the section and flashes it](screenshots/outline.png)
 
-## Links, wiki-links and frontmatter
+**Links.**
+- Relative links such as `[x](../folder/topic.md)` open the target in the app. Links to a heading,
+  `[x](topic.md#defenses)` or `[x](#defenses)`, jump to it: every heading gets a GitHub-style id (lower
+  case, punctuation dropped, spaces as hyphens).
+- `[[wiki-links]]` resolve by full path without `.md` first, then by file name alone. `[[name|text]]` shows
+  `text`, and `[[name#heading]]` jumps to a heading. A wiki-link with no matching file is grey (hover text
+  "missing"), so broken links are easy to spot.
+- External links (`http`, `https`, `mailto`) open in a new tab.
+- Images (`![alt](screenshots/x.png)`) are shown for PNG, JPEG, GIF and WebP files inside the repo. Remote
+  images become links, because the page loads images only from the app itself. SVG is not shown.
 
-![Frontmatter panel, resolved and missing wiki-links, a task list and a table](screenshots/wiki-links-frontmatter.png)
+**Frontmatter.** A `---` block at the top of a Markdown file is hidden behind a collapsed **frontmatter**
+line. Click it to see the raw YAML.
 
-This screenshot uses a scratch note (deleted afterwards), because the KB topics do not use frontmatter
-or wiki-links today.
+## Backlinks
 
-- **Relative links** such as `[incident response](../08-defensive/soc-detection-ir.md)` open the target
-  inside the app if that file is in the tree. A relative link to anything else (an image, a heading
-  anchor like `#defenses`) is shown as plain text.
-- **Images** such as `![alt](screenshots/search.png)` are shown when they are PNG, JPEG, GIF or WebP files
-  inside the repo; the path is resolved against the open file's folder. Remote images (`https://...`) are
-  shown as a link instead, because the page only loads images from the app itself. SVG is not shown.
-- **External links** (`http`, `https`, `mailto`) open in a new tab.
-- **Wiki-links**: `[[owasp-top10]]` resolves by full path without `.md` first, then by file name alone.
-  `[[kb/06-secure-sdlc/secure-code-review|Secure code review]]` shows the text after `|`. A wiki-link with
-  no matching file is shown in grey (hover text "missing"), which makes broken links easy to spot.
-- **Frontmatter**: a `---` block at the very top of a Markdown file is hidden behind a collapsed
-  **frontmatter** line. Click it to see the raw YAML.
+![The Linked from list at the end of a topic](screenshots/backlinks.png)
+
+**What it does.** Below every Markdown file the app lists the other files that link to it, by
+`[[wiki-link]]` or relative link. Each entry opens that file at the line holding the link. "No other file
+links here" marks an orphan that readers following links can never reach: link it from a related topic.
 
 ## Full-text search
 
-![Search results for "content-security-policy" with file, line number and highlighted match](screenshots/search.png)
-
-**What it does.** Searches the contents and names of every file in the tree.
+![Search results with file, line number and the match highlighted](screenshots/search.png)
 
 **How to use it.**
-1. Type at least 2 characters in **Search all files (Enter)...** in the header.
-2. Press **Enter**.
-3. Each result shows `path:line` and the matching line with the match highlighted. A file whose name
-   matches is listed with `(filename)`. Click a result to open that file at that line: the view scrolls
-   to the block holding the line (heading, paragraph, list item, table row, code block) and flashes it,
-   and **Edit** puts the cursor on the line. A `(filename)` result opens the file at the top.
+1. Click the search box (or press **/** anywhere outside a text field) and type at least 2 characters.
+2. Press **Enter**. The address bar changes to `#search=<text>`, so Back returns to the results.
+3. Each result shows `path:line` and the matching line with the match highlighted; a file whose name
+   matches is listed as `(filename)`. Click a result to open the file at that line: the view scrolls to the
+   block holding it and flashes it, and **Edit** puts the cursor on that line.
 
-**Details.** Matching is a case-insensitive plain substring, not a regular expression or word search.
-At most 200 results are returned. Result lines are shown as raw text (no Markdown formatting) and cut to
-200 characters. Files over 2 MB or not valid UTF-8 are skipped.
+**Details.** Matching is a case-insensitive plain substring, not a regular expression. At most 200 results
+are returned; files over 2 MB or not valid UTF-8 are skipped.
 
-**Why.** During a review you usually know the control or header name, not which topic covers it.
+## Editing with live preview
 
-## Editing and saving
-
-![Edit mode with the "Unsaved changes" status](screenshots/edit-unsaved.png)
+![Edit mode with the live preview beside the editor and the Unsaved changes status](screenshots/edit-preview.png)
 
 **How to use it.**
-1. Open a file and click **Edit**. The rendered view is replaced by a plain-text editor and a **Save**
-   button appears. The button now reads **View**.
-2. Type. The status reads **Unsaved changes**.
-3. Save with **Ctrl+S** (**Cmd+S** on macOS) or the **Save** button.
-4. Click **View** to see the rendered result.
+1. Open a file and click **Edit**. The rendered view is replaced by a plain-text editor, and **Save**
+   and **Preview** appear. The button now reads **View**.
+2. Click **Preview** (Markdown and CSV files) to show the rendered result beside the editor. It updates as
+   you type; click again to hide it. The setting lasts until you reload the page.
+3. Click **View** to see the rendered text, saved or not. Unsaved edits stay; the status still reads
+   **Unsaved changes**.
+
+On a window 700 px wide or less the preview is hidden; use **View** instead.
+
+## Saving
 
 ![After saving, the status shows the time of the save](screenshots/edit-saved.png)
 
-After a save the status shows **Saved** and the time. If you try to open another file with unsaved
-changes, the app asks "Discard unsaved changes?"; closing or reloading the tab triggers the browser's
-leave-page warning.
+Save with **Ctrl+S** (**Cmd+S** on macOS) or the **Save** button. The status shows **Saved** and the time.
+If you try to leave the file with unsaved changes, the app asks "Discard unsaved changes?"; closing or
+reloading the tab triggers the browser's leave-page warning.
 
-**What happens on disk.** The save writes straight to the file in your working copy: line endings are
-converted to LF, the text is written as UTF-8, and the file is replaced in one step (written to a
-temporary file, then renamed), keeping its permissions. Nothing is committed: review with `git diff` and
-commit as usual.
+**What happens on disk.** Line endings become LF, the text is written as UTF-8, and the file is replaced in
+one step (temporary file, then rename), keeping its permissions. Nothing is committed: review your edits on
+the [Changes](#reviewing-changes) page or with `git diff`, then commit with git.
 
-**Why.** Small fixes (a typo, a new defense, a broken link) are faster to make where you read them. For
-larger rewrites a normal editor is still the better tool.
+## Conflicts
 
-## Conflict detection
+![A save refused because the file changed on disk, with the two ways out](screenshots/conflict.png)
 
-![A save refused with "file changed on disk since you opened it"](screenshots/conflict.png)
+**What it does.** The app remembers each file's modification time when it opens it. If the file changed on
+disk before you save (another editor, `git pull`, a second browser tab), the save is refused, nothing is
+written, and the bar shows **file changed on disk since you opened it** with two buttons:
 
-**What it does.** When you open a file the app remembers its modification time. If the file changes on
-disk before you save (another editor, `git pull`, `git checkout`), the save is refused and the status shows
-**file changed on disk since you opened it** in red. Your text stays in the editor; nothing is overwritten.
-
-**What to do.** Copy your text out of the editor, reload the page (choose to leave when the browser warns
-about unsaved changes), open the file again, reapply your change and save.
-
-**Why.** It prevents the app from silently overwriting work done elsewhere.
+- **Load disk version** drops your edits and opens the file as it is on disk now.
+- **Overwrite** saves your text over the newer file (after a confirmation). Use it only when you know the
+  other change can go; otherwise copy your text out first, load the disk version and re-apply your edit.
 
 ## Creating a file
 
-![A new file created with + New, opened in the editor with a starter heading](screenshots/new-file.png)
+![A new file created with + New, opened in the editor](screenshots/new-file.png)
 
-**How to use it.**
 1. Click **+ New** in the header.
-2. Enter a repo-relative path in the browser prompt, for example `kb/02-network/new-topic.md`.
-3. The file is created (missing folders included), appears in the tree and opens in edit mode. A `.md`
-   file starts with a `# <file name>` heading; other types start empty.
+2. Enter a repo-relative path, for example `folder/new-topic.md`.
+3. The file is created (missing folders too), appears in the tree and opens in the editor.
 
-**Rules.** The path must end in one of the listed extensions and may not contain hidden (`.`) parts,
-`..` or skipped folders. An existing file is never overwritten ("already exists"). Errors are shown in a
-browser alert.
+A new `.md` file starts as a copy of `templates/kb-topic.md`, with `YYYY-MM-DD` set to today and, where the template
+has a `category: <...>` line, the category set to the first folder of the path. Fill in every section, then
+run the repo's checks. Other file types start empty.
 
-New KB topics should follow the section layout in [CONTRIBUTING.md](../CONTRIBUTING.md)
-(What / Why it matters / Attacks / Defenses / How to verify / References); `scripts/check-kb.sh` checks it.
+**Rules.** The path must end in one of the listed extensions and may not contain hidden (`.`) parts, `..`
+or skipped folders. An existing file is never overwritten ("already exists").
 
-## Sidebar toggle and small screens
+## Deleting a file
+
+Open the file and click **Delete** in the bar, then confirm. The file is removed from disk and the app goes
+back to the start page. A file that was committed can be restored with `git restore <path>`; a file that was
+never committed cannot be recovered. Read-only files have no **Delete** button, and a file that changed on
+disk since you opened it is not deleted.
+
+## Reviewing changes
+
+![The Changes page listing files that differ from the last commit](screenshots/changes.png)
+
+**What it does.** Inside a git checkout the header has a **Changes** button. It lists every file that
+differs from the last commit (`git status`), marked modified, added, deleted, renamed or untracked.
+
+![The diff of one file against the last commit](screenshots/diff.png)
+
+Click a file to see its diff against the last commit: added lines in green, removed lines in red. **Open
+file** jumps to the file, **All changes** goes back. Use it before you commit to check what you edited in the
+app. Only the file types the tree shows are linked; diffs over 256 KB are cut. The page is read-only: stage
+and commit with git.
+
+## Header actions
+
+![The output of a header action](screenshots/action.png)
+
+- **Check KB** runs `bash scripts/check-kb.sh`.
+
+Click a button to run its command in the repo root (2-minute limit). A window shows the exit code and the
+last 4000 characters of output; close it with **Close** or Esc. The tree reloads afterwards, and the open file
+reloads if it has no unsaved edits, so regenerated files show their new content.
+
+Use **Check KB** after adding or editing a topic: it runs the same structure, link, README-index, encoding and Action-pin checks as CI and names each problem with `[x] file: ...`. New topics follow the layout in [CONTRIBUTING.md](../CONTRIBUTING.md) (What / Why it matters / Attacks / Defenses / How to verify / References), which **+ New** starts from via `templates/kb-topic.md`.
+
+## Sidebar and small screens
 
 ![The reading view with the sidebar hidden](screenshots/sidebar-hidden.png)
 
-Click **☰** at the top left to hide or show the sidebar, giving the text the full width.
+Click **☰** to hide or show the sidebar and give wide tables the full width.
 
-On a window 700 px wide or less, the sidebar opens over the page instead of beside it. Use **☰** to close
-it and read.
+On a window 700 px wide or less the sidebar opens over the page: the app starts with it closed, and it
+closes again when you pick a file. The header wraps and the search box takes its own row.
 
-<img src="screenshots/narrow-screen.png" alt="The app in a narrow window, with the sidebar over the page" width="300">
+<img src="screenshots/narrow.png" alt="A topic on a phone-sized window" width="260"> <img src="screenshots/narrow-menu.png" alt="The sidebar open over the page on a phone-sized window" width="260">
 
-## Dark mode
+## Theme
 
-![The app in dark mode](screenshots/dark-mode.png)
+![The app in dark mode](screenshots/dark.png)
 
-The app follows your operating system or browser colour-scheme setting. There is no separate switch in the
-app.
+The **Theme** button cycles through **auto** (follow the operating system or browser setting), **light** and
+**dark**. The choice is kept in this browser.
+
+## Keyboard shortcuts
+
+| Key | Does |
+|---|---|
+| **/** | Focus the search box (outside text fields) |
+| **Enter** in the search box | Search |
+| **Ctrl+S** / **Cmd+S** | Save |
+| **Esc** | Close the action output window |
 
 ## Safety model
 
 The app can write to your repository, so it is locked down to your own machine:
 
-- **Local only.** The server listens on `127.0.0.1`, so other machines on your network cannot reach it.
-- **Host and Origin checks.** Requests whose `Host` is not `localhost`, `127.0.0.1` or `::1` are refused
-  with "forbidden host" (this blocks DNS-rebinding attacks from web pages). A request whose `Origin` does not
-  match the host is refused too.
+- **Local only.** The server listens on `127.0.0.1`; other machines cannot reach it.
+- **Host and Origin checks.** Requests whose `Host` is not `localhost`, `127.0.0.1` or `::1` are refused with
+  "forbidden host" (this blocks DNS-rebinding attacks from web pages); so is a request whose `Origin` does
+  not match the host.
 - **Write token.** Every start generates a random token. The page fetches it on load and sends it with each
-  save or create; without it, writes are refused with "bad token (reload the page)".
+  save, create, delete and action; without it, writes are refused with "bad token (reload the page)".
 - **Path limits.** Only files with the listed extensions, inside the repo, outside hidden and skipped
-  folders, can be read or written. Paths with `..`, absolute paths and backslashes are rejected. Files over
-  2 MB cannot be opened or saved here.
-- **Images are read-only.** A separate read-only route serves images under the same path rules, only PNG,
-  JPEG, GIF and WebP files (checked by extension and file content) up to 10 MB. They cannot be opened in
-  the editor or saved.
+  folders, can be read, written or deleted. Paths with `..`, absolute paths and backslashes are rejected.
+  Files over 2 MB cannot be opened or saved here.
+- **Read-only routes.** Images (PNG, JPEG, GIF, WebP up to 10 MB, checked by extension and content),
+  backlinks, the change list and diffs only read. Git runs with fixed arguments, never a shell.
 - **Browser hardening.** Responses carry a strict Content-Security-Policy (only the app's own script and
   stylesheet), `X-Content-Type-Options: nosniff`, `Referrer-Policy: no-referrer` and `Cache-Control:
   no-store`. Markdown is rendered with raw HTML escaped, so a file cannot inject script into the page.
-- **Conflict detection** (above) stops a save from overwriting a newer file.
+- **Conflict checks** stop a save or delete from overwriting a newer file.
 
 ## Configuration
 
-`webapp/config.json` sets the title, default port, listed extensions and skipped folders. It also supports
-two options that are empty in this repo:
+`webapp/config.json`:
 
-- `"readonly": ["path/", "file.md"]` marks paths read-only: they show a 🔒 in the tree and "(read-only)"
-  next to the path, and the server refuses to save them or create files under them.
-- `"actions": {"Name": ["command", "arg"]}` adds a header button per entry. Clicking it runs that command
-  in the repo root (2-minute timeout) and shows the exit code and the last 4000 characters of output in an
-  alert.
+| Key | Meaning |
+|---|---|
+| `title`, `port` | Page title and default port |
+| `extensions`, `skip_dirs` | Which files the tree lists and which folders it skips |
+| `readonly` | Paths shown with 🔒 that cannot be saved, deleted or created under, e.g. `["generated/", "INDEX.md"]` |
+| `template` | File a new `.md` file starts from (here `templates/kb-topic.md`) |
+| `actions` | Header buttons: `{"Name": ["command", "arg"]}`, run in the repo root |
+| `screenshots` | Settings for `webapp/screenshots.mjs` (below) |
 
-Restart the server after changing the file.
+Restart the server after changing it.
+
+## Refreshing these screenshots
+
+The screenshots in this guide come from the real app. To regenerate them after a change, commit your work
+first (the Changes shots list every uncommitted file), then:
+
+```bash
+npm install -g playwright && npx playwright install chromium   # once
+node webapp/screenshots.mjs                                     # writes docs/screenshots/*.png
+SHOTS_OUT=/tmp/shots node webapp/screenshots.mjs                # trial run elsewhere
+```
+
+It starts the server on a free port, opens `kb/03-application/owasp-top10.md` and the other pages named under `screenshots` in
+`config.json`, creates and deletes a scratch file `scratch-note.md`, and runs the first header action.
 
 ## Tips, troubleshooting and limits
 
 - **"bad token (reload the page)"**: the server was restarted since the page loaded. Reload the page.
-- **"forbidden host"**: open the app as `http://localhost:8771/` or `http://127.0.0.1:8771/`, not through
-  another host name.
-- **Address already in use**: another program (or another copy of the app) uses the port. Start with
-  `--port <other>`.
-- **A file is missing from the tree**: check its extension and whether it sits in a hidden or skipped
-  folder (see [File tree and filter](#file-tree-and-filter)).
-- **Images** in Markdown: SVG files and remote (`https://`) images are not displayed; a remote image is
-  shown as a link.
-- **Headings have no anchors**, so `#heading` links are not followable inside the app.
-- **No delete or rename.** Do these with git or your file manager; the tree updates when you reload the
-  page.
-- The tree is loaded once when the page opens. Reload to see files added outside the app.
+- **"forbidden host"**: open the app as `http://localhost:8771/` or `http://127.0.0.1:8771/`.
+- **Address already in use**: another program uses the port. Start with `--port <other>`.
+- **A file is missing from the tree**: check its extension and folder (see
+  [File tree and filter](#file-tree-and-filter)), then click **⟳**.
+- **No Changes button**: the folder is not a git checkout, or `git` is not installed.
+- **No rename.** Rename with git (`git mv`) or your file manager, then click **⟳**.
+- Backlinks and search read every file on each request; on a very large repo they take a moment.
 
 ## Command-line audit: `scripts/audit.sh`
 
@@ -251,22 +293,26 @@ The repo also ships a quick, heuristic security audit for your own projects. It 
 the terminal.
 
 ```bash
-scripts/audit.sh /path/to/your/project      # defaults to the current folder
+scripts/audit.sh /path/to/your/project            # defaults to the current folder
+scripts/audit.sh --strict /path/to/your/project   # exit 1 when there are findings (CI gate)
 ```
 
 ![Terminal output of scripts/audit.sh run on a small sample project](screenshots/audit-terminal.png)
 
 *Terminal output, captured from a real run against a throwaway sample project (a Python file using
-`os.system` and `hashlib.md5`, and a Dockerfile on `python:latest` with no `USER`), rendered as an image.*
+`os.system`, an f-string SQL query and `hashlib.md5`, and a Dockerfile on `python:latest` with no `USER`),
+rendered as an image.*
 
 **What it checks.** Secret-like patterns (file names only, values are never printed) and sensitive files
 tracked by git; baseline files (`SECURITY.md`, Dependabot, a CodeQL workflow, `.env` in `.gitignore`);
 risky code patterns (`eval`/`exec`, shell execution, unsafe deserialization, MD5/SHA1, string-built SQL,
-disabled TLS verification, `innerHTML`, `Math.random`); Dockerfile and GitHub Actions settings; and it runs
-`npm audit`, `pip-audit`, `trivy` and `gitleaks` when they are installed.
+disabled TLS verification, `innerHTML`, `Math.random`); Dockerfile settings; GitHub Actions pinned to tags
+instead of commit SHAs and `${{ github.event... }}` used inside `run:` scripts; and it runs `npm audit`,
+`pip-audit`, `osv-scanner`, `trivy` and `gitleaks` when they are installed. Mark a deliberate secret-like
+test value with a `gitleaks:allow` comment to suppress it.
 
 **How to read it.** `[!]` lines are findings, `[ok]` lines passed, and the last line counts findings. It is
-pattern matching, so expect false positives and misses (in the sample above, an f-string SQL query was not
-flagged). It always exits 0, so it reports rather than fails a build. Use it as a first pass, then run the
+pattern matching, so expect false positives and misses. It exits 0 unless you pass `--strict`, so by
+default it reports rather than fails a build. Use it as a first pass, then run the
 `secure-project-audit` skill for a full review, and add missing baseline files with
 `scripts/bootstrap-project.sh` (see the [README](../README.md)).

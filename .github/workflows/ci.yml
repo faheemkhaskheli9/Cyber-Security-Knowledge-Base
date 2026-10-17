@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - run: bash -n scripts/audit.sh && bash -n scripts/bootstrap-project.sh && bash -n scripts/check-kb.sh
+        with: { persist-credentials: false }
+      - run: for s in scripts/*.sh; do bash -n "$s" || exit 1; done
+      - run: shellcheck --severity=warning scripts/*.sh   # preinstalled on ubuntu-latest
       - run: scripts/check-kb.sh
-      - run: scripts/audit.sh . || true
+      - run: scripts/audit.sh .
+      - run: python3 webapp/test_server.py   # web app write path, backlinks and git routes
