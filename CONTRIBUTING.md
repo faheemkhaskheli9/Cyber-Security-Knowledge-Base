@@ -1,7 +1,7 @@
 # Contributing
 
 ## Adding or editing a KB file
-1. Put it in the matching `kb/NN-area/` folder, one topic per file, kebab-case name.
+1. Put it in the matching `kb/NN-area/` folder, one topic per file, kebab-case name. Start from [templates/kb-topic.md](templates/kb-topic.md) (the web app's **+ New** does this for `.md` files).
 2. Use this structure (required headings):
    ```
    # Title

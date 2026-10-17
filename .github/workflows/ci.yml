@@ -12,3 +12,4 @@ jobs:
       - run: shellcheck --severity=warning scripts/*.sh   # preinstalled on ubuntu-latest
       - run: scripts/check-kb.sh
       - run: scripts/audit.sh .
+      - run: python3 webapp/test_server.py   # web app write path, backlinks and git routes
