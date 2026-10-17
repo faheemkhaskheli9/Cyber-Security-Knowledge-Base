@@ -14,7 +14,7 @@ Where it sits in the lifecycle and which gates surround it: `kb/06-secure-sdlc/s
    - **Output/sink handling**: parameterized queries, no shell, contextual encoding, no dynamic code or template evaluation.
    - **Crypto**: vetted libraries, AEAD, CSPRNG for tokens, no hardcoded keys, TLS verification on (`kb/05-identity-crypto/cryptography.md`).
    - **Secrets**: none in code, tests, fixtures or logs (`kb/05-identity-crypto/secrets-management.md`).
-   - **Error handling**: fail closed, no stack traces to clients, exceptions do not skip authZ or leave partial state.
+   - **Error handling**: fail closed, no stack traces to clients, exceptions do not skip authZ or leave partial state (`kb/03-application/error-handling-and-fail-safe.md`).
    - **Logging**: security events logged with context; no passwords, tokens or PII; log-injection safe (CR/LF stripped or structured logs).
 4. **Trace source → sink**: for each dangerous sink found, walk backwards to its source. Ask: is the data attacker-controlled? Is there a sanitizer/validator on *every* path? Is it the right one for this sink (HTML escaping does not protect SQL)?
 5. **Trace sink ← source for new inputs**: for each new input, walk forward to every place it lands.
@@ -30,7 +30,7 @@ Where it sits in the lifecycle and which gates surround it: `kb/06-secure-sdlc/s
 - Check tests: does the PR add a negative test (unauthorized user, malicious input) for the security-relevant change?
 
 ## Why it matters
-- Many high-impact bugs are invisible to scanners: missing ownership checks, business-logic flaws, wrong trust assumptions. Broken Access Control topped the OWASP Top 10 2021 data set.
+- Many high-impact bugs are invisible to scanners: missing ownership checks, business-logic flaws, wrong trust assumptions. Broken Access Control topped the OWASP Top 10 in both 2021 and 2025.
 - Review at PR time is the cheapest point to fix: the author still has context, and the flaw is not yet deployed or copied elsewhere.
 - NIST SSDF lists code review/analysis as practice PW.7; PCI DSS requires review of custom code before release.
 - Reviews spread knowledge: a reviewer who explains *why* `yaml.load` is dangerous prevents the next ten instances.
@@ -133,7 +133,7 @@ printf("%s", input);                                      /* fixed: literal form
 Context ctx = new InitialContext(); ctx.lookup(userInput);  // vulnerable: JNDI injection
 // fixed: never look up user-supplied names; map an allowlisted key to a fixed JNDI name
 ```
-Deserialization and XXE fixes (pickle → schema-validated JSON, `ObjectInputFilter`, `defusedxml`, `disallow-doctype-decl`) are in `kb/03-application/owasp-top10.md` (A05, A08). For .NET, replace `BinaryFormatter` with `System.Text.Json` and explicit types.
+Deserialization and XXE fixes (pickle → schema-validated JSON, `ObjectInputFilter`, `defusedxml`, `disallow-doctype-decl`) are in `kb/03-application/owasp-top10.md` (A02, A08). For .NET, replace `BinaryFormatter` with `System.Text.Json` and explicit types.
 
 ### Reviewer checklist
 - [ ] Every new endpoint/handler has authN and an object-level authZ check; deny by default

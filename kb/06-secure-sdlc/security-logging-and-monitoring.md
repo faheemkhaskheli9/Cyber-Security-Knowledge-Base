@@ -1,7 +1,7 @@
 # Application Security Logging and Monitoring
 
 ## What
-Security logging is the set of events an application records so that attacks can be detected, investigated and proven: authentication, authorization decisions, input validation failures, privilege changes and access to sensitive data. Monitoring turns those logs into alerts. This is OWASP Top 10 A09 (Security Logging and Monitoring Failures) from the developer's side; the SOC side is in `kb/08-defensive/soc-detection-ir.md`.
+Security logging is the set of events an application records so that attacks can be detected, investigated and proven: authentication, authorization decisions, input validation failures, privilege changes and access to sensitive data. Monitoring turns those logs into alerts. This is OWASP Top 10 A09:2025 (Security Logging and Alerting Failures, "Monitoring" in 2021) from the developer's side; the SOC side is in `kb/08-defensive/soc-detection-ir.md`.
 
 ## Why it matters
 - Without the right events, an incident cannot be scoped: you cannot say which accounts or records an attacker touched, so you notify everyone or no one.
@@ -54,7 +54,7 @@ class JsonFormatter(logging.Formatter):
 log = logging.getLogger("security")
 h = logging.StreamHandler(); h.setFormatter(JsonFormatter()); log.addHandler(h)
 log.warning("login failed", extra={"fields": {"event": "auth.login", "user_id": "u123",
-            "ip": "203.0.113.7", "result": "fail", "password": "dropped-by-allowlist"}})
+            "ip": "203.0.113.7", "result": "fail", "password": "<dropped>"}})
 ```
 
 ## How to verify
@@ -67,7 +67,7 @@ log.warning("login failed", extra={"fields": {"event": "auth.login", "user_id": 
 ## References
 - OWASP Logging Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html
 - OWASP Logging Vocabulary Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/Logging_Vocabulary_Cheat_Sheet.html
-- OWASP Top 10 2021 A09: https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/
-- OWASP ASVS (V7 Error Handling and Logging in 4.0.3): https://owasp.org/www-project-application-security-verification-standard/
+- OWASP Top 10:2025 A09 Security Logging and Alerting Failures: https://owasp.org/Top10/2025/
+- OWASP ASVS 5.0 (V16 Security Logging and Error Handling; V7 in 4.0.3): https://owasp.org/www-project-application-security-verification-standard/
 - NIST SP 800-92, Guide to Computer Security Log Management: https://csrc.nist.gov/pubs/sp/800/92/final
-- See also `kb/03-application/owasp-top10.md`, `kb/08-defensive/soc-detection-ir.md`
+- See also `kb/03-application/owasp-top10.md`, `kb/03-application/error-handling-and-fail-safe.md`, `kb/08-defensive/soc-detection-ir.md`
