@@ -62,6 +62,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **DMZ** – screened subnet between internet and internal network.
 - **DNSSEC** – signed DNS records.
 - **DoH / DoT** – DNS over HTTPS / TLS.
+- **Double extortion** – ransomware that steals data before encrypting it and threatens to leak it if not paid.
 - **DPA / DPIA** – Data Processing Agreement / Data Protection Impact Assessment.
 
 ## E
@@ -89,6 +90,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **IAM** – Identity and Access Management.
 - **IDS / IPS** – Intrusion Detection / Prevention System.
 - **IMDS / IMDSv2** – cloud instance metadata service; IMDSv2 (AWS) adds session tokens that block most SSRF credential theft.
+- **Immutable backup** – backup copy that storage-level object lock or WORM media prevents anyone, including admins, from deleting or changing before its retention ends.
 - **IOC / IOA** – Indicator of Compromise / Attack.
 - **IR** – Incident Response.
 - **ISMS** – Information Security Management System (ISO 27001).
@@ -106,6 +108,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **Lateral movement** – pivoting from one compromised host to others.
 - **LFI / RFI** – Local / Remote File Inclusion; user input controls which file include/require loads.
 - **LOLBin / LOTL** – Living-off-the-Land binary / technique (abusing built-in tools).
+- **Log injection** – user input with CR/LF or forged fields that writes fake log entries; prevented by structured logging and encoding.
 - **Managed identity** – Azure-managed identity for a resource; no secret to store or rotate.
 - **MFA** – Multi-Factor Authentication.
 - **Microsegmentation** – identity/label-based allow rules between workloads; east-west denied by default.
@@ -139,6 +142,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 
 ## Q–R
 - **Quishing** – QR-code phishing; hides the URL from link scanners and moves the victim to a phone.
+- **RaaS** – Ransomware-as-a-Service; operators rent the encryptor and leak site to affiliates who break in.
 - **RBAC** – Role-Based Access Control.
 - **RCE** – Remote Code Execution.
 - **RCP** – AWS Resource Control Policy; org-level cap on permissions allowed on resources.

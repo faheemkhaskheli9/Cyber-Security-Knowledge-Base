@@ -156,7 +156,7 @@ obj = MyModel.model_validate_json(request.data)   # pydantic
 - Sign artifacts and updates (cosign), SRI on CDN scripts, HMAC-sign any serialized state sent to clients.
 
 ### A09: logging and monitoring
-- Log authN success/failure, authZ denials, input validation failures, admin actions, with user, source IP, timestamp and request ID; structured JSON; ship to a SIEM with alerts; redact secrets/PII; protect log integrity. See `kb/08-defensive/soc-detection-ir.md`.
+- Log authN success/failure, authZ denials, input validation failures, admin actions, with user, source IP, timestamp and request ID; structured JSON; ship to a SIEM with alerts; redact secrets/PII; protect log integrity. See `kb/06-secure-sdlc/security-logging-and-monitoring.md` and `kb/08-defensive/soc-detection-ir.md`.
 
 ### A10: SSRF
 ```python
