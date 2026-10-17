@@ -12,6 +12,10 @@ for r in "${REPOS[@]}"; do
   if [ -d "$d/.git" ]; then git -C "$d" pull -q --ff-only || echo "[!] pull failed: $r"
   else git clone -q --depth 1 "https://github.com/$OWNER/$r" "$d" || { echo "[!] skipped $r (clone failed)"; continue; }; fi
   [ -f "$d/CLAUDE.md" ] && ! grep -qF "@$d/CLAUDE.md" "$CFG" && printf '@%s/CLAUDE.md\n' "$d" >> "$CFG"
-  [ -d "$d/.claude/skills" ] && cp -rn "$d/.claude/skills/." "$HOME/.claude/skills/"
+  # Copy each skill unless one with that name is already installed (no `cp -n`: its behavior varies by coreutils version).
+  for s in "$d"/.claude/skills/*/; do
+    [ -d "$s" ] || continue; n=$(basename "$s")
+    [ -e "$HOME/.claude/skills/$n" ] || cp -R "$s" "$HOME/.claude/skills/$n"
+  done
 done
 echo "Done. Imports in $CFG:"; cat "$CFG"
