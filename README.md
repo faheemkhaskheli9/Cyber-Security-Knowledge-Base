@@ -10,7 +10,7 @@ A practical, Claude-readable knowledge base covering the whole cybersecurity fie
 | `.claude/skills/secure-project-audit/` | Skill: audit any project against this KB and fix findings |
 | `kb/01-foundations` | CIA triad, threat modeling, risk, attacker frameworks (ATT&CK, kill chain), zero trust |
 | `kb/02-network` | Network defense, protocols, wireless, DNS, DDoS, email security |
-| `kb/03-application` | OWASP Top 10, API security, mobile, browser/client side |
+| `kb/03-application` | OWASP Top 10 (2025), API security, mobile, browser/client side, error handling and fail-safe design |
 | `kb/04-cloud-infra` | Cloud (incl. AWS/Azure/GCP baselines), containers/Kubernetes, IaC, Linux/Windows hardening |
 | `kb/05-identity-crypto` | IAM, authN/authZ, Active Directory, secrets, cryptography, PKI |
 | `kb/06-secure-sdlc` | Secure SDLC, supply chain, SAST/DAST, CI/CD security, secure code review |
@@ -20,7 +20,7 @@ A practical, Claude-readable knowledge base covering the whole cybersecurity fie
 | `kb/10-emerging` | AI/LLM security, IoT/OT, quantum, social engineering, physical |
 | `kb/11-reference` | Glossary, tools, learning paths, cheat sheets |
 | `templates/` | Drop-in `SECURITY.md`, Dependabot, CodeQL, gitleaks, pre-commit, CLAUDE security snippet |
-| `scripts/` | `audit.sh` (quick local project audit), `bootstrap-project.sh` (install templates into a project) |
+| `scripts/` | `audit.sh` (quick local project audit, `--strict` for CI), `bootstrap-project.sh` (install templates into a project), `check-kb.sh` (KB lint run in CI), `install-global.sh` (make the KBs available in every session) |
 
 ## KB file index
 
@@ -28,7 +28,7 @@ A practical, Claude-readable knowledge base covering the whole cybersecurity fie
 |------|-------|
 | 01 Foundations | [core-concepts](kb/01-foundations/core-concepts.md) · [threat-modeling](kb/01-foundations/threat-modeling.md) · [frameworks-attack-models](kb/01-foundations/frameworks-attack-models.md) · [zero-trust-architecture](kb/01-foundations/zero-trust-architecture.md) |
 | 02 Network | [network-security](kb/02-network/network-security.md) · [wireless-dns-ddos](kb/02-network/wireless-dns-ddos.md) · [email-security](kb/02-network/email-security.md) |
-| 03 Application | [owasp-top10](kb/03-application/owasp-top10.md) · [api-security](kb/03-application/api-security.md) · [browser-client-side](kb/03-application/browser-client-side.md) · [mobile-and-client](kb/03-application/mobile-and-client.md) |
+| 03 Application | [owasp-top10](kb/03-application/owasp-top10.md) · [api-security](kb/03-application/api-security.md) · [browser-client-side](kb/03-application/browser-client-side.md) · [mobile-and-client](kb/03-application/mobile-and-client.md) · [error-handling-and-fail-safe](kb/03-application/error-handling-and-fail-safe.md) |
 | 04 Cloud & infra | [cloud-security](kb/04-cloud-infra/cloud-security.md) · [containers-kubernetes-iac](kb/04-cloud-infra/containers-kubernetes-iac.md) · [os-hardening](kb/04-cloud-infra/os-hardening.md) · [cloud-provider-baselines](kb/04-cloud-infra/cloud-provider-baselines.md) |
 | 05 Identity & crypto | [identity-access](kb/05-identity-crypto/identity-access.md) · [secrets-management](kb/05-identity-crypto/secrets-management.md) · [cryptography](kb/05-identity-crypto/cryptography.md) · [pki-and-tls](kb/05-identity-crypto/pki-and-tls.md) · [active-directory-security](kb/05-identity-crypto/active-directory-security.md) |
 | 06 Secure SDLC | [secure-sdlc-and-supply-chain](kb/06-secure-sdlc/secure-sdlc-and-supply-chain.md) · [cicd-security](kb/06-secure-sdlc/cicd-security.md) · [secure-code-review](kb/06-secure-sdlc/secure-code-review.md) · [security-logging-and-monitoring](kb/06-secure-sdlc/security-logging-and-monitoring.md) |
