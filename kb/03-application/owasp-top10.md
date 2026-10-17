@@ -8,7 +8,7 @@ The OWASP Top 10 is a consensus awareness list of the most critical web applicat
 | A01 | Broken Access Control (now includes SSRF) | A01 + A10 SSRF | Deny by default, server-side authZ on every request, object-level checks (IDOR), allowlist outbound destinations |
 | A02 | Security Misconfiguration | A05 | Hardened defaults, no debug in prod, security headers, minimal features, XXE off |
 | A03 | Software Supply Chain Failures | A06 Vulnerable & Outdated Components (broadened) | SBOM, SCA, pinned and reviewed dependencies, hardened CI/CD, staged rollouts |
-| A04 | Cryptographic Failures | A02 | TLS, strong algorithms, no plaintext secrets/PII, key management, Argon2id/bcrypt for passwords |
+| A04 | Cryptographic Failures | A02 | TLS, strong algorithms, no plaintext secrets/PII, key management, passwords hashed with Argon2id or bcrypt |
 | A05 | Injection (SQL, NoSQL, OS, LDAP, XSS) | A03 | Parameterized queries, ORM, input validation, contextual output encoding, CSP |
 | A06 | Insecure Design | A04 | Threat model, secure patterns, abuse cases, rate limits |
 | A07 | Authentication Failures | A07 Identification & Authentication Failures | MFA, rate limiting, secure session management, no default creds, breached-password checks |
