@@ -51,7 +51,7 @@ Risk register columns: `ID | Asset/process | Threat & vulnerability | Inherent l
 | SOC 2 (AICPA) | Service organizations (US-centric) | Attestation report | Trust Services Criteria: Security (required), Availability, Processing Integrity, Confidentiality, Privacy. Type I = design at a point in time; Type II = operating effectiveness over a period |
 | NIST CSF 2.0 (2024) | Any org (voluntary) | Outcome framework | Functions: Govern, Identify, Protect, Detect, Respond, Recover; profiles and tiers |
 | NIST SP 800-53 Rev. 5 / 800-171 | US federal systems / contractors handling CUI | Control catalog | Baselines (Low/Moderate/High); 800-171 for CUI, basis of CMMC |
-| CIS Controls v8 | Any org | Prioritized controls | Implementation Groups IG1–IG3 |
+| CIS Controls v8.1 | Any org | Prioritized controls | 18 controls; Implementation Groups IG1–IG3; v8.1 (2024) added a Governance function |
 | PCI DSS 4.0 (4.0.1) | Anyone storing, processing or transmitting card data | Contractual standard | 12 requirements; future-dated requirements mandatory since 31 Mar 2025 (e.g. MFA for all CDE access, script integrity on payment pages) |
 | HIPAA | US covered entities and business associates | Law | Privacy, Security and Breach Notification Rules; BAAs with vendors |
 | GDPR / UK GDPR | Processing personal data of people in the EU/UK | Law | Lawful basis, data subject rights, DPIA, records of processing, DPAs, 72 h breach notice |
@@ -102,7 +102,7 @@ Information security policy (top-level, board-approved) · acceptable use · acc
 Pre-draft templates and a decision tree in the IR plan (`kb/08-defensive/soc-detection-ir.md`).
 
 ### Vulnerability management
-Asset inventory → scan (Nessus, OpenVAS, Qualys, Trivy) → prioritize (CVSS + EPSS + KEV + asset criticality) → remediate with SLAs (e.g. Critical 7d, High 30d) → verify → report. Patch management, exception process. Detail: `kb/09-governance/vulnerability-management.md`.
+Asset inventory → scan (Nessus, OpenVAS, Qualys, Trivy) → prioritize (CVSS + EPSS + KEV + asset criticality) → remediate by priority-based deadlines (example targets, not CVSS-only SLAs, are in the vulnerability management file) → verify → report. Patch management, exception process. Detail: `kb/09-governance/vulnerability-management.md`.
 
 ### Business continuity
 BIA, RTO/RPO, 3-2-1 backups (immutable/offline), DR tests, tabletop exercises.
@@ -128,7 +128,7 @@ Phishing simulations, role-based training, reporting culture without blame. See 
 - ISO/IEC 27001:2022: https://www.iso.org/standard/27001 · ISO/IEC 27005
 - NIST CSF 2.0: https://www.nist.gov/cyberframework
 - NIST RMF: https://csrc.nist.gov/projects/risk-management · SP 800-30, 800-37, 800-53 Rev. 5, 800-171
-- CIS Controls v8: https://www.cisecurity.org/controls
+- CIS Controls v8.1: https://www.cisecurity.org/controls
 - PCI Security Standards Council: https://www.pcisecuritystandards.org
 - GDPR text: https://eur-lex.europa.eu/eli/reg/2016/679/oj · HHS HIPAA: https://www.hhs.gov/hipaa/index.html
 - CCPA/CPRA: https://oag.ca.gov/privacy/ccpa · ENISA (NIS2 guidance): https://www.enisa.europa.eu

@@ -18,7 +18,7 @@ For authorized testing only; each is paired with its defense.
 - **DCSync** → restrict replication rights to DCs; alert on 4662 replication GUIDs from non-DC hosts.
 - **Golden Ticket** → protect DCs as Tier 0, rotate `krbtgt` twice after compromise.
 - **Unconstrained delegation** → remove it; mark sensitive accounts "cannot be delegated".
-- **AD CS misconfigs (ESC1–8 and later)** → see `kb/05-identity-crypto/pki-and-tls.md`.
+- **AD CS misconfigs (ESC1 onward)** → see `kb/05-identity-crypto/active-directory-security.md`.
 - **LLMNR/NBT-NS poisoning and SMB relay** → disable LLMNR/NetBIOS, require SMB signing, disable SMBv1.
 - **Living-off-the-land** (PowerShell, `mshta`, `rundll32`) → PowerShell logging + Constrained Language Mode, AppLocker/WDAC, ASR rules.
 Audit tools: PingCastle, BloodHound (authorized use).
@@ -96,4 +96,4 @@ FileVault, Gatekeeper, SIP, MDM, firewall on, auto-update; enforce via MDM confi
 - NIST SP 800-123 (General Server Security) · NIST SP 800-53 (CM, AC, AU families)
 - Lynis: https://cisofy.com/lynis/ · OpenSCAP: https://www.open-scap.org · HardeningKitty (GitHub: scipag/HardeningKitty)
 - MITRE ATT&CK: https://attack.mitre.org
-- See also `kb/05-identity-crypto/identity-access.md`, `kb/05-identity-crypto/pki-and-tls.md`, `kb/08-defensive/soc-detection-ir.md`, `kb/04-cloud-infra/containers-kubernetes-iac.md`
+- See also `kb/05-identity-crypto/active-directory-security.md`, `kb/05-identity-crypto/identity-access.md`, `kb/05-identity-crypto/pki-and-tls.md`, `kb/08-defensive/soc-detection-ir.md`, `kb/04-cloud-infra/containers-kubernetes-iac.md`

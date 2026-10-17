@@ -10,7 +10,7 @@ Open-source first. Offensive tools are for **authorized** targets only.
 | SAST | Semgrep, CodeQL, Bandit (Python), gosec (Go), Brakeman (Rails), SpotBugs+FindSecBugs (Java) |
 | SCA / dependencies | OSV-Scanner, Trivy, Grype, Dependabot, Renovate, `npm audit`, `pip-audit`, `cargo audit` |
 | SBOM | Syft, CycloneDX tools, `docker sbom` |
-| Containers / IaC | Trivy, Checkov, tfsec/Trivy config, kube-bench, kube-linter, Hadolint, Dockle |
+| Containers / IaC | Trivy (incl. `trivy config`, successor of tfsec), Checkov, KICS, kube-bench, kube-linter, Hadolint, Dockle |
 | CI/CD | zizmor, actionlint, OpenSSF Scorecard, harden-runner |
 | Signing / provenance | Sigstore cosign, gh attestation, in-toto |
 | Cloud posture | Prowler, ScoutSuite, Steampipe, CloudSploit |
@@ -29,9 +29,10 @@ Open-source first. Offensive tools are for **authorized** targets only.
 
 **Secrets and dependencies**
 ```bash
-gitleaks detect --source . --redact -v           # scan repo + history
+gitleaks git --redact -v .                       # repo + history (gitleaks >= 8.19; `detect` is deprecated)
+gitleaks dir --redact -v .                       # working tree only, e.g. outside git
 trufflehog git file://. --only-verified
-osv-scanner scan -r .                            # all lockfiles
+osv-scanner scan source -r .                     # all lockfiles (OSV-Scanner v2)
 trivy fs --scanners vuln,secret,misconfig .
 ```
 

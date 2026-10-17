@@ -85,12 +85,13 @@ _dmarc.example.com.  TXT  "v=DMARC1; p=reject; sp=reject; adkim=s; aspf=r; rua=m
 - **DANE for SMTP** (RFC 7672, TLSA RFC 6698): pins the MX certificate in DNS, e.g. `_25._tcp.mx1.example.com TLSA 3 1 1 <sha256-of-spki>`. Requires DNSSEC on the MX zone. Publish the next key's TLSA record before rolling certificates.
 - **BIMI** (BIMI Group specification, not an RFC): shows your logo in supporting clients. `default._bimi.example.com TXT "v=BIMI1; l=https://example.com/logo.svg; a=https://example.com/vmc.pem"`. Needs DMARC at enforcement (`quarantine`/`reject`); Gmail also needs a mark certificate (VMC or CMC). BIMI is a brand feature, not a security control.
 
-### Gmail / Yahoo bulk sender requirements (from February 2024)
+### Gmail / Yahoo / Microsoft bulk sender requirements (from February 2024)
 - **All senders**: SPF or DKIM, valid forward and reverse DNS (PTR) for sending IPs, TLS for transmission, and a spam complaint rate below 0.3% (Google Postmaster Tools).
 - **Bulk senders** (Google: about 5,000+ messages/day to Gmail accounts) must also have:
   - both SPF and DKIM
   - a DMARC record (at least `p=none`) with the `From:` domain aligned with SPF or DKIM
   - one-click unsubscribe for marketing mail (`List-Unsubscribe` + `List-Unsubscribe-Post`, RFC 8058), honored within 2 days
+- **Microsoft** (Outlook.com, Hotmail, Live consumer domains) applies the same SPF + DKIM + aligned DMARC requirement to senders of more than 5,000 messages/day since May 2025; non-compliant mail is rejected.
 
 ### Mail gateway and platform controls
 - Anti-spoofing: enforce inbound DMARC. Flag display names that match executives or vendors but come from external addresses.
@@ -139,7 +140,7 @@ openssl s_client -starttls smtp -connect mx1.example.com:25 -servername mx1.exam
 ## References
 - [RFC 7208 (SPF)](https://www.rfc-editor.org/rfc/rfc7208) · [RFC 6376 (DKIM)](https://www.rfc-editor.org/rfc/rfc6376) · RFC 8301 / RFC 8463 (DKIM crypto) · [RFC 7489 (DMARC)](https://www.rfc-editor.org/rfc/rfc7489) · RFC 8617 (ARC)
 - RFC 8461 (MTA-STS) · RFC 8460 (TLS-RPT) · RFC 7672 / RFC 6698 (DANE/TLSA) · RFC 7505 (null MX) · RFC 8058 (one-click unsubscribe)
-- Google "Email sender guidelines" · Yahoo "Sender best practices" · BIMI Group specification
+- Google "Email sender guidelines" · Yahoo "Sender best practices" · Microsoft Defender for Office 365 blog "Strengthening Email Ecosystem: Outlook's New Requirements for High-Volume Senders" (April 2025) · BIMI Group specification
 - M3AAWG best practices · CISA BOD 18-01 · UK NCSC email security guidance · FBI IC3 BEC public service announcements
 - MITRE ATT&CK T1566 (Phishing), T1027.006 (HTML Smuggling), T1528 (Steal Application Access Token)
 - See also `kb/02-network/wireless-dns-ddos.md`, `kb/05-identity-crypto/identity-access.md`, `kb/08-defensive/soc-detection-ir.md`, `kb/10-emerging/iot-ot-social-physical.md`
