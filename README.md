@@ -75,21 +75,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). One topic per file, keep it actionable (
 python3 webapp/server.py --open     # http://localhost:8771 , stdlib only, no install
 ```
 
+Browse, search, read rendered Markdown (with `[[wiki-links]]`) and edit the files in this repo from your browser.
+Local only: it listens on 127.0.0.1, needs a per-run token for writes and refuses to overwrite files changed on disk.
+
 ![The Cybersecurity KB web app showing the OWASP Top 10 topic](docs/screenshots/webapp.png)
 
-**Where to use it**
-- During a review or audit: keep it open next to the code and search for the control you are
-  checking (for example "CSP", "IDOR", "SBOM").
-- Adding or fixing a topic: edit it in place, then review the diff and commit with git.
-- On your own machine only. It is a local tool for the person who maintains the KB, not a
-  site to host.
-
-**Why use it instead of GitHub or an editor**
-- Rendered Markdown with working `[[wiki-links]]`, which GitHub does not resolve.
-- One search box over every file, with no install: it is a single stdlib Python script.
-- Safe edits: writes stay inside the repo and refuse to overwrite a file changed on disk.
-
-Browse the file tree, read rendered Markdown (links and `[[wiki-links]]` work), full-text search, edit raw
-text (Ctrl+S saves) and create new files. Edits write straight to the files here; review and commit with git.
-It listens on 127.0.0.1 only, rejects foreign Host/Origin headers, needs a per-run token for writes, only touches
-text files inside the repo, and refuses to overwrite a file that changed on disk since you opened it.
+Full guide with screenshots: [docs/app-guide.md](docs/app-guide.md)
