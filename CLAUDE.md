@@ -20,6 +20,12 @@ When asked to review, harden or build anything:
 - Prefer secure defaults: least privilege, deny by default, parameterized queries, output encoding, TLS everywhere, pinned dependencies, MFA.
 - Confirm before destructive or outward-facing actions (history rewrites, key rotation, public disclosure).
 
+## Bugs
+
+When you find a bug (in code, tooling, CI or a wrong fact) that you do not fix in the same change,
+open a GitHub issue for it right away, labelled `bug`. First search open issues for a duplicate. Give the
+symptom, steps to reproduce, the cause with `file:line` when known, and a suggested fix.
+
 ## Style
 Concise, actionable, evidence-based. Each KB file: What / Why it matters / Attacks / Defenses / How to verify / References.
 
