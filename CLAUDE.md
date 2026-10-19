@@ -30,7 +30,13 @@ symptom, steps to reproduce, the cause with `file:line` when known, and a sugges
 Concise, actionable, evidence-based. Each KB file: What / Why it matters / Attacks / Defenses / How to verify / References.
 
 ## Sibling knowledge bases
-This repo is one of three: `faheemkhaskheli9/Cyber-Security-Knowledge-Base`, `faheemkhaskheli9/Personal-Knowledge-Base`,
-`faheemkhaskheli9/AI-Knowledge-Base`. If a task could use the others and they are not in the session, attach them
-with `add_repo` (read access is enough unless you need to push) and clone them next to this one. Each has a
-`webapp/` for manual viewing and editing (`python3 webapp/server.py --open`).
+
+For a task spanning security, AI, software architecture and medicine, use the [shared ChatGPT/agent knowledge-base router](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/CHATGPT-KB-ROUTER.md). It links these repositories:
+
+- [Cyber Security KB](https://github.com/faheemkhaskheli9/Cyber-Security-Knowledge-Base) (this repository): security topics in `README.md` and `kb/`.
+- [AI KB](https://github.com/faheemkhaskheli9/AI-Knowledge-Base): AI/ML/LLM/agent topics, starting with `INDEX.md`.
+- [Software Engineering KB](https://github.com/faheemkhaskheli9/Software-Engineering-KnowledgeBase): architecture, testing, distributed systems and operations, starting with `INDEX.md`.
+- [Medical KB](https://github.com/faheemkhaskheli9/Medical-Knowledge-Base): clinical and healthcare AI safety, starting with `AGENTS.md` and `KB-INDEX.md`.
+- [Personal KB](https://github.com/faheemkhaskheli9/Personal-Knowledge-Base) (**private**, if authorized): personal/project context, starting with `CONTEXT.md`.
+
+When needed, attach an accessible repository, read the relevant full files, and follow current source evidence. Never assume another KB is loaded or copy private records to a public KB.
