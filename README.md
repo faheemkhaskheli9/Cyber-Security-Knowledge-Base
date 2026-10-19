@@ -2,6 +2,10 @@
 
 A practical, Claude-readable knowledge base covering the whole cybersecurity field, plus tooling to audit and harden your own software projects.
 
+## ChatGPT and other reference knowledge bases
+
+For security-related ChatGPT tasks, start with this repository's topic index below and the relevant full `kb/` pages. The [shared ChatGPT KB router](https://github.com/faheemkhaskheli9/AI-Knowledge-Base/blob/main/CHATGPT-KB-ROUTER.md) links the AI, software engineering, medical and security repositories and includes reusable Project instructions. For security reviews of AI systems, consult both this KB and the AI KB; for application architecture, add the software engineering KB. The router does **not** automatically grant repository access or synchronize content.
+
 ## Layout
 
 | Path | Contents |
