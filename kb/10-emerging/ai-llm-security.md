@@ -88,4 +88,4 @@ Triage assistance, log summarization, code review, detection drafting — always
 - ISO/IEC 42001:2023 (AI management systems)
 - Model Context Protocol (security best practices in spec): https://modelcontextprotocol.io
 - Tools: garak (NVIDIA), PyRIT (Microsoft), promptfoo, ModelScan (Protect AI), safetensors
-- See also `kb/06-secure-sdlc/secure-sdlc-and-supply-chain.md`, `kb/03-application/api-security.md`
+- See also `kb/06-secure-sdlc/secure-sdlc-and-supply-chain.md`, `kb/03-application/api-security.md`, `kb/03-application/insecure-deserialization.md`

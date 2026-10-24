@@ -4,7 +4,9 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 
 ## A
 - **AAA** – Authentication, Authorization, Accounting.
+- **AAGUID** – Authenticator Attestation GUID; identifies a FIDO2 authenticator model, used with the FIDO Metadata Service to allow only approved authenticators.
 - **ABAC** – Attribute-Based Access Control; decisions from user/resource/environment attributes.
+- **Account pre-hijacking** – attacker registers or links an account with the victim's identifier before the victim signs up, then keeps access once the victim uses it; prevented by verifying the identifier before the account is usable.
 - **ACL** – Access Control List; per-object list of who may do what.
 - **AD / AD CS** – Active Directory / AD Certificate Services (common privilege-escalation target).
 - **AEAD** – Authenticated Encryption with Associated Data (AES-GCM, ChaCha20-Poly1305).
@@ -98,7 +100,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 
 ## F–H
 - **FaaS / Serverless** – Functions as a Service (AWS Lambda, Azure Functions, Cloud Run functions); provider runs the host, customer owns code, identity and triggers.
-- **FIDO2 / WebAuthn / Passkey** – phishing-resistant public-key authentication.
+- **FIDO2 / WebAuthn / Passkey** – phishing-resistant public-key authentication; a passkey is a discoverable FIDO2 credential scoped to one relying party (RP ID).
 - **FIM** – File Integrity Monitoring.
 - **Fourth party** – a supplier's own supplier or subprocessor; a source of hidden concentration risk.
 - **Format string vulnerability** – user input used as a printf-style format; can leak or write memory.
@@ -124,13 +126,17 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **Idempotency key** – client-supplied unique request ID stored with a unique constraint so a retried or replayed payment, refund or order is processed once.
 - **IMDS / IMDSv2** – cloud instance metadata service; IMDSv2 (AWS) adds session tokens that block most SSRF credential theft.
 - **Immutable backup** – backup copy that storage-level object lock or WORM media prevents anyone, including admins, from deleting or changing before its retention ends.
+- **Infostealer** – malware that harvests saved passwords, browser cookies and tokens for resale; a major source of credential stuffing lists and session hijacking.
+- **Insecure deserialization** – rebuilding objects from untrusted bytes with a format that chooses which types to instantiate (CWE-502), often leading to RCE through gadget chains.
 - **Insider threat** – risk that someone with authorized access (employee, contractor, vendor) harms the organization, maliciously, negligently or by mistake.
 - **IOC / IOA** – Indicator of Compromise / Attack.
 - **IR** – Incident Response.
 - **ISMS** – Information Security Management System (ISO 27001).
+- **JEP 290 / ObjectInputFilter** – Java serialization filtering; allowlists classes and limits depth, references and size during `ObjectInputStream` deserialization (`jdk.serialFilter`).
 - **JNDI injection** – user input reaching a Java naming lookup that can load remote code (the Log4Shell mechanism).
 - **JWT / JWS / JWE** – JSON Web Token / signed / encrypted.
 - **KDF** – Key Derivation Function (Argon2id, scrypt, PBKDF2, HKDF).
+- **k-anonymity (Pwned Passwords)** – breached-password check that sends only the first 5 hex characters of the password's SHA-1 hash and compares the returned suffixes locally.
 - **Kerberoasting** – requesting service tickets for accounts with SPNs and cracking their passwords offline.
 - **Kerberos delegation** – unconstrained / constrained / RBCD; lets a service act as a user; common escalation path when misconfigured.
 - **KEV** – CISA Known Exploited Vulnerabilities catalog.
@@ -171,6 +177,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **PAM** – Privileged Access Management (also Pluggable Authentication Modules on Linux).
 - **PAR** – OAuth Pushed Authorization Requests (RFC 9126); authorization parameters sent over a back channel instead of the browser URL.
 - **PAW / Tier 0** – Privileged Access Workstation / the identity control plane (DCs, AD CS, Entra Connect) in the Enterprise Access Model.
+- **Password spraying** – trying a few common passwords against many accounts to stay under per-account lockout (ATT&CK T1110.003).
 - **PE / PA / PEP / PDP** – Policy Engine / Policy Administrator / Policy Enforcement Point; PE + PA = Policy Decision Point (NIST SP 800-207).
 - **Persisted queries / Trusted documents** – GraphQL operations registered at build time; production accepts only their IDs, blocking arbitrary queries (automatic persisted queries are caching, not a control).
 - **Persistence** – attacker mechanisms to survive reboot/credential change.
@@ -194,6 +201,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **RCP** – AWS Resource Control Policy; org-level cap on permissions allowed on resources.
 - **Red / Blue team** – adversary emulation / defenders.
 - **ReDoS** – Regular-expression Denial of Service via catastrophic backtracking.
+- **Residential proxy** – proxy network that routes traffic through consumer IP addresses, used by credential-stuffing bots to evade IP reputation and rate limits.
 - **RLS** – Row-Level Security; database policies that filter which rows a role can read or change (e.g. per tenant).
 - **RPO / RTO** – Recovery Point / Recovery Time Objective.
 - **RSA** – public-key algorithm (≥ 3072-bit for new keys).
@@ -221,6 +229,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **SSPM** – SaaS Security Posture Management; continuous checks of SaaS tenant settings, users and integrations.
 - **SSTI** – Server-Side Template Injection; user input rendered as a template, often leading to RCE.
 - **STRIDE** – Spoofing, Tampering, Repudiation, Information disclosure, DoS, Elevation of privilege.
+- **Synced vs device-bound passkey** – passkey copied across a user's devices by a passkey provider (Backup Eligible flag set; NIST AAL2) / passkey whose private key never leaves one hardware authenticator (can meet AAL3).
 
 ## T–Z
 - **Tamper protection** – endpoint agent setting that stops local admins and malware from disabling protection or changing its configuration.
@@ -238,6 +247,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **UEFI** – Unified Extensible Firmware Interface; the firmware standard that replaced legacy BIOS.
 - **VDP** – Vulnerability Disclosure Policy.
 - **VEX** – Vulnerability Exploitability eXchange; statement of whether a product is affected by a vulnerability (`not_affected`, `affected`, `fixed`, `under_investigation`).
+- **ViewState** – ASP.NET Web Forms page state sent to the client, signed with the machine key; a leaked or published machine key lets attackers send malicious ViewState for code execution.
 - **VIB** – vSphere Installation Bundle; ESXi software package with an acceptance level (VMwareCertified to CommunitySupported); malicious VIBs have been used as hypervisor backdoors.
 - **VM escape** – code in a guest VM breaking out to run on the hypervisor host, usually through a virtual device or guest tools bug.
 - **VPC Service Controls** – GCP perimeter that blocks access to and exfiltration from Google-managed services outside approved projects.

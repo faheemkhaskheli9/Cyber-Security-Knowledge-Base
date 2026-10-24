@@ -119,4 +119,4 @@ The same pattern in PostgreSQL: `UPDATE wallet SET balance = balance - $1 WHERE 
 - PostgreSQL documentation, Transaction Isolation: https://www.postgresql.org/docs/current/transaction-iso.html
 - PostgreSQL documentation, Explicit Locking: https://www.postgresql.org/docs/current/explicit-locking.html
 - IETF draft, The Idempotency-Key HTTP Header Field: https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/
-- See also `kb/03-application/owasp-top10.md`, `kb/03-application/api-security.md`, `kb/03-application/graphql-security.md`, `kb/04-cloud-infra/database-security.md`, `kb/07-offensive/pentest-methodology.md`
+- See also `kb/03-application/owasp-top10.md`, `kb/03-application/api-security.md`, `kb/03-application/graphql-security.md`, `kb/04-cloud-infra/database-security.md`, `kb/07-offensive/pentest-methodology.md`, `kb/05-identity-crypto/account-takeover-and-credential-stuffing.md`

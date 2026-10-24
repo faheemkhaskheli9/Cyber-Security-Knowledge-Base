@@ -10,7 +10,7 @@ IAM covers who a user or workload is (**authentication**, AuthN: something you k
 
 ## Attacks
 For authorized testing only; each is paired with its defense.
-- **Credential stuffing** (breached password reuse) → MFA, breached-password checks, bot detection, rate limiting.
+- **Credential stuffing** (breached password reuse) → MFA, breached-password checks, bot detection, rate limiting. In depth: `kb/05-identity-crypto/account-takeover-and-credential-stuffing.md`.
 - **Password spraying** (one common password across many accounts) → banned-password lists, smart lockout, alert on many failed users from one source.
 - **Phishing / AitM phishing kits** (e.g., Evilginx proxies the real login and steals the session cookie, bypassing OTP and push) → phishing-resistant MFA (FIDO2/passkeys are origin-bound), token binding, conditional access requiring compliant devices.
 - **MFA fatigue / push bombing** → number matching, rate-limit prompts, alert on repeated denials, user reporting.
@@ -31,7 +31,7 @@ For authorized testing only; each is paired with its defense.
 3. TOTP authenticator app (phishable via AitM)
 4. Push with **number matching** and context (phishable via AitM, resists fatigue)
 5. **FIDO2/WebAuthn passkeys / security keys**, smart cards (PIV/CBA): phishing-resistant, required for admins and high-risk users.
-Prefer phishing-resistant MFA (FIDO2/WebAuthn passkeys) over SMS/TOTP. Secure recovery flows as strongly as login (no SMS fallback for passkey users).
+Prefer phishing-resistant MFA (FIDO2/WebAuthn passkeys) over SMS/TOTP. Secure recovery flows as strongly as login (no SMS fallback for passkey users). In depth: `kb/05-identity-crypto/passkeys-and-webauthn.md`.
 
 ### SSO / Federation
 - SAML, OIDC, OAuth2: validate signatures/audience/redirects.
@@ -87,4 +87,4 @@ Prefer phishing-resistant MFA (FIDO2/WebAuthn passkeys) over SMS/TOTP. Secure re
 - CISA "Implementing Phishing-Resistant MFA" fact sheet
 - FIDO Alliance passkeys: https://fidoalliance.org/passkeys/
 - MITRE ATT&CK T1078 (Valid Accounts), T1558 (Steal or Forge Kerberos Tickets): https://attack.mitre.org
-- See also `kb/04-cloud-infra/os-hardening.md`, `kb/05-identity-crypto/secrets-management.md`, `kb/03-application/api-security.md`, `kb/04-cloud-infra/cloud-security.md`, `kb/04-cloud-infra/saas-security.md`, `kb/05-identity-crypto/oauth-oidc-security.md`, `kb/05-identity-crypto/saml-security.md`
+- See also `kb/04-cloud-infra/os-hardening.md`, `kb/05-identity-crypto/secrets-management.md`, `kb/03-application/api-security.md`, `kb/04-cloud-infra/cloud-security.md`, `kb/04-cloud-infra/saas-security.md`, `kb/05-identity-crypto/oauth-oidc-security.md`, `kb/05-identity-crypto/saml-security.md`, `kb/05-identity-crypto/passkeys-and-webauthn.md`, `kb/05-identity-crypto/account-takeover-and-credential-stuffing.md`

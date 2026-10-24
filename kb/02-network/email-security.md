@@ -143,4 +143,4 @@ openssl s_client -starttls smtp -connect mx1.example.com:25 -servername mx1.exam
 - Google "Email sender guidelines" · Yahoo "Sender best practices" · BIMI Group specification
 - M3AAWG best practices · CISA BOD 18-01 · UK NCSC email security guidance · FBI IC3 BEC public service announcements
 - MITRE ATT&CK T1566 (Phishing), T1027.006 (HTML Smuggling), T1528 (Steal Application Access Token)
-- See also `kb/02-network/wireless-dns-ddos.md`, `kb/05-identity-crypto/identity-access.md`, `kb/08-defensive/soc-detection-ir.md`, `kb/10-emerging/iot-ot-social-physical.md`, `kb/04-cloud-infra/saas-security.md`
+- See also `kb/02-network/wireless-dns-ddos.md`, `kb/05-identity-crypto/identity-access.md`, `kb/08-defensive/soc-detection-ir.md`, `kb/10-emerging/iot-ot-social-physical.md`, `kb/04-cloud-infra/saas-security.md`, `kb/05-identity-crypto/passkeys-and-webauthn.md`
