@@ -56,3 +56,4 @@ Common frameworks: TIBER-EU, CBEST, and ATT&CK-based emulation plans such as the
 - MITRE ATT&CK: https://attack.mitre.org · CTID Adversary Emulation Library
 - TIBER-EU framework · disclose.io safe-harbor terms: https://disclose.io
 - RFC 9116 (security.txt) · ISO/IEC 29147 & 30111 (vulnerability disclosure and handling)
+- See also `kb/06-secure-sdlc/product-security-incident-response.md` (handling reports after intake), `kb/09-governance/vulnerability-management.md`
