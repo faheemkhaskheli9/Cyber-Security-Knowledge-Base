@@ -46,7 +46,7 @@ Securing the software-as-a-service applications an organization subscribes to: p
 ### 4. Data sharing and configuration
 - External sharing defaults to internal-only or specific people; external links expire; guest access is limited and reviewed.
 - Disable legacy/basic authentication protocols and block automatic external mail forwarding (`kb/02-network/email-security.md`).
-- Apply a published secure-configuration baseline and track drift: **CISA SCuBA** baselines for Microsoft 365 and Google Workspace (checked with ScubaGear and ScubaGoggles), CIS Microsoft 365 and Google Workspace Foundations Benchmarks, and vendor security guides. US federal civilian agencies must apply SCuBA baselines under CISA BOD 25-01.
+- Apply a published secure-configuration baseline and track drift: **CISA SCuBA** baselines for Microsoft 365 and Google Workspace (checked with ScubaGear and ScubaGoggles), CIS Microsoft 365 and Google Workspace Foundations Benchmarks, and vendor security guides. CISA BOD 25-01 (December 2024) requires US federal civilian agencies to inventory their cloud tenants, run CISA's assessment tools and implement the mandatory SCuBA policies for every tenant that has a finalized SCuBA baseline (Microsoft 365 at issue; CISA can add products).
 - Use an SSPM tool or scheduled baseline scans once the app count makes manual review impractical.
 
 ### 5. Logging and detection
@@ -77,6 +77,6 @@ Securing the software-as-a-service applications an organization subscribes to: p
 - CIS Benchmarks (Microsoft 365, Google Workspace): https://www.cisecurity.org/cis-benchmarks
 - Mandiant, UNC5537 targets Snowflake customer instances (2024): https://cloud.google.com/blog/topics/threat-intelligence/unc5537-snowflake-data-theft-extortion
 - Microsoft Security Response Center, Midnight Blizzard nation-state attack (2024): https://msrc.microsoft.com/blog/2024/01/microsoft-actions-following-attack-by-nation-state-actor-midnight-blizzard/
-- GitHub Blog, Security alert: stolen OAuth user tokens (2022): https://github.blog/2022-04-15-security-alert-stolen-oauth-user-tokens/
+- GitHub Blog, Security alert: Attack campaign involving stolen OAuth user tokens issued to two third-party integrators (April 2022): https://github.blog/2022-04-15-security-alert-stolen-oauth-user-tokens/
 - MITRE ATT&CK T1528 (Steal Application Access Token), T1550.001 (Application Access Token), T1078.004 (Cloud Accounts)
 - See also `kb/05-identity-crypto/identity-access.md`, `kb/04-cloud-infra/cloud-security.md`, `kb/02-network/email-security.md`, `kb/09-governance/grc-compliance-privacy.md`

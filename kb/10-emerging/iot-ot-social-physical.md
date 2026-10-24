@@ -110,4 +110,4 @@ Badges, tailgating prevention, locks, cameras, clean desk, device encryption, US
 - MITRE ATT&CK for ICS: https://attack.mitre.org/matrices/ics/ · CISA ICS: https://www.cisa.gov/topics/industrial-control-systems
 - CISA phishing guidance and phishing-resistant MFA fact sheets: https://www.cisa.gov
 - Verizon Data Breach Investigations Report (annual)
-- See also `kb/02-network/network-security.md`, `kb/05-identity-crypto/identity-access.md`, `kb/07-offensive/red-team-and-bug-bounty.md`, `kb/10-emerging/post-quantum-cryptography.md`
+- See also `kb/02-network/network-security.md`, `kb/05-identity-crypto/identity-access.md`, `kb/07-offensive/red-team-and-bug-bounty.md`, `kb/10-emerging/post-quantum-cryptography.md`, `kb/04-cloud-infra/firmware-and-boot-security.md`
