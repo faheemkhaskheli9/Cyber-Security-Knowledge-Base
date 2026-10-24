@@ -75,4 +75,4 @@
 - PortSwigger, Cross-site WebSocket hijacking: https://portswigger.net/web-security/websockets/cross-site-websocket-hijacking
 - Apollo Server, CORS and CSRF prevention: https://www.apollographql.com/docs/apollo-server/security/cors
 - Tools: graphql-cop https://github.com/dolevf/graphql-cop, InQL https://github.com/doyensec/inql, Clairvoyance https://github.com/nikitastupin/clairvoyance
-- See also `kb/03-application/api-security.md`, `kb/03-application/owasp-top10.md`, `kb/05-identity-crypto/oauth-oidc-security.md`, `kb/07-offensive/pentest-methodology.md`
+- See also `kb/03-application/api-security.md`, `kb/03-application/owasp-top10.md`, `kb/05-identity-crypto/oauth-oidc-security.md`, `kb/07-offensive/pentest-methodology.md`, `kb/03-application/websocket-security.md`, `kb/03-application/business-logic-and-race-conditions.md`

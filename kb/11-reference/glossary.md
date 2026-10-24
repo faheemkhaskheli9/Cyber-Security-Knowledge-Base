@@ -28,6 +28,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **Botnet** – network of compromised hosts under attacker control.
 - **Break-glass account** – emergency admin account with strong MFA, kept for IdP outages and alerted on every use.
 - **Brute force / Credential stuffing** – guessing passwords / replaying leaked credential pairs.
+- **Business logic flaw** – valid, well-formed requests that the application's rules should refuse (step skipping, negative amounts, coupon reuse); CWE-840.
 - **BYOD** – Bring Your Own Device.
 
 ## C
@@ -41,11 +42,13 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **CNAPP** – Cloud-Native Application Protection Platform (CSPM + CWPP + more).
 - **Confused deputy** – a privileged service tricked into acting for an attacker (cloud fix: external ID / source-account conditions).
 - **Consent phishing** – tricking a user into granting a malicious OAuth app access; survives password resets.
+- **Content script** – browser extension script injected into web pages; shares the page DOM, so it must treat page data and messages as untrusted.
 - **CORS** – Cross-Origin Resource Sharing.
 - **CRL / OCSP** – Certificate Revocation List / Online Certificate Status Protocol.
 - **CSP** – Content Security Policy (browser); also Cloud Service Provider.
 - **CSPM** – Cloud Security Posture Management.
 - **CSRF** – Cross-Site Request Forgery.
+- **CSWSH** – Cross-Site WebSocket Hijacking; a foreign page opens a cookie-authenticated WebSocket because the server does not check `Origin` (CWE-1385).
 - **CT** – Certificate Transparency logs; public append-only logs of issued TLS certificates, also used to enumerate an organization's hostnames (RFC 9162).
 - **CTEM** – Continuous Threat Exposure Management; cycle of scoping, discovery, prioritization, validation and mobilization of exposures.
 - **CTI** – Cyber Threat Intelligence.
@@ -106,6 +109,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **IaC** – Infrastructure as Code.
 - **IAM** – Identity and Access Management.
 - **IDS / IPS** – Intrusion Detection / Prevention System.
+- **Idempotency key** – client-supplied unique request ID stored with a unique constraint so a retried or replayed payment, refund or order is processed once.
 - **IMDS / IMDSv2** – cloud instance metadata service; IMDSv2 (AWS) adds session tokens that block most SSRF credential theft.
 - **Immutable backup** – backup copy that storage-level object lock or WORM media prevents anyone, including admins, from deleting or changing before its retention ends.
 - **Insider threat** – risk that someone with authorized access (employee, contractor, vendor) harms the organization, maliciously, negligently or by mistake.
@@ -125,9 +129,11 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **LAPS** – Windows Local Administrator Password Solution; unique, rotated local admin password per machine.
 - **Lateral movement** – pivoting from one compromised host to others.
 - **LFI / RFI** – Local / Remote File Inclusion; user input controls which file include/require loads.
+- **Limit overrun race** – parallel requests all pass a check (unused coupon, sufficient balance) before any records its effect; fixed by atomic check-and-update.
 - **LOLBin / LOTL** – Living-off-the-Land binary / technique (abusing built-in tools).
 - **Log injection** – user input with CR/LF or forged fields that writes fake log entries; prevented by structured logging and encoding.
 - **Managed identity** – Azure-managed identity for a resource; no secret to store or rotate.
+- **Manifest V3 (MV3)** – current Chrome/Edge extension platform; disallows remotely hosted code and runs background logic in a service worker.
 - **Measured boot** – each boot stage records a hash of the next in TPM PCRs so the boot chain can be attested or bound to disk-encryption keys.
 - **Memory safety roadmap** – a software producer's published plan to move products to memory-safe languages and reduce risk in remaining C/C++ (CISA Secure by Design).
 - **MFA** – Multi-Factor Authentication.
@@ -137,6 +143,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **MTA-STS** – policy (DNS + HTTPS) requiring senders to use validated TLS to your MX hosts (RFC 8461).
 - **mTLS** – mutual TLS; both sides present certificates.
 - **NAC** – Network Access Control.
+- **Native messaging** – browser extension API for exchanging messages with a registered local program; the host must validate input and allowed extension IDs.
 - **NDR** – Network Detection and Response.
 - **NGFW** – Next-Generation Firewall.
 - **NIST CSF / SP 800-53** – NIST Cybersecurity Framework / control catalog.
@@ -187,6 +194,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **SCuBA** – CISA Secure Cloud Business Applications; secure configuration baselines for Microsoft 365 and Google Workspace.
 - **SIEM / SOAR** – log analytics & correlation / security orchestration & automated response.
 - **Sigma / YARA / Snort** – detection rule formats for logs / files / network.
+- **Single-packet attack** – sending the final bytes of many HTTP/2 requests in one TCP packet so they arrive together, making race conditions reliable to exploit.
 - **SLSA** – Supply-chain Levels for Software Artifacts.
 - **SOC** – Security Operations Center; also SOC 2 audit report.
 - **SOC 2 Type II / CUEC** – auditor's report on a service organization's controls over a period / complementary user entity controls the customer must operate itself.
@@ -204,6 +212,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **Thread hijacking** – replying inside a real email conversation from a compromised mailbox to borrow its trust.
 - **TLS** – Transport Layer Security (use 1.2+; prefer 1.3).
 - **TLS-RPT** – daily reports from senders about TLS delivery failures to your domain (RFC 8460).
+- **TOCTOU** – Time-of-Check to Time-of-Use race (CWE-367); state changes between a check and the action that relies on it.
 - **Tokenization** – replacing a sensitive value (card number) with a meaningless token; the mapping is kept in a separately secured vault.
 - **TOTP / HOTP** – time / counter-based one-time passwords.
 - **TPM** – Trusted Platform Module.
@@ -216,6 +225,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **VPN / ZTNA** – Virtual Private Network / Zero Trust Network Access.
 - **WAF** – Web Application Firewall.
 - **Web cache poisoning / deception** – an unkeyed input poisons a shared cached response / a private page is cached as a public static asset.
+- **WebSocket** – full-duplex message channel opened by an HTTP Upgrade handshake (RFC 6455); not covered by CORS, so servers must check `Origin`.
 - **Workload identity federation** – exchanging an external OIDC/SAML token (e.g. GitHub Actions) for short-lived cloud credentials.
 - **XSW** – XML Signature Wrapping; moving a signed SAML element and inserting a forged one where the application reads, so the signature still verifies.
 - **XSS** – Cross-Site Scripting (reflected, stored, DOM).

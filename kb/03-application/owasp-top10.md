@@ -42,7 +42,7 @@ The OWASP Top 10 is a consensus awareness list of the most critical web applicat
 - LDAP, XPath, template injection (SSTI: `{{7*7}}`), header/CRLF injection, log injection.
 
 ### A04 Insecure Design
-- Missing rate limits on OTP or password reset, business-logic flaws (negative quantities, coupon reuse), race conditions on balance updates, "security questions" for recovery.
+- Missing rate limits on OTP or password reset, business-logic flaws (negative quantities, coupon reuse), race conditions on balance updates, "security questions" for recovery. In depth: `kb/03-application/business-logic-and-race-conditions.md`.
 
 ### A05 Security Misconfiguration
 - Debug pages/stack traces in prod, default credentials, directory listing, exposed `.git/` or `.env`, verbose errors, unneeded HTTP methods.
@@ -195,4 +195,4 @@ General: OWASP ZAP/Burp baseline scan, Semgrep/CodeQL, `securityheaders.com`, AS
 - OWASP Web Security Testing Guide: https://owasp.org/www-project-web-security-testing-guide/
 - NIST SP 800-63B (Digital Identity Guidelines, authentication)
 - MITRE CWE Top 25: https://cwe.mitre.org/top25/
-- See also `kb/03-application/api-security.md`, `kb/03-application/browser-client-side.md`, `kb/07-offensive/pentest-methodology.md`, `kb/03-application/http-request-smuggling-and-cache-attacks.md`, `kb/04-cloud-infra/database-security.md`, `kb/03-application/file-upload-security.md`
+- See also `kb/03-application/api-security.md`, `kb/03-application/browser-client-side.md`, `kb/07-offensive/pentest-methodology.md`, `kb/03-application/http-request-smuggling-and-cache-attacks.md`, `kb/04-cloud-infra/database-security.md`, `kb/03-application/file-upload-security.md`, `kb/03-application/business-logic-and-race-conditions.md`, `kb/03-application/websocket-security.md`
