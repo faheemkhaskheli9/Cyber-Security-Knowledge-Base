@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - run: bash -n scripts/audit.sh && bash -n scripts/bootstrap-project.sh && bash -n scripts/check-kb.sh
+      - run: bash -n scripts/audit.sh && bash -n scripts/bootstrap-project.sh && bash -n scripts/check-kb.sh && bash -n scripts/sync-template-pins.sh
       - run: scripts/check-kb.sh
+      # Warn only: Dependabot bumps .github/workflows/ alone; run scripts/sync-template-pins.sh after merging.
+      - run: scripts/sync-template-pins.sh --check || echo "::warning::templates/*.yml action pins differ from .github/workflows; run scripts/sync-template-pins.sh"
       - run: scripts/audit.sh . || true

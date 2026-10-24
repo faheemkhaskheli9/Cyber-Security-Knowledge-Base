@@ -50,10 +50,10 @@ s2026a._domainkey.example.com.  TXT  "v=DKIM1; k=rsa; p=MIIBIjANBgkqh...IDAQAB"
 - **Rotate** keys on a schedule (e.g., every 6–12 months) and immediately after a suspected leak. Publish the new selector, switch signing, wait for in-flight mail, then revoke the old one with an empty `p=`.
 - Use a separate selector per sending service so each can be revoked on its own. Sign with your own domain (`d=example.com`), not the vendor's.
 
-### DMARC (RFC 7489)
+### DMARC (RFC 9989)
 Requires SPF or DKIM to pass **and align** with the visible `From:` domain. Tells receivers what to do on failure and where to send reports.
 ```
-_dmarc.example.com.  TXT  "v=DMARC1; p=reject; sp=reject; adkim=s; aspf=r; rua=mailto:dmarc-rua@example.com; ruf=mailto:dmarc-ruf@example.com; fo=1"
+_dmarc.example.com.  TXT  "v=DMARC1; p=reject; sp=reject; np=reject; adkim=s; aspf=r; rua=mailto:dmarc-rua@example.com; ruf=mailto:dmarc-ruf@example.com; fo=1"
 ```
 - **Alignment**: relaxed (default) means the same organizational domain (`mail.example.com` aligns with `example.com`); strict (`s`) means an exact match. DKIM alignment survives forwarding, so make DKIM the primary path.
 - **Rollout**:
@@ -61,12 +61,13 @@ _dmarc.example.com.  TXT  "v=DMARC1; p=reject; sp=reject; adkim=s; aspf=r; rua=m
 | Stage | Policy | Exit criteria |
 |---|---|---|
 | 1. Monitor | `p=none; rua=...` | Every legitimate source found in reports and passing aligned SPF/DKIM |
-| 2. Quarantine | `p=quarantine; pct=10` → `pct=100` | No legitimate mail failing for 2–4 weeks |
+| 2. Quarantine | `p=quarantine; t=y` → `p=quarantine` | No legitimate mail failing for 2–4 weeks |
 | 3. Reject | `p=reject` (+ `sp=reject`) | Steady state; keep monitoring reports |
 
 - `rua` = daily aggregate XML reports (who sends as you, pass/fail counts). `ruf` = per-message failure reports; few receivers send them and they may contain personal data, so handle them as sensitive.
+- **RFC 9989 (May 2026)** obsoletes RFC 7489 and RFC 9091 and puts DMARC on the Standards Track. Records still start with `v=DMARC1` and existing ones keep working. Changes: `pct`, `rf` and `ri` are removed (receivers ignore them; gradual rollout uses `t=y`, test mode, which asks receivers to apply the next-lower policy); new `np` sets the policy for non-existent subdomains; `psd` flags a public suffix domain; the organizational domain is found by a DNS tree walk instead of the Public Suffix List. Reporting moved to RFC 9990 (aggregate) and RFC 9991 (failure).
 - Sending reports to another domain requires an authorization record there: `example.com._report._dmarc.reports.example.net TXT "v=DMARC1"`.
-- Parked domains: `v=spf1 -all`, `p=reject`, null MX (`MX 0 .`, RFC 7505).
+- Parked domains: `v=spf1 -all`, `p=reject` (add `np=reject` on the main domain), null MX (`MX 0 .`, RFC 7505).
 
 ### ARC, transport and branding
 - **ARC** (RFC 8617): intermediaries (mailing lists, forwarders, security gateways) seal the authentication results they saw. Receivers *may* trust the seals of known intermediaries when forwarding has broken SPF/DKIM. Configure the receiving side to trust your own gateway's ARC.
@@ -137,7 +138,7 @@ openssl s_client -starttls smtp -connect mx1.example.com:25 -servername mx1.exam
 - Process: run a BEC tabletop or simulated payment-change request against finance and check that the call-back step happens.
 
 ## References
-- [RFC 7208 (SPF)](https://www.rfc-editor.org/rfc/rfc7208) · [RFC 6376 (DKIM)](https://www.rfc-editor.org/rfc/rfc6376) · RFC 8301 / RFC 8463 (DKIM crypto) · [RFC 7489 (DMARC)](https://www.rfc-editor.org/rfc/rfc7489) · RFC 8617 (ARC)
+- [RFC 7208 (SPF)](https://www.rfc-editor.org/rfc/rfc7208) · [RFC 6376 (DKIM)](https://www.rfc-editor.org/rfc/rfc6376) · RFC 8301 / RFC 8463 (DKIM crypto) · [RFC 9989 (DMARC)](https://www.rfc-editor.org/rfc/rfc9989) · [RFC 9990 (DMARC aggregate reports)](https://www.rfc-editor.org/rfc/rfc9990) · [RFC 9991 (DMARC failure reports)](https://www.rfc-editor.org/rfc/rfc9991) · [RFC 7489](https://www.rfc-editor.org/rfc/rfc7489) (obsoleted DMARC spec) · RFC 8617 (ARC)
 - RFC 8461 (MTA-STS) · RFC 8460 (TLS-RPT) · RFC 7672 / RFC 6698 (DANE/TLSA) · RFC 7505 (null MX) · RFC 8058 (one-click unsubscribe)
 - Google "Email sender guidelines" · Yahoo "Sender best practices" · BIMI Group specification
 - M3AAWG best practices · CISA BOD 18-01 · UK NCSC email security guidance · FBI IC3 BEC public service announcements

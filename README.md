@@ -24,7 +24,7 @@ For security-related ChatGPT tasks, start with this repository's topic index bel
 | `kb/10-emerging` | AI/LLM security, IoT/OT, quantum, social engineering, physical |
 | `kb/11-reference` | Glossary, tools, learning paths, cheat sheets |
 | `templates/` | Drop-in `SECURITY.md`, Dependabot, CodeQL, gitleaks, pre-commit, CLAUDE security snippet |
-| `scripts/` | `audit.sh` (quick local project audit), `bootstrap-project.sh` (install templates into a project) |
+| `scripts/` | `audit.sh` (quick local project audit), `bootstrap-project.sh` (install templates into a project), `sync-template-pins.sh` (copy workflow action pins into the templates) |
 
 ## KB file index
 
