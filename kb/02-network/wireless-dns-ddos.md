@@ -69,4 +69,4 @@ Three network areas that sit outside the classic firewall/segmentation model: ra
 - [NIST SP 800-153 (WLAN security)](https://csrc.nist.gov/pubs/sp/800/153/final) · [Wi-Fi Alliance security (WPA3)](https://www.wi-fi.org/discover-wi-fi/security)
 - [NIST SP 800-81-2 (Secure DNS)](https://csrc.nist.gov/pubs/sp/800/81/2/final) · [OWASP WSTG: Test for Subdomain Takeover](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/10-Test_for_Subdomain_Takeover)
 - [CISA: Understanding and responding to DDoS attacks](https://www.cisa.gov/news-events/news/understanding-and-responding-distributed-denial-service-attacks) · [RFC 2827 / BCP 38](https://www.rfc-editor.org/rfc/rfc2827)
-- See also `kb/02-network/network-security.md`
+- See also `kb/02-network/network-security.md`, `kb/09-governance/attack-surface-management.md`

@@ -195,4 +195,4 @@ General: OWASP ZAP/Burp baseline scan, Semgrep/CodeQL, `securityheaders.com`, AS
 - OWASP Web Security Testing Guide: https://owasp.org/www-project-web-security-testing-guide/
 - NIST SP 800-63B (Digital Identity Guidelines, authentication)
 - MITRE CWE Top 25: https://cwe.mitre.org/top25/
-- See also `kb/03-application/api-security.md`, `kb/03-application/browser-client-side.md`, `kb/07-offensive/pentest-methodology.md`, `kb/03-application/http-request-smuggling-and-cache-attacks.md`, `kb/04-cloud-infra/database-security.md`
+- See also `kb/03-application/api-security.md`, `kb/03-application/browser-client-side.md`, `kb/07-offensive/pentest-methodology.md`, `kb/03-application/http-request-smuggling-and-cache-attacks.md`, `kb/04-cloud-infra/database-security.md`, `kb/03-application/file-upload-security.md`

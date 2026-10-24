@@ -51,4 +51,4 @@ XSS and client-side flaws run attacker code with the victim's session. That mean
 - OWASP XSS / DOM XSS / CSRF / Clickjacking Prevention Cheat Sheets
 - OWASP HTTP Headers Cheat Sheet · MDN Web Security docs
 - web.dev Strict CSP · W3C Trusted Types · https://xsleaks.dev
-- See also `kb/03-application/http-request-smuggling-and-cache-attacks.md`
+- See also `kb/03-application/http-request-smuggling-and-cache-attacks.md`, `kb/03-application/file-upload-security.md`

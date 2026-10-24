@@ -96,4 +96,4 @@ In depth: `kb/03-application/graphql-security.md`. Disable introspection in prod
 - RFC 9700 OAuth 2.0 Security Best Current Practice: https://datatracker.ietf.org/doc/html/rfc9700
 - RFC 7636 PKCE: https://datatracker.ietf.org/doc/html/rfc7636
 - OpenAPI Specification: https://spec.openapis.org/oas/latest.html
-- See also `kb/05-identity-crypto/identity-access.md`, `kb/03-application/owasp-top10.md`, `kb/07-offensive/pentest-methodology.md`, `kb/03-application/http-request-smuggling-and-cache-attacks.md`, `kb/05-identity-crypto/oauth-oidc-security.md`, `kb/03-application/graphql-security.md`
+- See also `kb/05-identity-crypto/identity-access.md`, `kb/03-application/owasp-top10.md`, `kb/07-offensive/pentest-methodology.md`, `kb/03-application/http-request-smuggling-and-cache-attacks.md`, `kb/05-identity-crypto/oauth-oidc-security.md`, `kb/03-application/graphql-security.md`, `kb/03-application/file-upload-security.md`
