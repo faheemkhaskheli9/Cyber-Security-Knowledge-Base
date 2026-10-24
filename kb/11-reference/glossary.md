@@ -9,12 +9,14 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **AD / AD CS** – Active Directory / AD Certificate Services (common privilege-escalation target).
 - **AEAD** – Authenticated Encryption with Associated Data (AES-GCM, ChaCha20-Poly1305).
 - **AES** – Advanced Encryption Standard; symmetric block cipher.
+- **Application control** – only approved executables, scripts and drivers may run (App Control for Business/WDAC, AppLocker, Santa, fapolicyd).
 - **APT** – Advanced Persistent Threat; well-resourced, long-term intrusion actor.
 - **ARC** – Authenticated Received Chain; forwarders sign the auth results they saw so mail survives forwarding (RFC 8617).
 - **AS-REP roasting** – cracking the AS-REP returned for AD accounts that do not require Kerberos preauthentication.
 - **ASan / UBSan / MSan / TSan** – Address / UndefinedBehavior / Memory / Thread Sanitizer; compiler instrumentation that catches memory and concurrency bugs in tests.
 - **ASLR** – Address Space Layout Randomization; memory-corruption mitigation.
 - **ASM / EASM** – (External) Attack Surface Management; continuous discovery, inventory and reduction of exposed assets, seen from the internet for EASM.
+- **ASR rules** – Microsoft Defender attack surface reduction rules that block risky behaviors such as Office spawning child processes or LSASS credential theft.
 - **ATO** – Account Takeover; also Authority To Operate (US gov).
 - **ATT&CK** – MITRE knowledge base of adversary tactics and techniques.
 
@@ -30,6 +32,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **Brute force / Credential stuffing** – guessing passwords / replaying leaked credential pairs.
 - **Business logic flaw** – valid, well-formed requests that the application's rules should refuse (step skipping, negative amounts, coupon reuse); CWE-840.
 - **BYOD** – Bring Your Own Device.
+- **BYOVD** – Bring Your Own Vulnerable Driver; loading a signed but vulnerable kernel driver to gain kernel access, often to kill EDR.
 
 ## C
 - **C2 / C&C** – Command and Control infrastructure.
@@ -39,12 +42,14 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **CASB** – Cloud Access Security Broker.
 - **CIA triad** – Confidentiality, Integrity, Availability.
 - **CIS Benchmarks / Controls** – consensus hardening guides / prioritized control set.
+- **CNA** – CVE Numbering Authority; organization authorized to assign CVE IDs for a defined scope (often its own products).
 - **CNAPP** – Cloud-Native Application Protection Platform (CSPM + CWPP + more).
 - **Confused deputy** – a privileged service tricked into acting for an attacker (cloud fix: external ID / source-account conditions).
 - **Consent phishing** – tricking a user into granting a malicious OAuth app access; survives password resets.
 - **Content script** – browser extension script injected into web pages; shares the page DOM, so it must treat page data and messages as untrusted.
 - **CORS** – Cross-Origin Resource Sharing.
 - **CRL / OCSP** – Certificate Revocation List / Online Certificate Status Protocol.
+- **CSAF** – Common Security Advisory Framework (OASIS); machine-readable JSON security advisories, including a VEX profile.
 - **CSP** – Content Security Policy (browser); also Cloud Service Provider.
 - **CSPM** – Cloud Security Posture Management.
 - **CSRF** – Cross-Site Request Forgery.
@@ -52,6 +57,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **CT** – Certificate Transparency logs; public append-only logs of issued TLS certificates, also used to enumerate an organization's hostnames (RFC 9162).
 - **CTEM** – Continuous Threat Exposure Management; cycle of scoping, discovery, prioritization, validation and mobilization of exposures.
 - **CTI** – Cyber Threat Intelligence.
+- **CVD** – Coordinated Vulnerability Disclosure; reporter and vendor keep details private until a fix is ready, then publish together (ISO/IEC 29147).
 - **CVE** – Common Vulnerabilities and Exposures identifier.
 - **CVSS** – Common Vulnerability Scoring System (severity, not risk).
 - **CWE** – Common Weakness Enumeration.
@@ -131,6 +137,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **LFI / RFI** – Local / Remote File Inclusion; user input controls which file include/require loads.
 - **Limit overrun race** – parallel requests all pass a check (unused coupon, sufficient balance) before any records its effect; fixed by atomic check-and-update.
 - **LOLBin / LOTL** – Living-off-the-Land binary / technique (abusing built-in tools).
+- **Log archive account** – separate cloud account or project that receives organization-wide audit logs with retention locks, so a compromised workload admin cannot erase evidence.
 - **Log injection** – user input with CR/LF or forged fields that writes fake log entries; prevented by structured logging and encoding.
 - **Managed identity** – Azure-managed identity for a resource; no secret to store or rotate.
 - **Manifest V3 (MV3)** – current Chrome/Edge extension platform; disallows remotely hosted code and runs background logic in a service worker.
@@ -169,6 +176,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **PQC** – Post-Quantum Cryptography (ML-KEM, ML-DSA, SLH-DSA).
 - **Privilege escalation** – gaining higher rights than granted.
 - **Prototype pollution** – injecting __proto__ / constructor.prototype keys to alter properties of all JavaScript objects.
+- **PSIRT** – Product Security Incident Response Team; receives, fixes and discloses vulnerabilities in products an organization ships.
 - **Purple team** – red and blue teams working together to improve detection.
 
 ## Q–R
@@ -208,6 +216,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **STRIDE** – Spoofing, Tampering, Repudiation, Information disclosure, DoS, Elevation of privilege.
 
 ## T–Z
+- **Tamper protection** – endpoint agent setting that stops local admins and malware from disabling protection or changing its configuration.
 - **TDE** – Transparent Data Encryption; database encrypts its files at rest; does not protect against SQL access.
 - **Thread hijacking** – replying inside a real email conversation from a compromised mailbox to borrow its trust.
 - **TLS** – Transport Layer Security (use 1.2+; prefer 1.3).
@@ -221,6 +230,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **UEBA** – User and Entity Behavior Analytics.
 - **UEFI** – Unified Extensible Firmware Interface; the firmware standard that replaced legacy BIOS.
 - **VDP** – Vulnerability Disclosure Policy.
+- **VEX** – Vulnerability Exploitability eXchange; statement of whether a product is affected by a vulnerability (`not_affected`, `affected`, `fixed`, `under_investigation`).
 - **VPC Service Controls** – GCP perimeter that blocks access to and exfiltration from Google-managed services outside approved projects.
 - **VPN / ZTNA** – Virtual Private Network / Zero Trust Network Access.
 - **WAF** – Web Application Firewall.

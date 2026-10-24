@@ -116,4 +116,4 @@ Containers, Kubernetes and IaC scanning: `kb/04-cloud-infra/containers-kubernete
 - NIST SP 800-210 (General Access Control Guidance for Cloud Systems), NIST SP 800-144 (Security and Privacy in Public Cloud Computing)
 - CISA Secure Cloud Business Applications (SCuBA) and Cloud Security Technical Reference Architecture
 - Prowler: https://github.com/prowler-cloud/prowler · ScoutSuite: https://github.com/nccgroup/ScoutSuite
-- See also `kb/04-cloud-infra/containers-kubernetes-iac.md`, `kb/05-identity-crypto/identity-access.md`, `kb/04-cloud-infra/database-security.md`, `kb/04-cloud-infra/saas-security.md`, `kb/04-cloud-infra/serverless-security.md`
+- See also `kb/04-cloud-infra/containers-kubernetes-iac.md`, `kb/05-identity-crypto/identity-access.md`, `kb/04-cloud-infra/database-security.md`, `kb/04-cloud-infra/saas-security.md`, `kb/04-cloud-infra/serverless-security.md`, `kb/08-defensive/cloud-incident-response.md`

@@ -27,6 +27,9 @@ Locate the KB (this repo, or `$CYBERSEC_KB`, or `~/cybersec-kb`). Read the relev
    - Dockerfile/K8s/IaC → `kb/04-cloud-infra/`
    - CI/CD workflows (permissions, pinned actions, secrets) → `kb/06-secure-sdlc/`
    - Logging, error handling, security headers, CORS → `kb/06-secure-sdlc/security-logging-and-monitoring.md`
+   - Shipped products and libraries (SECURITY.md, security.txt, advisory/CVE and VEX process, supported versions) → `kb/06-secure-sdlc/product-security-incident-response.md`
+   - Cloud accounts (org-level audit logs, log archive, responder roles, IR playbooks) → `kb/08-defensive/cloud-incident-response.md`
+   - Endpoint and server fleet (EDR coverage, tamper protection, ASR/application control) → `kb/08-defensive/endpoint-security-and-edr.md`
 4. **Report**: table of findings – Severity (Critical/High/Med/Low/Info), Location (`file:line`), Issue, Fix. Be concrete; no speculative noise.
 5. **Fix**: apply safe fixes directly; add missing baseline files from `templates/`; for risky or breaking changes, ask first.
 6. **Verify**: re-run tests/linters/`audit.sh`; state what remains.
