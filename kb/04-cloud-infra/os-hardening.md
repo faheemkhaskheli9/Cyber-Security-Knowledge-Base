@@ -96,4 +96,4 @@ FileVault, Gatekeeper, SIP, MDM, firewall on, auto-update; enforce via MDM confi
 - NIST SP 800-123 (General Server Security) · NIST SP 800-53 (CM, AC, AU families)
 - Lynis: https://cisofy.com/lynis/ · OpenSCAP: https://www.open-scap.org · HardeningKitty (GitHub: scipag/HardeningKitty)
 - MITRE ATT&CK: https://attack.mitre.org
-- See also `kb/05-identity-crypto/identity-access.md`, `kb/05-identity-crypto/pki-and-tls.md`, `kb/08-defensive/soc-detection-ir.md`, `kb/04-cloud-infra/containers-kubernetes-iac.md`, `kb/04-cloud-infra/firmware-and-boot-security.md` (Secure Boot, TPM, BMC), `kb/08-defensive/endpoint-security-and-edr.md`
+- See also `kb/05-identity-crypto/identity-access.md`, `kb/05-identity-crypto/pki-and-tls.md`, `kb/08-defensive/soc-detection-ir.md`, `kb/04-cloud-infra/containers-kubernetes-iac.md`, `kb/04-cloud-infra/firmware-and-boot-security.md` (Secure Boot, TPM, BMC), `kb/08-defensive/endpoint-security-and-edr.md`, `kb/04-cloud-infra/virtualization-and-hypervisor-security.md`

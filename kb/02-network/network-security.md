@@ -90,4 +90,4 @@ Scan only scope you own or are authorized in writing to test.
 - MITRE ATT&CK T1557 Adversary-in-the-Middle: https://attack.mitre.org/techniques/T1557/ · T1046: https://attack.mitre.org/techniques/T1046/
 - RFC 8446 (TLS 1.3) · RFC 8996 (deprecating TLS 1.0/1.1) · RFC 9325 (BCP 195, TLS recommendations) · RFC 4253 (SSH transport) · RFC 3414 (SNMPv3 USM) · RFC 2827 (BCP 38) · IEEE 802.1X
 - Suricata: https://suricata.io · Zeek: https://zeek.org · Nmap reference guide: https://nmap.org/book/man.html
-- See also `kb/02-network/wireless-dns-ddos.md`, `kb/05-identity-crypto/pki-and-tls.md`, `kb/04-cloud-infra/os-hardening.md`, `kb/07-offensive/pentest-methodology.md`
+- See also `kb/02-network/wireless-dns-ddos.md`, `kb/05-identity-crypto/pki-and-tls.md`, `kb/04-cloud-infra/os-hardening.md`, `kb/07-offensive/pentest-methodology.md`, `kb/02-network/edge-device-security.md`

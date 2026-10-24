@@ -74,4 +74,4 @@ Report with explicit denominators: share of discovered assets with an owner, unk
 - RFC 9116, security.txt: https://www.rfc-editor.org/rfc/rfc9116
 - Microsoft, Prevent dangling DNS entries and avoid subdomain takeover: https://learn.microsoft.com/en-us/azure/security/fundamentals/subdomain-takeover
 - Tools: crt.sh https://crt.sh/, OWASP Amass https://github.com/owasp-amass/amass, subfinder https://github.com/projectdiscovery/subfinder, httpx https://github.com/projectdiscovery/httpx, nuclei https://github.com/projectdiscovery/nuclei
-- See also `kb/09-governance/vulnerability-management.md`, `kb/02-network/wireless-dns-ddos.md`, `kb/04-cloud-infra/cloud-security.md`, `kb/07-offensive/pentest-methodology.md`, `kb/09-governance/third-party-risk-management.md`
+- See also `kb/09-governance/vulnerability-management.md`, `kb/02-network/wireless-dns-ddos.md`, `kb/04-cloud-infra/cloud-security.md`, `kb/07-offensive/pentest-methodology.md`, `kb/09-governance/third-party-risk-management.md`, `kb/02-network/edge-device-security.md`

@@ -73,4 +73,4 @@ Securing code that runs on a provider-managed function platform: AWS Lambda, Azu
 - Google Cloud, Cloud Run functions security overview: https://docs.cloud.google.com/functions/docs/securing/overview
 - NIST SP 800-204 (Security Strategies for Microservices-based Application Systems)
 - MITRE ATT&CK T1648 (Serverless Execution), T1552.005 (Unsecured Credentials: Cloud Instance Metadata API), T1078.004 (Cloud Accounts)
-- See also `kb/04-cloud-infra/cloud-security.md`, `kb/04-cloud-infra/cloud-provider-baselines.md`, `kb/05-identity-crypto/secrets-management.md`, `kb/06-secure-sdlc/cicd-security.md`
+- See also `kb/04-cloud-infra/cloud-security.md`, `kb/04-cloud-infra/cloud-provider-baselines.md`, `kb/05-identity-crypto/secrets-management.md`, `kb/06-secure-sdlc/cicd-security.md`, `kb/03-application/server-side-request-forgery.md`

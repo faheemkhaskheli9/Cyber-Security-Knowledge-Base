@@ -77,4 +77,4 @@ OS-level hardening is in `kb/04-cloud-infra/os-hardening.md`; embedded and IoT f
 - CISA and NSA, *Harden Baseboard Management Controllers* (June 2023): https://www.cisa.gov/news-events/alerts/2023/06/14/cisa-and-nsa-release-joint-guidance-hardening-baseboard-management-controllers-bmcs
 - fwupd / Linux Vendor Firmware Service: https://fwupd.org · CHIPSEC: https://github.com/chipsec/chipsec
 - MITRE ATT&CK T1542 (Pre-OS Boot): T1542.001 (System Firmware), T1542.003 (Bootkit); T1495 (Firmware Corruption)
-- See also `kb/04-cloud-infra/os-hardening.md`, `kb/01-foundations/zero-trust-architecture.md`, `kb/10-emerging/iot-ot-social-physical.md`, `kb/08-defensive/dfir-malware-threat-intel.md`
+- See also `kb/04-cloud-infra/os-hardening.md`, `kb/01-foundations/zero-trust-architecture.md`, `kb/10-emerging/iot-ot-social-physical.md`, `kb/08-defensive/dfir-malware-threat-intel.md`, `kb/04-cloud-infra/virtualization-and-hypervisor-security.md`
