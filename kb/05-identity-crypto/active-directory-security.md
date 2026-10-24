@@ -133,4 +133,4 @@ Get-ChildItem "\\$((Get-ADDomain).DNSRoot)\SYSVOL" -Recurse -Include *.xml -Erro
 - ANSSI Active Directory security checkpoints (CERT-FR)
 - MITRE ATT&CK T1558 (Steal or Forge Kerberos Tickets), T1003.006 (DCSync), T1557.001, T1110.003, T1552.006, T1649: https://attack.mitre.org
 - PingCastle: https://www.pingcastle.com; Purple Knight (Semperis); Locksmith (Jake Hildreth / Trimarc); BloodHound CE (SpecterOps)
-- See also `kb/05-identity-crypto/identity-access.md`, `kb/04-cloud-infra/os-hardening.md`, `kb/05-identity-crypto/pki-and-tls.md`, `kb/08-defensive/soc-detection-ir.md`, `kb/05-identity-crypto/saml-security.md`
+- See also `kb/05-identity-crypto/identity-access.md`, `kb/04-cloud-infra/os-hardening.md`, `kb/05-identity-crypto/pki-and-tls.md`, `kb/08-defensive/soc-detection-ir.md`, `kb/05-identity-crypto/saml-security.md`, `kb/04-cloud-infra/virtualization-and-hypervisor-security.md`

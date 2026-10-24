@@ -21,6 +21,7 @@ Locate the KB (this repo, or `$CYBERSEC_KB`, or `~/cybersec-kb`). Read the relev
    - Business flows that spend, redeem or limit something (atomic check-and-update, idempotency keys, server-side state machines, server-computed prices) → `kb/03-application/business-logic-and-race-conditions.md`
    - WebSocket endpoints (Origin check, handshake auth, per-message authZ, size/rate limits) → `kb/03-application/websocket-security.md`
    - Browser extension code (manifest permissions, message sender checks, MV3 CSP) → `kb/03-application/browser-extension-security.md`
+   - Code that fetches user-supplied URLs (webhooks, imports, previews, PDF rendering): destination allowlist, IP checks after resolution, no redirects, egress proxy → `kb/03-application/server-side-request-forgery.md`
    - Crypto misuse (weak hashes, hardcoded keys, `Math.random`) → `cryptography.md`
    - Dependencies & lockfiles → `kb/06-secure-sdlc/`
    - Data stores (DB exposure, app DB roles, TLS, RLS, backups) → `kb/04-cloud-infra/database-security.md`
@@ -30,6 +31,8 @@ Locate the KB (this repo, or `$CYBERSEC_KB`, or `~/cybersec-kb`). Read the relev
    - Shipped products and libraries (SECURITY.md, security.txt, advisory/CVE and VEX process, supported versions) → `kb/06-secure-sdlc/product-security-incident-response.md`
    - Cloud accounts (org-level audit logs, log archive, responder roles, IR playbooks) → `kb/08-defensive/cloud-incident-response.md`
    - Endpoint and server fleet (EDR coverage, tamper protection, ASR/application control) → `kb/08-defensive/endpoint-security-and-edr.md`
+   - Virtualization hosts (management network, lockdown mode, Secure Boot/execInstalledOnly, AD join, backups) → `kb/04-cloud-infra/virtualization-and-hypervisor-security.md`
+   - VPNs, firewalls and other edge appliances (exposed management, KEV patching, off-box logs, compromise response) → `kb/02-network/edge-device-security.md`
 4. **Report**: table of findings – Severity (Critical/High/Med/Low/Info), Location (`file:line`), Issue, Fix. Be concrete; no speculative noise.
 5. **Fix**: apply safe fixes directly; add missing baseline files from `templates/`; for risky or breaking changes, ask first.
 6. **Verify**: re-run tests/linters/`audit.sh`; state what remains.

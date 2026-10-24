@@ -151,4 +151,4 @@ Trigger a benign `StopLogging` attempt, a root/Super Admin/break-glass sign-in, 
 - Google Cloud enterprise foundations blueprint; Organization Policy constraints list; Cloud Audit Logs docs (cloud.google.com)
 - Prowler: https://github.com/prowler-cloud/prowler · ScoutSuite: https://github.com/nccgroup/ScoutSuite · Steampipe: https://steampipe.io
 - Rhino Security Labs research on AWS and GCP IAM privilege escalation paths
-- See also `kb/04-cloud-infra/cloud-security.md`, `kb/04-cloud-infra/containers-kubernetes-iac.md`, `kb/05-identity-crypto/identity-access.md`, `kb/04-cloud-infra/serverless-security.md`, `kb/08-defensive/cloud-incident-response.md`
+- See also `kb/04-cloud-infra/cloud-security.md`, `kb/04-cloud-infra/containers-kubernetes-iac.md`, `kb/05-identity-crypto/identity-access.md`, `kb/04-cloud-infra/serverless-security.md`, `kb/08-defensive/cloud-incident-response.md`, `kb/03-application/server-side-request-forgery.md`

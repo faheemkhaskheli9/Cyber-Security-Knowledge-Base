@@ -78,6 +78,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **DLP** – Data Loss Prevention; detects and blocks sensitive data leaving via endpoint, email, web and cloud channels.
 - **DMARC alignment** – the domain that passed SPF/DKIM must match the visible From: domain (relaxed or strict).
 - **DMZ** – screened subnet between internet and internal network.
+- **DNS rebinding** – a hostname resolves to a public IP when checked and an internal IP when used, bypassing SSRF and same-origin checks; prevented by connecting to the checked IP or enforcing policy at an egress proxy.
 - **DNSSEC** – signed DNS records.
 - **DoH / DoT** – DNS over HTTPS / TLS.
 - **Double extortion** – ransomware that steals data before encrypting it and threatens to leak it if not paid.
@@ -87,8 +88,12 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 
 ## E
 - **ECC / ECDSA / ECDH** – elliptic-curve cryptography, signatures, key exchange.
+- **Edge device** – internet-facing appliance such as a VPN gateway, firewall, router or file-transfer server; a leading initial-access target that usually runs no EDR agent.
 - **EDR / XDR / MDR** – endpoint / extended detection & response / managed detection & response.
+- **Egress proxy** – outbound proxy that enforces which destinations servers may reach (for example blocking internal and metadata ranges for URL fetchers).
 - **EPSS** – Exploit Prediction Scoring System (probability of exploitation in 30 days).
+- **ESXi lockdown mode** – VMware host setting that forces management through vCenter and blocks direct host logins except listed exception users.
+- **execInstalledOnly** – ESXi setting that lets only binaries from installed, signed VIBs run, blocking dropped ransomware and tools.
 - **Exfiltration** – unauthorized data transfer out of an environment.
 
 ## F–H
@@ -110,6 +115,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **HSTS** – HTTP Strict Transport Security.
 - **HTML smuggling** – HTML/JS assembles a payload in the browser so mail and web gateways never see the file.
 - **HTTP request smuggling / desync** – front end and back end disagree on request boundaries (Content-Length vs Transfer-Encoding), so attacker bytes become the next request (CWE-444).
+- **Hypervisor (Type 1 / Type 2)** – software that runs virtual machines on bare metal (ESXi, Hyper-V, KVM) / as an application on a desktop OS (Workstation, VirtualBox).
 
 ## I–K
 - **IaC** – Infrastructure as Code.
@@ -157,6 +163,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **NTLM relay** – forwarding captured NTLM authentication to another service; blocked by signing, channel binding and EPA.
 
 ## O–P
+- **OAST** – Out-of-band Application Security Testing; detecting blind SSRF and injection through DNS/HTTP callbacks to a tester-controlled host (Burp Collaborator, interactsh).
 - **OAuth 2.0 / OIDC** – delegated authorization / identity layer on top.
 - **OSINT** – Open-Source Intelligence.
 - **OT / ICS / SCADA** – Operational Technology / Industrial Control Systems.
@@ -210,7 +217,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **SPIFFE / SPIRE / SVID** – workload identity standard / its reference implementation / the short-lived X.509 or JWT identity document.
 - **SQLi** – SQL injection.
 - **SSO / SAML** – Single Sign-On / XML-based federation protocol.
-- **SSRF** – Server-Side Request Forgery.
+- **SSRF** – Server-Side Request Forgery (CWE-918); the server is made to send requests to attacker-chosen destinations such as cloud metadata or internal services.
 - **SSPM** – SaaS Security Posture Management; continuous checks of SaaS tenant settings, users and integrations.
 - **SSTI** – Server-Side Template Injection; user input rendered as a template, often leading to RCE.
 - **STRIDE** – Spoofing, Tampering, Repudiation, Information disclosure, DoS, Elevation of privilege.
@@ -231,6 +238,8 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **UEFI** – Unified Extensible Firmware Interface; the firmware standard that replaced legacy BIOS.
 - **VDP** – Vulnerability Disclosure Policy.
 - **VEX** – Vulnerability Exploitability eXchange; statement of whether a product is affected by a vulnerability (`not_affected`, `affected`, `fixed`, `under_investigation`).
+- **VIB** – vSphere Installation Bundle; ESXi software package with an acceptance level (VMwareCertified to CommunitySupported); malicious VIBs have been used as hypervisor backdoors.
+- **VM escape** – code in a guest VM breaking out to run on the hypervisor host, usually through a virtual device or guest tools bug.
 - **VPC Service Controls** – GCP perimeter that blocks access to and exfiltration from Google-managed services outside approved projects.
 - **VPN / ZTNA** – Virtual Private Network / Zero Trust Network Access.
 - **WAF** – Web Application Firewall.

@@ -93,4 +93,4 @@ OS configuration baselines are in `kb/04-cloud-infra/os-hardening.md`; this file
 - Atomic Red Team: https://github.com/redcanaryco/atomic-red-team · EICAR test file: https://www.eicar.org
 - CIS Benchmarks: https://www.cisecurity.org/cis-benchmarks
 - CrowdStrike, Channel File 291 incident root cause analysis (August 2024); Microsoft, "Helping our customers through the CrowdStrike outage" (July 2024)
-- See also `kb/04-cloud-infra/os-hardening.md`, `kb/08-defensive/soc-detection-ir.md`, `kb/08-defensive/ransomware-resilience.md`, `kb/01-foundations/zero-trust-architecture.md`, `kb/04-cloud-infra/firmware-and-boot-security.md`, `kb/03-application/browser-extension-security.md`
+- See also `kb/04-cloud-infra/os-hardening.md`, `kb/08-defensive/soc-detection-ir.md`, `kb/08-defensive/ransomware-resilience.md`, `kb/01-foundations/zero-trust-architecture.md`, `kb/04-cloud-infra/firmware-and-boot-security.md`, `kb/03-application/browser-extension-security.md`, `kb/04-cloud-infra/virtualization-and-hypervisor-security.md`
