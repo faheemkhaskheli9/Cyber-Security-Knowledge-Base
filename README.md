@@ -14,8 +14,8 @@ For security-related ChatGPT tasks, start with this repository's topic index bel
 | `.claude/skills/secure-project-audit/` | Skill: audit any project against this KB and fix findings |
 | `kb/01-foundations` | CIA triad, threat modeling, risk, attacker frameworks (ATT&CK, kill chain), zero trust |
 | `kb/02-network` | Network defense, protocols, wireless, DNS, DDoS, email security |
-| `kb/03-application` | OWASP Top 10, API security, mobile, browser/client side |
-| `kb/04-cloud-infra` | Cloud (incl. AWS/Azure/GCP baselines), containers/Kubernetes, IaC, Linux/Windows hardening |
+| `kb/03-application` | OWASP Top 10, API security, mobile, browser/client side, HTTP request smuggling and web cache attacks |
+| `kb/04-cloud-infra` | Cloud (incl. AWS/Azure/GCP baselines), SaaS tenants, databases, containers/Kubernetes, IaC, Linux/Windows hardening |
 | `kb/05-identity-crypto` | IAM, authN/authZ, Active Directory, secrets, cryptography, PKI |
 | `kb/06-secure-sdlc` | Secure SDLC, supply chain, SAST/DAST, CI/CD security, secure code review |
 | `kb/07-offensive` | Pentesting methodology, red team, bug bounty, exploit concepts (authorized testing only) |
@@ -32,8 +32,8 @@ For security-related ChatGPT tasks, start with this repository's topic index bel
 |------|-------|
 | 01 Foundations | [core-concepts](kb/01-foundations/core-concepts.md) · [threat-modeling](kb/01-foundations/threat-modeling.md) · [frameworks-attack-models](kb/01-foundations/frameworks-attack-models.md) · [zero-trust-architecture](kb/01-foundations/zero-trust-architecture.md) |
 | 02 Network | [network-security](kb/02-network/network-security.md) · [wireless-dns-ddos](kb/02-network/wireless-dns-ddos.md) · [email-security](kb/02-network/email-security.md) |
-| 03 Application | [owasp-top10](kb/03-application/owasp-top10.md) · [api-security](kb/03-application/api-security.md) · [browser-client-side](kb/03-application/browser-client-side.md) · [mobile-and-client](kb/03-application/mobile-and-client.md) |
-| 04 Cloud & infra | [cloud-security](kb/04-cloud-infra/cloud-security.md) · [containers-kubernetes-iac](kb/04-cloud-infra/containers-kubernetes-iac.md) · [os-hardening](kb/04-cloud-infra/os-hardening.md) · [cloud-provider-baselines](kb/04-cloud-infra/cloud-provider-baselines.md) |
+| 03 Application | [owasp-top10](kb/03-application/owasp-top10.md) · [api-security](kb/03-application/api-security.md) · [browser-client-side](kb/03-application/browser-client-side.md) · [mobile-and-client](kb/03-application/mobile-and-client.md) · [http-request-smuggling-and-cache-attacks](kb/03-application/http-request-smuggling-and-cache-attacks.md) |
+| 04 Cloud & infra | [cloud-security](kb/04-cloud-infra/cloud-security.md) · [containers-kubernetes-iac](kb/04-cloud-infra/containers-kubernetes-iac.md) · [os-hardening](kb/04-cloud-infra/os-hardening.md) · [cloud-provider-baselines](kb/04-cloud-infra/cloud-provider-baselines.md) · [database-security](kb/04-cloud-infra/database-security.md) · [saas-security](kb/04-cloud-infra/saas-security.md) |
 | 05 Identity & crypto | [identity-access](kb/05-identity-crypto/identity-access.md) · [secrets-management](kb/05-identity-crypto/secrets-management.md) · [cryptography](kb/05-identity-crypto/cryptography.md) · [pki-and-tls](kb/05-identity-crypto/pki-and-tls.md) · [active-directory-security](kb/05-identity-crypto/active-directory-security.md) |
 | 06 Secure SDLC | [secure-sdlc-and-supply-chain](kb/06-secure-sdlc/secure-sdlc-and-supply-chain.md) · [cicd-security](kb/06-secure-sdlc/cicd-security.md) · [secure-code-review](kb/06-secure-sdlc/secure-code-review.md) · [security-logging-and-monitoring](kb/06-secure-sdlc/security-logging-and-monitoring.md) |
 | 07 Offensive | [pentest-methodology](kb/07-offensive/pentest-methodology.md) · [red-team-and-bug-bounty](kb/07-offensive/red-team-and-bug-bounty.md) |

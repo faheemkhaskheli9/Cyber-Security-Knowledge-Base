@@ -16,6 +16,7 @@ Locate the KB (this repo, or `$CYBERSEC_KB`, or `~/cybersec-kb`). Read the relev
    - AuthN/AuthZ on every endpoint, session/JWT handling → `identity-access.md`, `api-security.md`
    - Crypto misuse (weak hashes, hardcoded keys, `Math.random`) → `cryptography.md`
    - Dependencies & lockfiles → `kb/06-secure-sdlc/`
+   - Data stores (DB exposure, app DB roles, TLS, RLS, backups) → `kb/04-cloud-infra/database-security.md`
    - Dockerfile/K8s/IaC → `kb/04-cloud-infra/`
    - CI/CD workflows (permissions, pinned actions, secrets) → `kb/06-secure-sdlc/`
    - Logging, error handling, security headers, CORS → `kb/06-secure-sdlc/security-logging-and-monitoring.md`

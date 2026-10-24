@@ -52,4 +52,4 @@ Ransomware is extortion: an intruder gains access, escalates, moves laterally, s
 - MITRE ATT&CK T1486 Data Encrypted for Impact: https://attack.mitre.org/techniques/T1486/ · T1490 Inhibit System Recovery: https://attack.mitre.org/techniques/T1490/
 - CISA Known Exploited Vulnerabilities catalog: https://www.cisa.gov/known-exploited-vulnerabilities-catalog
 - No More Ransom (free decryptors): https://www.nomoreransom.org
-- See also `kb/08-defensive/dfir-malware-threat-intel.md`, `kb/05-identity-crypto/active-directory-security.md`
+- See also `kb/08-defensive/dfir-malware-threat-intel.md`, `kb/05-identity-crypto/active-directory-security.md`, `kb/04-cloud-infra/database-security.md`
