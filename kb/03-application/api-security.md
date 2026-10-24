@@ -52,7 +52,7 @@ Verify signature + `alg` allowlist (reject `none`), check `exp/aud/iss`, prefer 
 - Client credentials grant for service-to-service; prefer workload identity / mTLS over static API keys. API keys identify a client, they don't authenticate a user.
 
 ### GraphQL
-Disable introspection in prod, depth/complexity limits, per-field authZ, batching limits.
+In depth: `kb/03-application/graphql-security.md`. Disable introspection in prod, depth/complexity limits, per-field authZ, batching limits.
 - Example limits: max depth 10, query cost budget per request and per minute, max aliases ~15, max batch size ~10.
 - Persisted queries/operation allowlists for first-party clients; reject arbitrary queries in prod.
 - Disable field suggestions ("Did you mean ...") in prod; mask errors.
@@ -96,4 +96,4 @@ Disable introspection in prod, depth/complexity limits, per-field authZ, batchin
 - RFC 9700 OAuth 2.0 Security Best Current Practice: https://datatracker.ietf.org/doc/html/rfc9700
 - RFC 7636 PKCE: https://datatracker.ietf.org/doc/html/rfc7636
 - OpenAPI Specification: https://spec.openapis.org/oas/latest.html
-- See also `kb/05-identity-crypto/identity-access.md`, `kb/03-application/owasp-top10.md`, `kb/07-offensive/pentest-methodology.md`, `kb/03-application/http-request-smuggling-and-cache-attacks.md`, `kb/05-identity-crypto/oauth-oidc-security.md`
+- See also `kb/05-identity-crypto/identity-access.md`, `kb/03-application/owasp-top10.md`, `kb/07-offensive/pentest-methodology.md`, `kb/03-application/http-request-smuggling-and-cache-attacks.md`, `kb/05-identity-crypto/oauth-oidc-security.md`, `kb/03-application/graphql-security.md`

@@ -64,7 +64,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **DEP / NX** – Data Execution Prevention / No-eXecute bit.
 - **DFIR** – Digital Forensics and Incident Response.
 - **DKIM / SPF / DMARC** – email authentication standards (RFC 6376, RFC 7208, RFC 9989; RFC 9989 obsoletes RFC 7489).
-- **DLP** – Data Loss Prevention.
+- **DLP** – Data Loss Prevention; detects and blocks sensitive data leaving via endpoint, email, web and cloud channels.
 - **DMARC alignment** – the domain that passed SPF/DKIM must match the visible From: domain (relaxed or strict).
 - **DMZ** – screened subnet between internet and internal network.
 - **DNSSEC** – signed DNS records.
@@ -72,6 +72,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **Double extortion** – ransomware that steals data before encrypting it and threatens to leak it if not paid.
 - **DPA / DPIA** – Data Processing Agreement / Data Protection Impact Assessment.
 - **DPoP** – Demonstrating Proof of Possession (RFC 9449); binds OAuth tokens to a client-held key so a stolen token cannot be replayed alone.
+- **DSPM** – Data Security Posture Management; discovers and classifies sensitive data across cloud and SaaS stores and flags exposure.
 
 ## E
 - **ECC / ECDSA / ECDH** – elliptic-curve cryptography, signatures, key exchange.
@@ -89,6 +90,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **Gadget chain** – existing classes chained during deserialization to reach code execution.
 - **gMSA** – Group Managed Service Account; AD manages and rotates its long random password.
 - **Golden / Silver Ticket** – forged Kerberos TGT (krbtgt key) / service ticket (service or computer account key).
+- **GraphQL introspection** – built-in `__schema` / `__type` queries that return a GraphQL API's full schema; disable in production.
 - **GRC** – Governance, Risk, Compliance.
 - **HMAC** – keyed hash for message authentication.
 - **Honeypot** – decoy host or service; any connection to it is suspicious (low-interaction emulates a service, high-interaction is a real instrumented system).
@@ -103,6 +105,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **IDS / IPS** – Intrusion Detection / Prevention System.
 - **IMDS / IMDSv2** – cloud instance metadata service; IMDSv2 (AWS) adds session tokens that block most SSRF credential theft.
 - **Immutable backup** – backup copy that storage-level object lock or WORM media prevents anyone, including admins, from deleting or changing before its retention ends.
+- **Insider threat** – risk that someone with authorized access (employee, contractor, vendor) harms the organization, maliciously, negligently or by mistake.
 - **IOC / IOA** – Indicator of Compromise / Attack.
 - **IR** – Incident Response.
 - **ISMS** – Information Security Management System (ISO 27001).
@@ -145,6 +148,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **PAR** – OAuth Pushed Authorization Requests (RFC 9126); authorization parameters sent over a back channel instead of the browser URL.
 - **PAW / Tier 0** – Privileged Access Workstation / the identity control plane (DCs, AD CS, Entra Connect) in the Enterprise Access Model.
 - **PE / PA / PEP / PDP** – Policy Engine / Policy Administrator / Policy Enforcement Point; PE + PA = Policy Decision Point (NIST SP 800-207).
+- **Persisted queries / Trusted documents** – GraphQL operations registered at build time; production accepts only their IDs, blocking arbitrary queries (automatic persisted queries are caching, not a control).
 - **Persistence** – attacker mechanisms to survive reboot/credential change.
 - **Phishing / Spear-phishing / Smishing / Vishing** – social engineering via email / targeted / SMS / voice.
 - **PII / PHI** – Personally Identifiable / Protected Health Information.
@@ -171,6 +175,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 ## S
 - **SASE / SSE** – Secure Access Service Edge / Security Service Edge.
 - **Secure Boot (UEFI)** – firmware verifies boot components against allowed (`db`) and revoked (`dbx`) signatures; keys are PK and KEK.
+- **Separation of duties** – no single person can complete a sensitive action (payment, production change, backup deletion) alone.
 - **SBOM** – Software Bill of Materials (SPDX, CycloneDX).
 - **SCIM** – System for Cross-domain Identity Management; standard API for provisioning and deprovisioning users in SaaS apps (RFC 7643, 7644).
 - **SCP** – AWS Service Control Policy; caps maximum permissions in member accounts, never grants.
@@ -194,6 +199,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **Thread hijacking** – replying inside a real email conversation from a compromised mailbox to borrow its trust.
 - **TLS** – Transport Layer Security (use 1.2+; prefer 1.3).
 - **TLS-RPT** – daily reports from senders about TLS delivery failures to your domain (RFC 8460).
+- **Tokenization** – replacing a sensitive value (card number) with a meaningless token; the mapping is kept in a separately secured vault.
 - **TOTP / HOTP** – time / counter-based one-time passwords.
 - **TPM** – Trusted Platform Module.
 - **TTP** – Tactics, Techniques, and Procedures.

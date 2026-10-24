@@ -135,4 +135,4 @@ Phishing simulations, role-based training, reporting culture without blame. See 
 - GDPR text: https://eur-lex.europa.eu/eli/reg/2016/679/oj · HHS HIPAA: https://www.hhs.gov/hipaa/index.html
 - CCPA/CPRA: https://oag.ca.gov/privacy/ccpa · ENISA (NIS2 guidance): https://www.enisa.europa.eu
 - AICPA SOC 2 Trust Services Criteria · FAIR Institute: https://www.fairinstitute.org
-- See also `kb/09-governance/vulnerability-management.md`, `kb/01-foundations/frameworks-attack-models.md`, `kb/08-defensive/soc-detection-ir.md`, `templates/`, `kb/04-cloud-infra/saas-security.md`, `kb/04-cloud-infra/database-security.md`, `kb/09-governance/third-party-risk-management.md`
+- See also `kb/09-governance/vulnerability-management.md`, `kb/01-foundations/frameworks-attack-models.md`, `kb/08-defensive/soc-detection-ir.md`, `templates/`, `kb/04-cloud-infra/saas-security.md`, `kb/04-cloud-infra/database-security.md`, `kb/09-governance/third-party-risk-management.md`, `kb/09-governance/data-security-and-dlp.md`

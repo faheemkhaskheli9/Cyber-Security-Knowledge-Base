@@ -120,4 +120,4 @@ Design rules:
 - SPIFFE / SPIRE: https://spiffe.io
 - OpenID Shared Signals Framework (CAEP, RISC), OpenID Foundation
 - CISA Known Exploited Vulnerabilities: https://www.cisa.gov/known-exploited-vulnerabilities-catalog
-- See also `kb/05-identity-crypto/identity-access.md`, `kb/02-network/network-security.md`, `kb/04-cloud-infra/cloud-security.md`, `kb/01-foundations/core-concepts.md`
+- See also `kb/05-identity-crypto/identity-access.md`, `kb/02-network/network-security.md`, `kb/04-cloud-infra/cloud-security.md`, `kb/01-foundations/core-concepts.md`, `kb/09-governance/data-security-and-dlp.md`

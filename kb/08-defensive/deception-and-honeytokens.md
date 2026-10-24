@@ -70,4 +70,4 @@ MITRE Engage is the reference framework for planning adversary engagement, decep
 - Canarytokens (open source, self-hostable): https://github.com/thinkst/canarytokens
 - Microsoft Learn, Event 4769 (A Kerberos service ticket was requested): https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4769
 - MITRE ATT&CK T1558.003 (Kerberoasting), T1552 (Unsecured Credentials), T1087 (Account Discovery)
-- See also `kb/08-defensive/soc-detection-ir.md`, `kb/05-identity-crypto/active-directory-security.md`, `kb/02-network/network-security.md`
+- See also `kb/08-defensive/soc-detection-ir.md`, `kb/05-identity-crypto/active-directory-security.md`, `kb/02-network/network-security.md`, `kb/08-defensive/insider-threat.md`

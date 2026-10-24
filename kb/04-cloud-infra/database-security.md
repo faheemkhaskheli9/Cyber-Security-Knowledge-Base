@@ -104,4 +104,4 @@ Protecting the database tier itself: relational engines (PostgreSQL, MySQL/Maria
 - CIS Benchmarks (database engines): https://www.cisecurity.org/cis-benchmarks
 - NIST SP 800-53 Rev. 5 (AC-6 least privilege, AU-2 event logging, SC-8 transmission confidentiality, SC-28 protection of information at rest)
 - MITRE ATT&CK T1190 (Exploit Public-Facing Application), T1213 (Data from Information Repositories), T1485 (Data Destruction)
-- See also `kb/04-cloud-infra/cloud-security.md`, `kb/05-identity-crypto/secrets-management.md`, `kb/03-application/owasp-top10.md`, `kb/08-defensive/ransomware-resilience.md`
+- See also `kb/04-cloud-infra/cloud-security.md`, `kb/05-identity-crypto/secrets-management.md`, `kb/03-application/owasp-top10.md`, `kb/08-defensive/ransomware-resilience.md`, `kb/09-governance/data-security-and-dlp.md`
