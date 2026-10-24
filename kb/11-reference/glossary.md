@@ -56,7 +56,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **DDoS** – Distributed Denial of Service.
 - **DEP / NX** – Data Execution Prevention / No-eXecute bit.
 - **DFIR** – Digital Forensics and Incident Response.
-- **DKIM / SPF / DMARC** – email authentication standards.
+- **DKIM / SPF / DMARC** – email authentication standards (RFC 6376, RFC 7208, RFC 9989; RFC 9989 obsoletes RFC 7489).
 - **DLP** – Data Loss Prevention.
 - **DMARC alignment** – the domain that passed SPF/DKIM must match the visible From: domain (relaxed or strict).
 - **DMZ** – screened subnet between internet and internal network.
