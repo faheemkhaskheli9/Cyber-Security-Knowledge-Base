@@ -71,7 +71,7 @@ Each attack is described at concept level only and paired with its defense and d
 - Monitor the Entra audit logs for: new federated domains, changes to federation settings, PTA agent registrations, and role assignments.
 
 ### Monitoring (Windows event IDs)
-Enable "Advanced Audit Policy" (Kerberos, Account Logon/Management, DS Access with SACLs) on DCs and forward the events to the SIEM (see `kb/08-defensive/soc-detection-ir.md`). Microsoft Defender for Identity covers many of these out of the box.
+Enable "Advanced Audit Policy" (Kerberos, Account Logon/Management, DS Access with SACLs) on DCs and forward the events to the SIEM (see `kb/08-defensive/soc-detection-ir.md`, `kb/08-defensive/deception-and-honeytokens.md`). Microsoft Defender for Identity covers many of these out of the box.
 
 | Event | Watch for |
 |---|---|

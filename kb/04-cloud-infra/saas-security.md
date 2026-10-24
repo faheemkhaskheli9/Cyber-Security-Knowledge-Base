@@ -1,7 +1,7 @@
 # SaaS Security (Tenant Configuration and Integrations)
 
 ## What
-Securing the software-as-a-service applications an organization subscribes to: productivity suites (Microsoft 365, Google Workspace), CRM (Salesforce), code hosting (GitHub, GitLab), data platforms (Snowflake), chat, HR and finance tools. The provider secures the platform; the customer owns identities, tenant settings, sharing, data, and every third-party integration connected to the tenant. **SSPM** (SaaS Security Posture Management) is the tool category that checks these settings continuously. Vendor due diligence and contracts are in `kb/09-governance/grc-compliance-privacy.md`; this file covers the technical controls inside each tenant.
+Securing the software-as-a-service applications an organization subscribes to: productivity suites (Microsoft 365, Google Workspace), CRM (Salesforce), code hosting (GitHub, GitLab), data platforms (Snowflake), chat, HR and finance tools. The provider secures the platform; the customer owns identities, tenant settings, sharing, data, and every third-party integration connected to the tenant. **SSPM** (SaaS Security Posture Management) is the tool category that checks these settings continuously. Vendor due diligence and contracts are in `kb/09-governance/grc-compliance-privacy.md`, `kb/05-identity-crypto/oauth-oidc-security.md`, `kb/09-governance/third-party-risk-management.md`; this file covers the technical controls inside each tenant.
 
 ## Why it matters
 - Most business data now lives in SaaS, reached from any network with a browser, so identity and tenant configuration are the main controls.

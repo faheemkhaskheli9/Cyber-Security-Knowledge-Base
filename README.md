@@ -16,11 +16,11 @@ For security-related ChatGPT tasks, start with this repository's topic index bel
 | `kb/02-network` | Network defense, protocols, wireless, DNS, DDoS, email security |
 | `kb/03-application` | OWASP Top 10, API security, mobile, browser/client side, HTTP request smuggling and web cache attacks |
 | `kb/04-cloud-infra` | Cloud (incl. AWS/Azure/GCP baselines), serverless, SaaS tenants, databases, containers/Kubernetes, IaC, Linux/Windows hardening, firmware and boot security |
-| `kb/05-identity-crypto` | IAM, authN/authZ, Active Directory, secrets, cryptography, PKI |
+| `kb/05-identity-crypto` | IAM, authN/authZ, OAuth 2.0/OIDC, Active Directory, secrets, cryptography, PKI |
 | `kb/06-secure-sdlc` | Secure SDLC, supply chain, SAST/DAST, CI/CD security, secure code review, memory safety |
 | `kb/07-offensive` | Pentesting methodology, red team, bug bounty, exploit concepts (authorized testing only) |
-| `kb/08-defensive` | SOC, detection engineering, incident response, DFIR, malware analysis, threat intel |
-| `kb/09-governance` | GRC, compliance (ISO 27001, SOC 2, NIST, PCI, GDPR), privacy, vulnerability management |
+| `kb/08-defensive` | SOC, detection engineering, incident response, DFIR, malware analysis, threat intel, deception and honeytokens |
+| `kb/09-governance` | GRC, compliance (ISO 27001, SOC 2, NIST, PCI, GDPR), privacy, vulnerability management, third-party/vendor risk |
 | `kb/10-emerging` | AI/LLM security, IoT/OT, quantum, social engineering, physical |
 | `kb/11-reference` | Glossary, tools, learning paths, cheat sheets |
 | `templates/` | Drop-in `SECURITY.md`, Dependabot, CodeQL, gitleaks, pre-commit, CLAUDE security snippet |
@@ -34,11 +34,11 @@ For security-related ChatGPT tasks, start with this repository's topic index bel
 | 02 Network | [network-security](kb/02-network/network-security.md) · [wireless-dns-ddos](kb/02-network/wireless-dns-ddos.md) · [email-security](kb/02-network/email-security.md) |
 | 03 Application | [owasp-top10](kb/03-application/owasp-top10.md) · [api-security](kb/03-application/api-security.md) · [browser-client-side](kb/03-application/browser-client-side.md) · [mobile-and-client](kb/03-application/mobile-and-client.md) · [http-request-smuggling-and-cache-attacks](kb/03-application/http-request-smuggling-and-cache-attacks.md) |
 | 04 Cloud & infra | [cloud-security](kb/04-cloud-infra/cloud-security.md) · [containers-kubernetes-iac](kb/04-cloud-infra/containers-kubernetes-iac.md) · [os-hardening](kb/04-cloud-infra/os-hardening.md) · [cloud-provider-baselines](kb/04-cloud-infra/cloud-provider-baselines.md) · [database-security](kb/04-cloud-infra/database-security.md) · [saas-security](kb/04-cloud-infra/saas-security.md) · [serverless-security](kb/04-cloud-infra/serverless-security.md) · [firmware-and-boot-security](kb/04-cloud-infra/firmware-and-boot-security.md) |
-| 05 Identity & crypto | [identity-access](kb/05-identity-crypto/identity-access.md) · [secrets-management](kb/05-identity-crypto/secrets-management.md) · [cryptography](kb/05-identity-crypto/cryptography.md) · [pki-and-tls](kb/05-identity-crypto/pki-and-tls.md) · [active-directory-security](kb/05-identity-crypto/active-directory-security.md) |
+| 05 Identity & crypto | [identity-access](kb/05-identity-crypto/identity-access.md) · [secrets-management](kb/05-identity-crypto/secrets-management.md) · [cryptography](kb/05-identity-crypto/cryptography.md) · [pki-and-tls](kb/05-identity-crypto/pki-and-tls.md) · [active-directory-security](kb/05-identity-crypto/active-directory-security.md) · [oauth-oidc-security](kb/05-identity-crypto/oauth-oidc-security.md) |
 | 06 Secure SDLC | [secure-sdlc-and-supply-chain](kb/06-secure-sdlc/secure-sdlc-and-supply-chain.md) · [cicd-security](kb/06-secure-sdlc/cicd-security.md) · [secure-code-review](kb/06-secure-sdlc/secure-code-review.md) · [security-logging-and-monitoring](kb/06-secure-sdlc/security-logging-and-monitoring.md) · [memory-safety](kb/06-secure-sdlc/memory-safety.md) |
 | 07 Offensive | [pentest-methodology](kb/07-offensive/pentest-methodology.md) · [red-team-and-bug-bounty](kb/07-offensive/red-team-and-bug-bounty.md) |
-| 08 Defensive | [soc-detection-ir](kb/08-defensive/soc-detection-ir.md) · [dfir-malware-threat-intel](kb/08-defensive/dfir-malware-threat-intel.md) · [ransomware-resilience](kb/08-defensive/ransomware-resilience.md) |
-| 09 Governance | [grc-compliance-privacy](kb/09-governance/grc-compliance-privacy.md) · [vulnerability-management](kb/09-governance/vulnerability-management.md) |
+| 08 Defensive | [soc-detection-ir](kb/08-defensive/soc-detection-ir.md) · [dfir-malware-threat-intel](kb/08-defensive/dfir-malware-threat-intel.md) · [ransomware-resilience](kb/08-defensive/ransomware-resilience.md) · [deception-and-honeytokens](kb/08-defensive/deception-and-honeytokens.md) |
+| 09 Governance | [grc-compliance-privacy](kb/09-governance/grc-compliance-privacy.md) · [vulnerability-management](kb/09-governance/vulnerability-management.md) · [third-party-risk-management](kb/09-governance/third-party-risk-management.md) |
 | 10 Emerging | [ai-llm-security](kb/10-emerging/ai-llm-security.md) · [iot-ot-social-physical](kb/10-emerging/iot-ot-social-physical.md) · [post-quantum-cryptography](kb/10-emerging/post-quantum-cryptography.md) |
 | 11 Reference | [glossary](kb/11-reference/glossary.md) · [tools-and-cheatsheets](kb/11-reference/tools-and-cheatsheets.md) · [learning-paths-and-resources](kb/11-reference/learning-paths-and-resources.md) |
 

@@ -14,6 +14,7 @@ Locate the KB (this repo, or `$CYBERSEC_KB`, or `~/cybersec-kb`). Read the relev
    - Secrets in code/history/config → `kb/05-identity-crypto/secrets-management.md`
    - Injection, XSS, SSRF, path traversal, deserialization, command exec
    - AuthN/AuthZ on every endpoint, session/JWT handling → `identity-access.md`, `api-security.md`
+   - OAuth/OIDC clients and servers (redirect URIs, PKCE, token validation and storage) → `kb/05-identity-crypto/oauth-oidc-security.md`
    - Crypto misuse (weak hashes, hardcoded keys, `Math.random`) → `cryptography.md`
    - Dependencies & lockfiles → `kb/06-secure-sdlc/`
    - Data stores (DB exposure, app DB roles, TLS, RLS, backups) → `kb/04-cloud-infra/database-security.md`

@@ -34,6 +34,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **C2 / C&C** – Command and Control infrastructure.
 - **CA** – Certificate Authority.
 - **CAE / CAEP** – Continuous Access Evaluation / OpenID Shared Signals profile; revoke sessions in near real time on risk change.
+- **Canary token / Honeytoken** – fake credential, file, URL or record with no legitimate use that alerts when touched.
 - **CASB** – Cloud Access Security Broker.
 - **CIA triad** – Confidentiality, Integrity, Availability.
 - **CIS Benchmarks / Controls** – consensus hardening guides / prioritized control set.
@@ -51,6 +52,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **CVSS** – Common Vulnerability Scoring System (severity, not risk).
 - **CWE** – Common Weakness Enumeration.
 - **CWPP** – Cloud Workload Protection Platform.
+- **C-SCRM / TPRM** – Cybersecurity Supply Chain Risk Management (NIST SP 800-161) / Third-Party Risk Management; assessing, contracting for and monitoring suppliers.
 
 ## D
 - **DANE / TLSA** – DNSSEC-signed record pinning the certificate or key a TLS server must present (RFC 6698, 7672).
@@ -58,6 +60,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **DCSync** – abusing AD replication rights to pull password hashes (incl. krbtgt) from a domain controller.
 - **DDoS** – Distributed Denial of Service.
 - **Denial of wallet** – abusing auto-scaling (serverless, cloud) to run up the victim's bill instead of taking the service down.
+- **Device code phishing** – attacker starts an OAuth device authorization flow (RFC 8628) and lures the victim into entering the code, receiving the victim's tokens.
 - **DEP / NX** – Data Execution Prevention / No-eXecute bit.
 - **DFIR** – Digital Forensics and Incident Response.
 - **DKIM / SPF / DMARC** – email authentication standards (RFC 6376, RFC 7208, RFC 9989; RFC 9989 obsoletes RFC 7489).
@@ -68,6 +71,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **DoH / DoT** – DNS over HTTPS / TLS.
 - **Double extortion** – ransomware that steals data before encrypting it and threatens to leak it if not paid.
 - **DPA / DPIA** – Data Processing Agreement / Data Protection Impact Assessment.
+- **DPoP** – Demonstrating Proof of Possession (RFC 9449); binds OAuth tokens to a client-held key so a stolen token cannot be replayed alone.
 
 ## E
 - **ECC / ECDSA / ECDH** – elliptic-curve cryptography, signatures, key exchange.
@@ -79,6 +83,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **FaaS / Serverless** – Functions as a Service (AWS Lambda, Azure Functions, Cloud Run functions); provider runs the host, customer owns code, identity and triggers.
 - **FIDO2 / WebAuthn / Passkey** – phishing-resistant public-key authentication.
 - **FIM** – File Integrity Monitoring.
+- **Fourth party** – a supplier's own supplier or subprocessor; a source of hidden concentration risk.
 - **Format string vulnerability** – user input used as a printf-style format; can leak or write memory.
 - **Fuzzing** – feeding malformed/random input to find crashes and bugs.
 - **Gadget chain** – existing classes chained during deserialization to reach code execution.
@@ -86,6 +91,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **Golden / Silver Ticket** – forged Kerberos TGT (krbtgt key) / service ticket (service or computer account key).
 - **GRC** – Governance, Risk, Compliance.
 - **HMAC** – keyed hash for message authentication.
+- **Honeypot** – decoy host or service; any connection to it is suspicious (low-interaction emulates a service, high-interaction is a real instrumented system).
 - **HSM** – Hardware Security Module.
 - **HSTS** – HTTP Strict Transport Security.
 - **HTML smuggling** – HTML/JS assembles a payload in the browser so mail and web gateways never see the file.
@@ -136,6 +142,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **OT / ICS / SCADA** – Operational Technology / Industrial Control Systems.
 - **OWASP** – Open Worldwide Application Security Project.
 - **PAM** – Privileged Access Management (also Pluggable Authentication Modules on Linux).
+- **PAR** – OAuth Pushed Authorization Requests (RFC 9126); authorization parameters sent over a back channel instead of the browser URL.
 - **PAW / Tier 0** – Privileged Access Workstation / the identity control plane (DCs, AD CS, Entra Connect) in the Enterprise Access Model.
 - **PE / PA / PEP / PDP** – Policy Engine / Policy Administrator / Policy Enforcement Point; PE + PA = Policy Decision Point (NIST SP 800-207).
 - **Persistence** – attacker mechanisms to survive reboot/credential change.
@@ -172,6 +179,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **Sigma / YARA / Snort** – detection rule formats for logs / files / network.
 - **SLSA** – Supply-chain Levels for Software Artifacts.
 - **SOC** – Security Operations Center; also SOC 2 audit report.
+- **SOC 2 Type II / CUEC** – auditor's report on a service organization's controls over a period / complementary user entity controls the customer must operate itself.
 - **Source / Sink / Taint analysis** – where untrusted data enters / where it can do harm / tracking data from one to the other.
 - **SPIFFE / SPIRE / SVID** – workload identity standard / its reference implementation / the short-lived X.509 or JWT identity document.
 - **SQLi** – SQL injection.
