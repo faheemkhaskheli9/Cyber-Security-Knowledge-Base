@@ -12,6 +12,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **APT** – Advanced Persistent Threat; well-resourced, long-term intrusion actor.
 - **ARC** – Authenticated Received Chain; forwarders sign the auth results they saw so mail survives forwarding (RFC 8617).
 - **AS-REP roasting** – cracking the AS-REP returned for AD accounts that do not require Kerberos preauthentication.
+- **ASan / UBSan / MSan / TSan** – Address / UndefinedBehavior / Memory / Thread Sanitizer; compiler instrumentation that catches memory and concurrency bugs in tests.
 - **ASLR** – Address Space Layout Randomization; memory-corruption mitigation.
 - **ASM** – Attack Surface Management; continuous discovery of exposed assets.
 - **ATO** – Account Takeover; also Authority To Operate (US gov).
@@ -21,7 +22,9 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **BEC** – Business Email Compromise.
 - **BeyondCorp** – Google's zero trust model: access proxy plus device inventory and user identity instead of a VPN.
 - **BIMI** – Brand Indicators for Message Identification; shows a verified logo, requires DMARC at enforcement.
+- **BMC** – Baseboard Management Controller (iDRAC, iLO); out-of-band server management with full control of the host; keep on an isolated network.
 - **BOLA / IDOR** – Broken Object Level Authorization / Insecure Direct Object Reference.
+- **Bootkit** – malware that runs in the boot chain (boot loader or firmware) before the OS and its defenses load.
 - **Botnet** – network of compromised hosts under attacker control.
 - **Break-glass account** – emergency admin account with strong MFA, kept for IdP outages and alerted on every use.
 - **Brute force / Credential stuffing** – guessing passwords / replaying leaked credential pairs.
@@ -54,6 +57,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **DAST / SAST / IAST / SCA** – dynamic / static / interactive app testing / software composition analysis.
 - **DCSync** – abusing AD replication rights to pull password hashes (incl. krbtgt) from a domain controller.
 - **DDoS** – Distributed Denial of Service.
+- **Denial of wallet** – abusing auto-scaling (serverless, cloud) to run up the victim's bill instead of taking the service down.
 - **DEP / NX** – Data Execution Prevention / No-eXecute bit.
 - **DFIR** – Digital Forensics and Incident Response.
 - **DKIM / SPF / DMARC** – email authentication standards (RFC 6376, RFC 7208, RFC 9989; RFC 9989 obsoletes RFC 7489).
@@ -72,6 +76,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **Exfiltration** – unauthorized data transfer out of an environment.
 
 ## F–H
+- **FaaS / Serverless** – Functions as a Service (AWS Lambda, Azure Functions, Cloud Run functions); provider runs the host, customer owns code, identity and triggers.
 - **FIDO2 / WebAuthn / Passkey** – phishing-resistant public-key authentication.
 - **FIM** – File Integrity Monitoring.
 - **Format string vulnerability** – user input used as a printf-style format; can leak or write memory.
@@ -111,9 +116,12 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **LOLBin / LOTL** – Living-off-the-Land binary / technique (abusing built-in tools).
 - **Log injection** – user input with CR/LF or forged fields that writes fake log entries; prevented by structured logging and encoding.
 - **Managed identity** – Azure-managed identity for a resource; no secret to store or rotate.
+- **Measured boot** – each boot stage records a hash of the next in TPM PCRs so the boot chain can be attested or bound to disk-encryption keys.
+- **Memory safety roadmap** – a software producer's published plan to move products to memory-safe languages and reduce risk in remaining C/C++ (CISA Secure by Design).
 - **MFA** – Multi-Factor Authentication.
 - **Microsegmentation** – identity/label-based allow rules between workloads; east-west denied by default.
 - **MITM / AitM** – (Adversary-)in-the-Middle.
+- **MSL / Memory-safe language** – language that prevents out-of-bounds and use-after-free bugs by construction (Rust, Go, Java, C#, Swift, Python).
 - **MTA-STS** – policy (DNS + HTTPS) requiring senders to use validated TLS to your MX hosts (RFC 8461).
 - **mTLS** – mutual TLS; both sides present certificates.
 - **NAC** – Network Access Control.
@@ -155,6 +163,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 
 ## S
 - **SASE / SSE** – Secure Access Service Edge / Security Service Edge.
+- **Secure Boot (UEFI)** – firmware verifies boot components against allowed (`db`) and revoked (`dbx`) signatures; keys are PK and KEK.
 - **SBOM** – Software Bill of Materials (SPDX, CycloneDX).
 - **SCIM** – System for Cross-domain Identity Management; standard API for provisioning and deprovisioning users in SaaS apps (RFC 7643, 7644).
 - **SCP** – AWS Service Control Policy; caps maximum permissions in member accounts, never grants.
@@ -180,7 +189,9 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **TOTP / HOTP** – time / counter-based one-time passwords.
 - **TPM** – Trusted Platform Module.
 - **TTP** – Tactics, Techniques, and Procedures.
+- **UAF** – Use After Free (CWE-416); memory used after it is freed, often exploitable for code execution.
 - **UEBA** – User and Entity Behavior Analytics.
+- **UEFI** – Unified Extensible Firmware Interface; the firmware standard that replaced legacy BIOS.
 - **VDP** – Vulnerability Disclosure Policy.
 - **VPC Service Controls** – GCP perimeter that blocks access to and exfiltration from Google-managed services outside approved projects.
 - **VPN / ZTNA** – Virtual Private Network / Zero Trust Network Access.

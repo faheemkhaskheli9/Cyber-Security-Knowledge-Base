@@ -98,4 +98,4 @@ Building security into every phase of software delivery and controlling everythi
 - CycloneDX: https://cyclonedx.org · SPDX: https://spdx.dev
 - OpenSSF Scorecard: https://github.com/ossf/scorecard · OSV: https://osv.dev
 - CISA Secure by Design: https://www.cisa.gov/securebydesign
-- See also `kb/06-secure-sdlc/cicd-security.md`, `kb/09-governance/vulnerability-management.md`, `templates/`
+- See also `kb/06-secure-sdlc/cicd-security.md`, `kb/09-governance/vulnerability-management.md`, `kb/06-secure-sdlc/memory-safety.md`, `templates/`

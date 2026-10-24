@@ -205,4 +205,4 @@ Deserialization and XXE fixes (pickle → schema-validated JSON, `ObjectInputFil
 - MITRE CWE Top 25: https://cwe.mitre.org/top25/
 - Semgrep docs and registry: https://semgrep.dev/docs/ · CodeQL docs: https://codeql.github.com/docs/
 - NIST SP 800-218 SSDF (PW.7): https://csrc.nist.gov/pubs/sp/800/218/final
-- See also `kb/06-secure-sdlc/secure-sdlc-and-supply-chain.md`, `kb/03-application/owasp-top10.md`, `kb/03-application/browser-client-side.md`, `kb/06-secure-sdlc/cicd-security.md`
+- See also `kb/06-secure-sdlc/secure-sdlc-and-supply-chain.md`, `kb/03-application/owasp-top10.md`, `kb/03-application/browser-client-side.md`, `kb/06-secure-sdlc/cicd-security.md`, `kb/06-secure-sdlc/memory-safety.md`

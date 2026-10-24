@@ -98,7 +98,7 @@ Protecting the database tier itself: relational engines (PostgreSQL, MySQL/Maria
 ## References
 - OWASP Database Security Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/Database_Security_Cheat_Sheet.html
 - PostgreSQL docs, Client Authentication: https://www.postgresql.org/docs/current/client-authentication.html · Row Security Policies: https://www.postgresql.org/docs/current/ddl-rowsecurity.html · Secure TCP/IP Connections with SSL: https://www.postgresql.org/docs/current/ssl-tcp.html
-- MySQL Security Guidelines: https://dev.mysql.com/doc/refman/8.0/en/security-guidelines.html
+- MySQL 8.4 Reference Manual, Security Guidelines: https://dev.mysql.com/doc/refman/8.4/en/security-guidelines.html
 - MongoDB Security Checklist: https://www.mongodb.com/docs/manual/administration/security-checklist/
 - Redis security: https://redis.io/docs/latest/operate/oss_and_stack/management/security/
 - CIS Benchmarks (database engines): https://www.cisecurity.org/cis-benchmarks
