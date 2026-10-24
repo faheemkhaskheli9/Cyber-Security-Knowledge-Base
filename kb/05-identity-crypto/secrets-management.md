@@ -94,4 +94,4 @@ Scope the cloud trust policy `sub` claim to the repo and branch/environment (e.g
 - GitHub docs: secret scanning and push protection; "Configuring OpenID Connect in cloud providers"
 - Gitleaks: https://github.com/gitleaks/gitleaks · TruffleHog: https://github.com/trufflesecurity/trufflehog · SOPS: https://github.com/getsops/sops
 - Canarytokens: https://canarytokens.org
-- See also `kb/06-secure-sdlc/cicd-security.md`, `kb/05-identity-crypto/cryptography.md`, `kb/04-cloud-infra/containers-kubernetes-iac.md`, `templates/pre-commit-config.yaml`, `templates/gitleaks.yml`
+- See also `kb/06-secure-sdlc/cicd-security.md`, `kb/05-identity-crypto/cryptography.md`, `kb/04-cloud-infra/containers-kubernetes-iac.md`, `templates/pre-commit-config.yaml`, `templates/gitleaks.yml`, `kb/04-cloud-infra/database-security.md`

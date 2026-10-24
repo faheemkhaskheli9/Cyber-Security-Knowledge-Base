@@ -84,6 +84,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **HSM** – Hardware Security Module.
 - **HSTS** – HTTP Strict Transport Security.
 - **HTML smuggling** – HTML/JS assembles a payload in the browser so mail and web gateways never see the file.
+- **HTTP request smuggling / desync** – front end and back end disagree on request boundaries (Content-Length vs Transfer-Encoding), so attacker bytes become the next request (CWE-444).
 
 ## I–K
 - **IaC** – Infrastructure as Code.
@@ -148,13 +149,16 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **RCP** – AWS Resource Control Policy; org-level cap on permissions allowed on resources.
 - **Red / Blue team** – adversary emulation / defenders.
 - **ReDoS** – Regular-expression Denial of Service via catastrophic backtracking.
+- **RLS** – Row-Level Security; database policies that filter which rows a role can read or change (e.g. per tenant).
 - **RPO / RTO** – Recovery Point / Recovery Time Objective.
 - **RSA** – public-key algorithm (≥ 3072-bit for new keys).
 
 ## S
 - **SASE / SSE** – Secure Access Service Edge / Security Service Edge.
 - **SBOM** – Software Bill of Materials (SPDX, CycloneDX).
+- **SCIM** – System for Cross-domain Identity Management; standard API for provisioning and deprovisioning users in SaaS apps (RFC 7643, 7644).
 - **SCP** – AWS Service Control Policy; caps maximum permissions in member accounts, never grants.
+- **SCuBA** – CISA Secure Cloud Business Applications; secure configuration baselines for Microsoft 365 and Google Workspace.
 - **SIEM / SOAR** – log analytics & correlation / security orchestration & automated response.
 - **Sigma / YARA / Snort** – detection rule formats for logs / files / network.
 - **SLSA** – Supply-chain Levels for Software Artifacts.
@@ -164,10 +168,12 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **SQLi** – SQL injection.
 - **SSO / SAML** – Single Sign-On / XML-based federation protocol.
 - **SSRF** – Server-Side Request Forgery.
+- **SSPM** – SaaS Security Posture Management; continuous checks of SaaS tenant settings, users and integrations.
 - **SSTI** – Server-Side Template Injection; user input rendered as a template, often leading to RCE.
 - **STRIDE** – Spoofing, Tampering, Repudiation, Information disclosure, DoS, Elevation of privilege.
 
 ## T–Z
+- **TDE** – Transparent Data Encryption; database encrypts its files at rest; does not protect against SQL access.
 - **Thread hijacking** – replying inside a real email conversation from a compromised mailbox to borrow its trust.
 - **TLS** – Transport Layer Security (use 1.2+; prefer 1.3).
 - **TLS-RPT** – daily reports from senders about TLS delivery failures to your domain (RFC 8460).
@@ -179,6 +185,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **VPC Service Controls** – GCP perimeter that blocks access to and exfiltration from Google-managed services outside approved projects.
 - **VPN / ZTNA** – Virtual Private Network / Zero Trust Network Access.
 - **WAF** – Web Application Firewall.
+- **Web cache poisoning / deception** – an unkeyed input poisons a shared cached response / a private page is cached as a public static asset.
 - **Workload identity federation** – exchanging an external OIDC/SAML token (e.g. GitHub Actions) for short-lived cloud credentials.
 - **XSS** – Cross-Site Scripting (reflected, stored, DOM).
 - **XXE** – XML External Entity injection.
