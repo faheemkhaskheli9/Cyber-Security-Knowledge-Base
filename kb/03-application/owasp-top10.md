@@ -143,7 +143,7 @@ f.setXIncludeAware(false); f.setExpandEntityReferences(false);
 - Lockfiles, SCA in CI (Dependabot, `npm audit`, `pip-audit`, OSV-Scanner, Trivy), SBOM per build, remove unused deps, track EOL runtimes. See `kb/06-secure-sdlc/secure-sdlc-and-supply-chain.md`, `kb/09-governance/vulnerability-management.md`.
 
 ### A07: authentication
-- MFA (phishing-resistant/passkeys for admins), rate limiting and progressive delays, breached-password check (k-anonymity API), no composition rules or forced rotation (NIST SP 800-63B), regenerate session ID on login, server-side logout, idle and absolute timeouts. See `kb/05-identity-crypto/identity-access.md`.
+- MFA (phishing-resistant/passkeys for admins), rate limiting and progressive delays, breached-password check (k-anonymity API), no composition rules or forced rotation (NIST SP 800-63B), regenerate session ID on login, server-side logout, idle and absolute timeouts. See `kb/05-identity-crypto/identity-access.md` and `kb/05-identity-crypto/account-takeover-and-credential-stuffing.md`.
 
 ### A08: integrity and deserialization
 ```python
@@ -154,6 +154,7 @@ obj = MyModel.model_validate_json(request.data)   # pydantic
 ```
 - Java: avoid native serialization; if unavoidable, set an `ObjectInputFilter` allowlist (JEP 290). Jackson: no default typing. YAML: `yaml.safe_load`.
 - Sign artifacts and updates (cosign), SRI on CDN scripts, HMAC-sign any serialized state sent to clients.
+- In depth: `kb/03-application/insecure-deserialization.md`.
 
 ### A09: logging and monitoring
 - Log authN success/failure, authZ denials, input validation failures, admin actions, with user, source IP, timestamp and request ID; structured JSON; ship to a SIEM with alerts; redact secrets/PII; protect log integrity. See `kb/06-secure-sdlc/security-logging-and-monitoring.md` and `kb/08-defensive/soc-detection-ir.md`.
@@ -195,4 +196,4 @@ General: OWASP ZAP/Burp baseline scan, Semgrep/CodeQL, `securityheaders.com`, AS
 - OWASP Web Security Testing Guide: https://owasp.org/www-project-web-security-testing-guide/
 - NIST SP 800-63B (Digital Identity Guidelines, authentication)
 - MITRE CWE Top 25: https://cwe.mitre.org/top25/
-- See also `kb/03-application/api-security.md`, `kb/03-application/browser-client-side.md`, `kb/07-offensive/pentest-methodology.md`, `kb/03-application/http-request-smuggling-and-cache-attacks.md`, `kb/04-cloud-infra/database-security.md`, `kb/03-application/file-upload-security.md`, `kb/03-application/business-logic-and-race-conditions.md`, `kb/03-application/websocket-security.md`, `kb/03-application/server-side-request-forgery.md`
+- See also `kb/03-application/api-security.md`, `kb/03-application/browser-client-side.md`, `kb/07-offensive/pentest-methodology.md`, `kb/03-application/http-request-smuggling-and-cache-attacks.md`, `kb/04-cloud-infra/database-security.md`, `kb/03-application/file-upload-security.md`, `kb/03-application/business-logic-and-race-conditions.md`, `kb/03-application/websocket-security.md`, `kb/03-application/server-side-request-forgery.md`, `kb/03-application/insecure-deserialization.md`, `kb/05-identity-crypto/account-takeover-and-credential-stuffing.md`

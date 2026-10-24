@@ -22,6 +22,9 @@ Locate the KB (this repo, or `$CYBERSEC_KB`, or `~/cybersec-kb`). Read the relev
    - WebSocket endpoints (Origin check, handshake auth, per-message authZ, size/rate limits) → `kb/03-application/websocket-security.md`
    - Browser extension code (manifest permissions, message sender checks, MV3 CSP) → `kb/03-application/browser-extension-security.md`
    - Code that fetches user-supplied URLs (webhooks, imports, previews, PDF rendering): destination allowlist, IP checks after resolution, no redirects, egress proxy → `kb/03-application/server-side-request-forgery.md`
+   - Deserialization of request, cookie, cache, queue or model-file data (native formats, polymorphic typing, filters, signing keys) → `kb/03-application/insecure-deserialization.md`
+   - Login, signup, password reset and account recovery (rate limits by account and source, breached-password checks, enumeration, re-auth for account changes) → `kb/05-identity-crypto/account-takeover-and-credential-stuffing.md`
+   - WebAuthn/passkey implementations (RP ID, origin and challenge checks, UV, recovery and fallbacks) → `kb/05-identity-crypto/passkeys-and-webauthn.md`
    - Crypto misuse (weak hashes, hardcoded keys, `Math.random`) → `cryptography.md`
    - Dependencies & lockfiles → `kb/06-secure-sdlc/`
    - Data stores (DB exposure, app DB roles, TLS, RLS, backups) → `kb/04-cloud-infra/database-security.md`
