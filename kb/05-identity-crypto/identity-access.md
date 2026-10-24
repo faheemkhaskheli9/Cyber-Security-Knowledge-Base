@@ -87,4 +87,4 @@ Prefer phishing-resistant MFA (FIDO2/WebAuthn passkeys) over SMS/TOTP. Secure re
 - CISA "Implementing Phishing-Resistant MFA" fact sheet
 - FIDO Alliance passkeys: https://fidoalliance.org/passkeys/
 - MITRE ATT&CK T1078 (Valid Accounts), T1558 (Steal or Forge Kerberos Tickets): https://attack.mitre.org
-- See also `kb/04-cloud-infra/os-hardening.md`, `kb/05-identity-crypto/secrets-management.md`, `kb/03-application/api-security.md`, `kb/04-cloud-infra/cloud-security.md`, `kb/04-cloud-infra/saas-security.md`
+- See also `kb/04-cloud-infra/os-hardening.md`, `kb/05-identity-crypto/secrets-management.md`, `kb/03-application/api-security.md`, `kb/04-cloud-infra/cloud-security.md`, `kb/04-cloud-infra/saas-security.md`, `kb/05-identity-crypto/oauth-oidc-security.md`

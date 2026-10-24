@@ -150,4 +150,4 @@ Blameless review, root cause, detection gaps, action items with owners.
 - CISA #StopRansomware: https://www.cisa.gov/stopransomware
 - CISA Tabletop Exercise Packages (CTEPs)
 - SANS Incident Handler's Handbook
-- See also `kb/08-defensive/dfir-malware-threat-intel.md`, `kb/05-identity-crypto/identity-access.md`, `kb/08-defensive/ransomware-resilience.md`, `kb/06-secure-sdlc/security-logging-and-monitoring.md`
+- See also `kb/08-defensive/dfir-malware-threat-intel.md`, `kb/05-identity-crypto/identity-access.md`, `kb/08-defensive/ransomware-resilience.md`, `kb/06-secure-sdlc/security-logging-and-monitoring.md`, `kb/08-defensive/deception-and-honeytokens.md`
