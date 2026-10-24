@@ -14,7 +14,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **AS-REP roasting** – cracking the AS-REP returned for AD accounts that do not require Kerberos preauthentication.
 - **ASan / UBSan / MSan / TSan** – Address / UndefinedBehavior / Memory / Thread Sanitizer; compiler instrumentation that catches memory and concurrency bugs in tests.
 - **ASLR** – Address Space Layout Randomization; memory-corruption mitigation.
-- **ASM** – Attack Surface Management; continuous discovery of exposed assets.
+- **ASM / EASM** – (External) Attack Surface Management; continuous discovery, inventory and reduction of exposed assets, seen from the internet for EASM.
 - **ATO** – Account Takeover; also Authority To Operate (US gov).
 - **ATT&CK** – MITRE knowledge base of adversary tactics and techniques.
 
@@ -46,7 +46,8 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **CSP** – Content Security Policy (browser); also Cloud Service Provider.
 - **CSPM** – Cloud Security Posture Management.
 - **CSRF** – Cross-Site Request Forgery.
-- **CT** – Certificate Transparency logs.
+- **CT** – Certificate Transparency logs; public append-only logs of issued TLS certificates, also used to enumerate an organization's hostnames (RFC 9162).
+- **CTEM** – Continuous Threat Exposure Management; cycle of scoping, discovery, prioritization, validation and mobilization of exposures.
 - **CTI** – Cyber Threat Intelligence.
 - **CVE** – Common Vulnerabilities and Exposures identifier.
 - **CVSS** – Common Vulnerability Scoring System (severity, not risk).
@@ -61,6 +62,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **DDoS** – Distributed Denial of Service.
 - **Denial of wallet** – abusing auto-scaling (serverless, cloud) to run up the victim's bill instead of taking the service down.
 - **Device code phishing** – attacker starts an OAuth device authorization flow (RFC 8628) and lures the victim into entering the code, receiving the victim's tokens.
+- **Decompression bomb** – small archive or image that expands to huge size or pixel count to exhaust disk, memory or CPU.
 - **DEP / NX** – Data Execution Prevention / No-eXecute bit.
 - **DFIR** – Digital Forensics and Incident Response.
 - **DKIM / SPF / DMARC** – email authentication standards (RFC 6376, RFC 7208, RFC 9989; RFC 9989 obsoletes RFC 7489).
@@ -90,6 +92,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **Gadget chain** – existing classes chained during deserialization to reach code execution.
 - **gMSA** – Group Managed Service Account; AD manages and rotates its long random password.
 - **Golden / Silver Ticket** – forged Kerberos TGT (krbtgt key) / service ticket (service or computer account key).
+- **Golden SAML** – forging SAML assertions for any user and federated app with a stolen IdP token-signing key (ATT&CK T1606.002).
 - **GraphQL introspection** – built-in `__schema` / `__type` queries that return a GraphQL API's full schema; disable in production.
 - **GRC** – Governance, Risk, Compliance.
 - **HMAC** – keyed hash for message authentication.
@@ -155,6 +158,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **PKCE** – Proof Key for Code Exchange (OAuth).
 - **PKI** – Public Key Infrastructure.
 - **PoC** – Proof of Concept.
+- **Polyglot file** – one file valid as two formats (image and HTML/JS or archive) so it passes one check and is interpreted as the other.
 - **PQC** – Post-Quantum Cryptography (ML-KEM, ML-DSA, SLH-DSA).
 - **Privilege escalation** – gaining higher rights than granted.
 - **Prototype pollution** – injecting __proto__ / constructor.prototype keys to alter properties of all JavaScript objects.
@@ -173,6 +177,7 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **RSA** – public-key algorithm (≥ 3072-bit for new keys).
 
 ## S
+- **SAML assertion / ACS** – signed XML statement from an IdP about a user / the SP endpoint (Assertion Consumer Service) that receives and validates it.
 - **SASE / SSE** – Secure Access Service Edge / Security Service Edge.
 - **Secure Boot (UEFI)** – firmware verifies boot components against allowed (`db`) and revoked (`dbx`) signatures; keys are PK and KEK.
 - **Separation of duties** – no single person can complete a sensitive action (payment, production change, backup deletion) alone.
@@ -212,8 +217,10 @@ Alphabetical. Acronyms first, expansion second, one-line meaning third. See topi
 - **WAF** – Web Application Firewall.
 - **Web cache poisoning / deception** – an unkeyed input poisons a shared cached response / a private page is cached as a public static asset.
 - **Workload identity federation** – exchanging an external OIDC/SAML token (e.g. GitHub Actions) for short-lived cloud credentials.
+- **XSW** – XML Signature Wrapping; moving a signed SAML element and inserting a forged one where the application reads, so the signature still verifies.
 - **XSS** – Cross-Site Scripting (reflected, stored, DOM).
 - **XXE** – XML External Entity injection.
 - **Zero trust** – never trust network location; verify every request (NIST SP 800-207).
 - **Zero-day** – flaw exploited before a vendor fix exists.
+- **Zip Slip** – archive entries with `../` paths or links that write outside the extraction directory during unzip/untar.
 - **ZTMM** – CISA Zero Trust Maturity Model; 5 pillars, 3 cross-cutting capabilities, 4 stages.

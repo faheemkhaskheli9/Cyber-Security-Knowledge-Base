@@ -91,4 +91,4 @@
 - OWASP OAuth 2.0 Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/OAuth2_Cheat_Sheet.html
 - Microsoft Threat Intelligence, Storm-2372 conducts device code phishing campaign (February 2025): https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/
 - MITRE ATT&CK T1528 (Steal Application Access Token), T1550.001 (Application Access Token)
-- See also `kb/05-identity-crypto/identity-access.md`, `kb/03-application/api-security.md`, `kb/04-cloud-infra/saas-security.md`
+- See also `kb/05-identity-crypto/identity-access.md`, `kb/03-application/api-security.md`, `kb/04-cloud-infra/saas-security.md`, `kb/05-identity-crypto/saml-security.md`

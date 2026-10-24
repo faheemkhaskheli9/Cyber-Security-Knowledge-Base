@@ -16,6 +16,8 @@ Locate the KB (this repo, or `$CYBERSEC_KB`, or `~/cybersec-kb`). Read the relev
    - AuthN/AuthZ on every endpoint, session/JWT handling → `identity-access.md`, `api-security.md`
    - GraphQL endpoints (resolver authZ, depth/cost limits, introspection, CSRF) → `kb/03-application/graphql-security.md`
    - OAuth/OIDC clients and servers (redirect URIs, PKCE, token validation and storage) → `kb/05-identity-crypto/oauth-oidc-security.md`
+   - SAML service providers (signature, audience, replay checks; library version) → `kb/05-identity-crypto/saml-security.md`
+   - File uploads and archive/document processing (type allowlist, storage, parser sandboxing, serving headers) → `kb/03-application/file-upload-security.md`
    - Crypto misuse (weak hashes, hardcoded keys, `Math.random`) → `cryptography.md`
    - Dependencies & lockfiles → `kb/06-secure-sdlc/`
    - Data stores (DB exposure, app DB roles, TLS, RLS, backups) → `kb/04-cloud-infra/database-security.md`
