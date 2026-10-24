@@ -76,4 +76,4 @@ Web cache attacks:
 - PortSwigger Web Security Academy, Request smuggling: https://portswigger.net/web-security/request-smuggling · Web cache poisoning: https://portswigger.net/web-security/web-cache-poisoning · Web cache deception: https://portswigger.net/web-security/web-cache-deception
 - James Kettle, "HTTP Desync Attacks: Request Smuggling Reborn" (2019) and "Practical Web Cache Poisoning" (2018), PortSwigger Research: https://portswigger.net/research
 - OWASP Web Security Testing Guide: https://owasp.org/www-project-web-security-testing-guide/
-- See also `kb/03-application/browser-client-side.md`, `kb/03-application/owasp-top10.md`, `kb/02-network/wireless-dns-ddos.md`, `kb/07-offensive/pentest-methodology.md`
+- See also `kb/03-application/browser-client-side.md`, `kb/03-application/owasp-top10.md`, `kb/02-network/wireless-dns-ddos.md`, `kb/07-offensive/pentest-methodology.md`, `kb/03-application/websocket-security.md`

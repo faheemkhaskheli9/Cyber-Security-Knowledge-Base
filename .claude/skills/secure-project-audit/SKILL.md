@@ -18,6 +18,9 @@ Locate the KB (this repo, or `$CYBERSEC_KB`, or `~/cybersec-kb`). Read the relev
    - OAuth/OIDC clients and servers (redirect URIs, PKCE, token validation and storage) → `kb/05-identity-crypto/oauth-oidc-security.md`
    - SAML service providers (signature, audience, replay checks; library version) → `kb/05-identity-crypto/saml-security.md`
    - File uploads and archive/document processing (type allowlist, storage, parser sandboxing, serving headers) → `kb/03-application/file-upload-security.md`
+   - Business flows that spend, redeem or limit something (atomic check-and-update, idempotency keys, server-side state machines, server-computed prices) → `kb/03-application/business-logic-and-race-conditions.md`
+   - WebSocket endpoints (Origin check, handshake auth, per-message authZ, size/rate limits) → `kb/03-application/websocket-security.md`
+   - Browser extension code (manifest permissions, message sender checks, MV3 CSP) → `kb/03-application/browser-extension-security.md`
    - Crypto misuse (weak hashes, hardcoded keys, `Math.random`) → `cryptography.md`
    - Dependencies & lockfiles → `kb/06-secure-sdlc/`
    - Data stores (DB exposure, app DB roles, TLS, RLS, backups) → `kb/04-cloud-infra/database-security.md`
