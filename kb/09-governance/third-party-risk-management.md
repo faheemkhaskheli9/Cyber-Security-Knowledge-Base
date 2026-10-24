@@ -78,4 +78,4 @@
 - Cloud Security Alliance, STAR Registry and CAIQ: https://cloudsecurityalliance.org/star
 - Shared Assessments, Standardized Information Gathering (SIG) questionnaire: https://sharedassessments.org/sig/
 - EU Regulation 2022/2554 (DORA), Chapter V ICT third-party risk: https://eur-lex.europa.eu/eli/reg/2022/2554/oj
-- See also `kb/09-governance/grc-compliance-privacy.md`, `kb/06-secure-sdlc/secure-sdlc-and-supply-chain.md`, `kb/04-cloud-infra/saas-security.md`
+- See also `kb/09-governance/grc-compliance-privacy.md`, `kb/06-secure-sdlc/secure-sdlc-and-supply-chain.md`, `kb/04-cloud-infra/saas-security.md`, `kb/08-defensive/insider-threat.md`
