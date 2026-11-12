@@ -38,7 +38,7 @@ Securing the software-as-a-service applications an organization subscribes to: p
 
 ### 3. Integrations and tokens
 - **Microsoft Entra ID**: restrict user consent (disable, or allow only verified publishers and low-impact permissions) and enable the admin consent workflow; review enterprise apps and service principal credentials.
-- **Google Workspace**: in API controls, restrict or block unconfigured third-party apps and mark only reviewed apps as trusted; limit high-risk scopes (Gmail, Drive).
+- **Google Workspace**: in Admin console > Security > Access and data control > API controls, restrict unconfigured third-party apps, then assign reviewed apps the narrowest supported access setting (prefer **Specific Google data** for approved scopes; **Limited** for unrestricted services; **Trusted** only when full-service access is justified). Restrict high-risk Gmail/Drive/Docs/Chat scopes and review organizational-unit exceptions.
 - **GitHub**: require approval for fine-grained personal access tokens and restrict classic PATs at the organization or enterprise level; require token expiration; use GitHub Apps with minimal permissions instead of user tokens; enforce SSO authorization for tokens.
 - **Salesforce and similar**: only admins can install or authorize connected apps; restrict API access to approved apps; use IP restrictions for integration users.
 - Grant each integration the narrowest scope and a dedicated, non-human integration account; record an owner; review grants quarterly and remove unused ones.
@@ -61,7 +61,7 @@ Securing the software-as-a-service applications an organization subscribes to: p
 ## How to verify
 - Run the baseline tools and track pass rates over time: ScubaGear (`Invoke-SCuBA` in PowerShell) for Microsoft 365, ScubaGoggles for Google Workspace.
 - Accounts that bypass SSO or MFA: export users from each high-tier app and compare against the IdP; any local-login account other than break-glass is a finding.
-- OAuth grants: in Microsoft Graph PowerShell, `Get-MgOauth2PermissionGrant -All` and review enterprise apps with high-privilege delegated or application permissions; in the Google Admin console, Security > API controls > Manage third-party app access.
+- OAuth grants: in Microsoft Graph PowerShell, `Get-MgOauth2PermissionGrant -All` and review enterprise apps with high-privilege delegated or application permissions; in the Google Admin console, Security > Access and data control > API controls > Manage App Access. Check Configured, Accessed and Pending Review apps, scopes and organizational-unit exceptions.
 - GitHub: organization settings show PAT approval required and classic PATs restricted; `gh api orgs/<ORG>/personal-access-tokens` lists approved fine-grained tokens (requires an org owner and a GitHub App or appropriate token).
 - Offboarding test: disable a test user at the IdP and confirm access and refresh tokens stop working in each tier-1 app within the agreed time.
 - Sharing: report externally shared and "anyone with the link" files; confirm count trends down.
@@ -72,7 +72,7 @@ Securing the software-as-a-service applications an organization subscribes to: p
 - CISA BOD 25-01, Implementing Secure Practices for Cloud Services: https://www.cisa.gov/news-events/directives/bod-25-01-implementing-secure-practices-cloud-services
 - ScubaGear: https://github.com/cisagov/ScubaGear · ScubaGoggles: https://github.com/cisagov/ScubaGoggles
 - Microsoft Learn, Configure how users consent to applications: https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent
-- Google Workspace Admin Help, Control which third-party and internal apps access Workspace data: https://support.google.com/a/answer/7281227
+- Google Workspace Admin Help, Control which third-party and internal apps access Workspace data: https://knowledge.workspace.google.com/admin/apps/control-which-apps-access-google-workspace-data
 - GitHub Docs, Setting a personal access token policy for your organization: https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/setting-a-personal-access-token-policy-for-your-organization
 - CIS Benchmarks (Microsoft 365, Google Workspace): https://www.cisecurity.org/cis-benchmarks
 - Mandiant, UNC5537 targets Snowflake customer instances (2024): https://cloud.google.com/blog/topics/threat-intelligence/unc5537-snowflake-data-theft-extortion
