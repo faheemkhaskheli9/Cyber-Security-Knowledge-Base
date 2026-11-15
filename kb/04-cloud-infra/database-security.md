@@ -38,6 +38,7 @@ Protecting the database tier itself: relational engines (PostgreSQL, MySQL/Maria
   # pg_hba.conf: TLS only, SCRAM, app subnet only
   hostssl  appdb  app_rw  10.0.1.0/24  scram-sha-256
   ```
+  `hostssl` matches only TLS connections; it does **not** deny plaintext connections matched by another `host` or `hostnossl` rule. Audit the entire `pg_hba.conf` in first-match order, remove permissive rules, and verify plaintext is rejected for every application role and network. PostgreSQL `ssl = on` enables TLS but does not by itself require clients to use it.
 - MySQL 8: `caching_sha2_password` (the default); remove anonymous users and test databases.
 - MongoDB: `security.authorization: enabled`, SCRAM-SHA-256 or x.509, one user per application.
 - Redis 6+: named ACL users with their own passwords and restricted command categories, and the `default` user disabled or password-protected, for example `ACL SETUSER app on >EXAMPLE_PASSWORD ~app:* +@read +@write -@admin -@dangerous`.
