@@ -22,7 +22,8 @@ echo "== Risky code patterns =="
 check(){ r=$(grep -rInE "$2" . --include='*.py' --include='*.js' --include='*.ts' --include='*.php' --include='*.java' --include='*.go' --include='*.rb' --exclude-dir={.git,node_modules,venv,.venv,dist,build} 2>/dev/null | head -5); [ -n "$r" ] && { warn "$1"; echo "$r" | sed 's/^/    /'; }; }
 check "eval/exec on dynamic input" '(^|[^a-zA-Z_.])(eval|exec)\('
 check "shell=True / os.system / child_process.exec" 'shell=True|os\.system\(|child_process.*exec\('
-check "pickle/yaml.load unsafe deserialization" 'pickle\.loads?\(|yaml\.load\((?!.*Loader)'
+# GNU grep -E does not support lookaheads; flag yaml.load for manual Loader review.
+check "pickle/yaml.load unsafe deserialization" 'pickle\.loads?\(|yaml\.(load|unsafe_load)\('
 check "weak hash MD5/SHA1" '(md5|sha1)\('
 check "SQL string building" '(SELECT|INSERT|UPDATE|DELETE).*(\+|%s|\$\{|f")'
 check "TLS verification disabled" 'verify=False|rejectUnauthorized: *false|InsecureSkipVerify'
