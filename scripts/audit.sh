@@ -19,7 +19,7 @@ ls .github/workflows 2>/dev/null | grep -qi codeql && ok CodeQL || warn "no Code
 grep -qE '^\.env' .gitignore 2>/dev/null && ok ".env ignored" || warn ".env not in .gitignore"
 
 echo "== Risky code patterns =="
-check(){ r=$(grep -rInE "$2" . --include='*.py' --include='*.js' --include='*.ts' --include='*.php' --include='*.java' --include='*.go' --include='*.rb' --exclude-dir={.git,node_modules,venv,.venv,dist,build} 2>/dev/null | head -5); [ -n "$r" ] && { warn "$1"; echo "$r" | sed 's/^/    /'; }; }
+check(){ r=$(grep -rIlE "$2" . --include='*.py' --include='*.js' --include='*.ts' --include='*.php' --include='*.java' --include='*.go' --include='*.rb' --exclude-dir={.git,node_modules,venv,.venv,dist,build} 2>/dev/null | head -5); [ -n "$r" ] && { warn "$1 (matching filenames only; source lines may contain secrets)"; printf '%s\n' "$r" | sed 's/^/    /'; }; }
 check "eval/exec on dynamic input" '(^|[^a-zA-Z_.])(eval|exec)\('
 check "shell=True / os.system / child_process.exec" 'shell=True|os\.system\(|child_process.*exec\('
 # GNU grep -E does not support lookaheads; flag yaml.load for manual Loader review.
